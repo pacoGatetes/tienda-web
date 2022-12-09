@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+    <script src="https://kit.fontawesome.com/65e2b874ef.js" crossorigin="anonymous"></script><!--icon_fonts-->
+    <link rel="stylesheet" type="text/css" href="css/Carrusel_Slider.css">
+</head>
+
+<body>
+    
+    <div class="slider">
+        <div class="head"><h2 class="slider-title">Titulo del slider</h2></div>
+       
+        
+        <div class="image-wrapper">
+            
+            <div class="image-content">
+                <a href="#"><img src="img/gatito_blanco_04.jpg" class="slider-image">
+                <div class="post-info">
+                    <h4>La musica es un lenguaje univesal</h4>
+                    <i class="fa fa-user">Asi da da gusto</i>
+                    &nbsp;
+                    <i class="fa fa-calendar"> noviembre 2020</i>
+                </div></a>
+            </div>
+        
+        
+    
+            <div class="image-content">
+                <a href="#"><img src="img/gatito_gris_01.jpg" class="slider-image">
+                <div class="post-info">
+                    <h4>La musica es un lenguaje univesal</h4>
+                    <i class="fa fa-user">Asi da da gusto</i>
+                    &nbsp;
+                    <i class="fa fa-calendar"> noviembre 2020</i>
+                </div></a>
+            </div>
+       
+        
+        
+            <div class="image-content">
+                <a href="#"><img src="img/gatito_negro_04.jpg" class="slider-image">
+                <div class="post-info">
+                    <h4>La musica es un lenguaje univesal</h4>
+                    <i class="fa fa-user">Asi da da gusto</i>
+                    &nbsp;
+                    <i class="fa fa-calendar"> noviembre 2020</i>
+                </div></a>
+            </div>
+       
+        
+       
+            <div class="image-content">
+                <a href="#"><img src="img/gatito_pardo_03.jpg" class="slider-image">
+                <div class="post-info">
+                    <h4>La musica es un lenguaje univesal</h4>
+                    <i class="fa fa-user">Asi da da gusto</i>
+                    &nbsp;
+                    <i class="fa fa-calendar"> noviembre 2020</i>
+                </div></a>
+            </div>
+           <div class="image-content">
+                <a href="#"><img src="img/gatito_castaño_010.jpg" class="slider-image">
+                <div class="post-info">
+                    <h4>La musica es un lenguaje univesal</h4>
+                    <i class="fa fa-user">Asi da da gusto</i>
+                    &nbsp;
+                    <i class="fa fa-calendar"> noviembre 2020</i>
+                </div></a>
+            </div>
+            
+            
+        </div>
+    </div>
+    <script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("image-content");
+
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "";  
+  }
+  
+ 
+}
+</script>
+
+</body>
+</html>

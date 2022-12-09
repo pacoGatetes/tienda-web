@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>tienda</title>
+    <link href="icons/favicon.svg" rel="icon" type="image/x-icon"/>
+    <script src="https://kit.fontawesome.com/65e2b874ef.js" crossorigin="anonymous"></script><!--icon_fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"><!--Google roboto fonts-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/estilocss.css">
+</head>
+<body>
+    
+    <form>
+       <h1>Forma de pago</h1>
+        <p>Los campos obligatorios van seguidos de <strong><abbr title="requeridos">&#42;</abbr></strong>.</p>
+        
+        <section>
+         <h2>Información de contacto</h2>
+            <fieldset>
+             <legend>Título</legend>
+                <ul>
+                
+                <li>
+                    <label for="titulo_1">
+                       <input type="radio" id="titulo_1" name="titulo" value="K">Rey
+                    </label>
+                </li>
+                <li>
+                    <label for="titulo_2">
+                      <input type="radio" id="titulo_2" name="titulo" value="Q">Reina
+                    </label> 
+                </li>
+                <li>
+                  <label for="titulo_3">
+                      <input type="radio" id="titulo_3" name="titulo" value="J">Bufón
+                  </label>
+                </li>
+                </ul>
+            </fieldset>
+            
+            <p>
+            <label for="name">
+                <span>Nombre:</span>
+                <strong><abbr title="requerido">&#42;</abbr></strong>
+                </label>
+                <input type="text" id="name" name="usuario">
+            </p>
+            <p>
+             <label for="mail">
+                <span>Correo electrónico:</span>
+                 <strong><abbr title="requerido">&#42;</abbr></strong>
+             </label>
+                  <input type="email" id="email" name="usermail">
+            </p>
+            <p>
+             <label for="pwd">
+                <span>Contraseña:</span>
+                 <strong><abbr title="requerido">&#42;</abbr></strong>
+                </label>
+                <input type="password" id="psw" name="password">
+            </p>
+        
+        </section>
+        
+        <section>
+         <h2>Información de pago</h2>
+            <p>
+                <label for="card">
+                    <span>Tipo de tarjeta:</span>
+                </label>
+                <select id="card" name="usercard">
+                    <option value="visa">Visa</option>
+                    <option value="mc">Mastercard</option>
+                    <option value="amex">American Express</option>
+                </select>
+            </p>
+            <p>
+            <label for="date">
+                <span>Fecha de caducidad:</span>
+                <strong><abbr title="requerido"></abbr></strong>
+                <em>el formato dd/mm/aaaa</em>
+            </label>
+                <input type="date" id="date" name="expiration">
+            
+            </p>
+        <p><button type="submit">Validar el pago</button></p>
+        </section>
+        
+    </form>
+    
+    
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+    <style>
+    #ms::backdrop {
+  background-color:RGBA(0,0,0, .75);
+}
+    </style>
+</head>
+
+<body>
+<dialog id="ms">
+  <h2>¡Vuelve a la sombra!</h2>
+  <img src="gandalf.jpg" alt="Gandalf">
+  <p>¡NO.. PUEDES... PASAR!</p>
+  <button id="close" onclick="document.getElementById('ms').close()">Ok!</button>
+</dialog>
+<button id="show" 
+        onclick="document.getElementById('ms').showModal()">Mostrar</button>
+</body>
+</html>

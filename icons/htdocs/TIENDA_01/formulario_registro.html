@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>tienda</title>
+    <link href="icons/favicon.svg" rel="icon" type="image/x-icon"/>
+    <script src="https://kit.fontawesome.com/65e2b874ef.js" crossorigin="anonymous"></script><!--icon_fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"><!--Google roboto fonts-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/estilocss.css">
+    <style>
+
+    </style>
+</head>
+
+<body> 
+    
+    <div class="containerform">
+     <form class="reg" action="action_page.php">
+      
+             <h2 style="text-align: center; font-weight: 400; font-size: 15px; margin-top: 2px; letter-spacing: 2px;">REGISTRATE</h2>
+              <div class="logo-container">
+                <img class="logo-cont" src="icons/gatetes.svg" alt="logo" >
+              </div>
+                 <p class="inicia-reg">Por favor rellena el formulario para crear tu cuenta de usuario</p><br>
+                    
+             <fieldset>
+                 <legend>Datos de registro</legend>
+                 <hr>
+                 <label for="email"><span>Email</span></label>
+                 <input type="text" placeholder="Introduzca su correo" name="email" required>
+       
+                 <label for="psw"><span>Contraseña</span></label>
+                 <input type="password" placeholder="Introduzca su contraseña" name="psw" required>
+         
+                 <label for="psw-repeat"><span>Repita la contraseña</span><abbr title="requerido">&#42;</abbr></label>
+                 <input type="password" placeholder="Repita la contraseña" name="psw-repeat" required>
+         
+                 <label>
+                   <input type="checkbox" checked="checked" name="recuerdame">&nbsp;<span>Recuerdame</span>
+                 </label>
+         
+            </fieldset>
+                 <p class="inicia-reg">Al crear una cuenta acepto las condiciones de uso&nbsp;<a href="#" style="color: dodgerblue;">Terminos&amp;Privacidad.</a></p>
+         
+                 <button type="submit" class="registro clearfix">Registro</button>
+        
+                <div class="container-cancel">
+                   <p class="inicia-reg">Si tienes cuenta de usuario:&nbsp;&nbsp;<a href="iniciar_sesion.html">Inicia sesión</a></p>
+                </div>
+           <a class="cancelbtn clearfix" href="index.html">Cancelar</a>
+        
+    </form>
+  </div>
+    
+    
+    
+
+    
+</body>
+</html>

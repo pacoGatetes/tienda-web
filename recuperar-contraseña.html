@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Una monada de gatitos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Informamos al navegador para que precarge las fuentes de Google-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap" rel="preconnect"
+        as="font"><!-- API Google roboto flex fonts-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#E50914">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#E50914">
+    <!--Esta etiqueta puede establecer si la página admite la función de zoom de la pantalla táctil -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet preload" href="css/hoja-estilo.css" as="style">
+    <link rel="icon" href="icons/favicon.svg" type="image/svg+xml" sizes="any"><!--Favicon-->
+    <!--<link rel="icon" href="icons/favicon.ico" sizes="16x16" type="image/vnd.microsoft.icon">-->
+    <link rel="apple-touch-icon" sizes="57x57" href="icons/touch-icon-iphone.png"><!--favicon para telf Apple-->
+    <link rel="apple-touch-icon" sizes="114x114" href="icons/touch-icon-ipad.png"><!--favicon Apple para Ipad-->
+    <script rel="preload" src="js/main.js" defer></script>
+</head>
+<body>
+    <div class="main-form">
+        <main>
+        <section class="contenedor__formulario">
+            <header>
+                <h2>Recuperar contraseña</h2>
+                <img class="logo logo__formularios" src="icons/gatetes.svg" alt="logo" title="logo">
+            </header>
+            <div class="linea"></div>
+            <form action="" class="formulario" id="formulario">
+                <fieldset>
+                    <legend>Introduzca la dirección de correo asociada a su cuenta</legend>
+
+                    <!--Grupo Contraseña-->
+                    <div class="formulario__grupo" id="grupo__password">
+                        <label for="email" class="formulario__label">Correo</label>
+                        <div class="formulario__grupo-input">
+                            <input type="email" class="formulario__input" name="email" id="email"
+                                autocomplete="current-email" id="current-email"
+                                aria-describedby="firstName-length-error" aria-invalid="true">
+                        </div>
+                    </div>
+                    <!--Fin Grupo Contraseña-->
+
+                    <div class="formulario__grupo div-btn">
+                        <button type="submit" class="btn-form">Enviar</button>
+                        <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">El mensaje se envio correctamente.</p>
+                    </div>
+
+                </fieldset>
+            </form>
+        </section>
+        </main>
+
+
+            <footer class="pie__formulario">
+                <div class="contenedor-privacidad-form">
+                    <ul class=" condiciones-form">
+                        <li><a href="#">Condiciones de uso</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Política de Cookies</a></li>
+                    </ul>
+                    <ul class="favicon-footer">
+                        <li class=""><img src="./icons/favicon.svg" width="20" height="20" alt="">&copy;&nbsp;2021-2022 gatetes
+                            tiene todos los derechos reservados. Si no cumples la ley, te arañamos
+                        </li>
+                    </ul>
+                </div>
+         </footer>
+</div>
+</body>
+</html>

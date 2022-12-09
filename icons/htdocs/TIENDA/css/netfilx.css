@@ -1,0 +1,138 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin: 0; padding: 0; border: 0; box-sizing: border-box;}
+html{scroll-behavior: smooth; font-size:100%;}/*permite un desplazamiento suave por toda la página*/
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, img, main, div {
+	display: block;
+}
+html, body {
+	outline: 0;
+	background: transparent;
+    height: 100%;
+    overflow: auto;
+}
+:root{
+	--rojo: #E50914;
+	--color-textos: #292A2D;
+	--gris-claro: #f5f5f5;
+	--gris-google-04: #5F6368;
+	--sombra: 0 0 13px 0 rgba(185,185,185, .25);
+	--blanco: #fff;
+}
+a{
+    display: block;/* las etiquetas <a> ocupan todo el bloque*/
+    text-align: center; /*El texto se alinea en el centro*/
+	font-size: 100%;/*esto es el tamaño de letra al 100%; pero creo que se pude quitar*/
+	vertical-align: baseline;
+	background: transparent;
+    text-decoration: none;
+}
+.contenedor{
+	width: 90%;
+	margin: auto;
+}
+
+/*--Contenedor de los titulos y controles---*/
+.contenedor-titulo-controles{
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+}
+.contenedor-titulo-controles h3{
+	color: var(--rojo);
+	font-size: 1.5rem;
+}
+.contenedor-titulo-controles .indicadores button{
+	background: var(--gris-google-04);
+	height: 5px;
+	width: 20px;
+	cursor: pointer;
+	border: none;
+	margin-right: 5px;
+}
+.contenedor-titulo-controles .indicadores button:hover,
+.contenedor-titulo-controles .indicadores button.ativo{
+	background: var(--rojo);
+}
+
+/*---Contenedor principal y flechas-------*/
+/*.peliculas-recomendadas{
+	margin-bottom: 70px;
+}*/
+.peliculas-recomendadas .contenedor-principal{
+	display: flex;
+	align-items: center;
+	position: relative;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	background-color: #f5f5f5;
+}
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda,
+.peliculas-recomendadas .contenedor-principal .flecha-derecha{
+	position: absolute;
+	border: none;
+	background-color: rgba(0,0,0,0.3);
+	font-size: 40px;
+	height: 50%;
+	top: calc(50% - 25%);
+	line-height: 40px;
+	width: 50px;
+	color: #fff;
+	cursor: pointer;
+	z-index: 500;
+	transition:.2s ease all; 
+}
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda:hover,
+.peliculas-recomendadas .contenedor-principal .flecha-derecha:hover{
+	background: rgba(0,0,0, .9);
+}
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda{
+	left: 0;
+}.peliculas-recomendadas .contenedor-principal .flecha-derecha{
+	right: 0;
+}
+/*-------Carousel-------*/
+.peliculas-recomendadas .contenedor-carousel{
+	min-width: 100%;
+	padding: 20px 0;
+	overflow: hidden;
+	scroll-behavior: smooth;
+	/*scroll-padding: 0 0 0 50px;*/
+	/*scroll-snap-type: x;*/
+}
+.peliculas-recomendadas .contenedor-carousel{
+	display: flex;
+	flex-wrap: nowrap;
+}
+.peliculas-recomendadas .contenedor-carousel .carousel .pelicula {
+	width: 20%;
+	transition: .6s ease all;
+	box-shadow: 5px 5px 10px rgba(0,0,0, .3);
+	display: flex;
+	gap:20px;
+}
+
+.peliculas-recomendadas .contenedor-carousel .carousel .pelicula img{
+	width: 100%;
+	vertical-align: top;
+	/*width: 100%;*/
+	max-width: 270px;
+	height: 800;
+	border-radius: 50%;
+	object-fit: cover;
+	scroll-snap-align: start;
+ /*   flex: 0 0 150px;*/
+}
+@media screen and (max-width: 800px) {
+
+	.peliculas-recomendadas .indicadores,
+	.peliculas-recomendadas .flecha-izquierda,
+	.peliculas-recomendadas .flecha-derecha {
+		display: none;
+	}
+	
+}
+
+
+
+
+

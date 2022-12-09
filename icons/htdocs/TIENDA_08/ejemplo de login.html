@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>tienda</title>
+    <link href="icons/favicon.svg" rel="icon" type="image/x-icon"/>
+    <script src="https://kit.fontawesome.com/65e2b874ef.js" crossorigin="anonymous"></script><!--icon_fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"><!--Google roboto fonts-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- <link rel="stylesheet" type="text/css" href="css/estilocss.css">-->
+    <style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 1px solid #f5f5f5; background: #fff; width: 50%; margin: 40px auto 0px auto; border-radius: 5px; box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 12px 0;
+  display: inline-block;
+  box-sizing: border-box;/*esto despues hay que eliminarlo*/
+  border: 1px solid #c5c5c5;/*gris*/
+  border-radius: 4px;
+}
+}
+input[type=text]:hover, input[type=password]:hover{
+    border-color: #ccff00;
+}
+input, .inicia-sesion{
+    font-weight: 200;
+    font-size: 14px;
+}
+label{
+    display: block;
+    clear: both;
+    font-weight: 200;
+    font-size: 12px;
+    color: #484848;/*Color gris*/
+    text-transform: uppercase;/*Pone el texto en mayúsculas*/
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.logo-container {
+  text-align: center;
+  margin: 0px 0 15px 0;
+}
+img.logo-cont{
+    width: 30%;
+}
+
+.container {
+  padding: 30px; 
+}
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+        @media screen and (max-width: 600px){
+            form{/*con esto sololucionamos el ancho del formulario para distintos anchos de navegador, para que este siempre al 100%, porque mira que no me llevaba tiempo comiendo la moral, esta mierda*/
+                width: 100%;
+                margin: 0 auto;
+            }
+        }
+</style>
+</head>
+    <body>
+        
+      <form action="/action_page.php" method="post">
+          
+        <h2 style="text-align: center; font-weight: 400; font-size: 15px; margin-top: 25px">MI CUENTA</h2>
+          <div class="container">
+          <div class="logo-container">
+            <img src="icons/gatetes.svg" alt="logo" class="logo-cont">
+          </div>
+
+             <p class="inicia-sesion">Inicia sesión para acceder a tú cuenta de usuario<br><br>
+              Los campos marcados con&nbsp;<span style="color: red">&#42;</span>&nbsp;&nbsp;son obligatorios</p>
+             <hr>
+
+        
+            <label for="nombre-usuario"><span>Usuario&nbsp;</span>&#42;</label>
+            <input type="text" placeholder="Nombre usuario" name="nombre" required>
+
+            <label for="psw"><span>Contraseña&nbsp;</span>&#42;</label>
+            <input type="password" placeholder="Introduzca su contraseña" name="psw" required>
+
+            <button type="submit">Login</button>
+            <label><input type="checkbox" checked="checked" name="recuerdame">&nbsp;Recordarme</label>
+             
+          </div>
+                 <div class="container" style="background-color: #f5f5f5"><!--en este div estan los bontes de cancelar sesión-->
+                    <button type="button" class="cancelbtn">Cancelar</button>
+                    <span class="psw">Olvido su&nbsp;<a href="#">contraseña</a></span>
+                </div><!--div donde se encuentra el boton cerrar-->
+            
+     </form>
+
+</body>
+</html>

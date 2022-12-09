@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Una monada de gatitos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Informamos al navegador para que precarge las fuentes de Google-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap" rel="preconnect"
+        as="font"><!-- API Google roboto flex fonts-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#E50914">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#E50914">
+    <!--Esta etiqueta puede establecer si la página admite la función de zoom de la pantalla táctil -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet preload" href="css/hoja-estilo.css" as="style">
+    <link rel="icon" href="icons/favicon.svg" type="image/svg+xml" sizes="any">
+    <!--Favicon-->
+    <!--<link rel="icon" href="icons/favicon.ico" sizes="16x16" type="image/vnd.microsoft.icon">-->
+    <link rel="apple-touch-icon" sizes="57x57" href="icons/touch-icon-iphone.png">
+    <!--favicon para telf Apple-->
+    <link rel="apple-touch-icon" sizes="114x114" href="icons/touch-icon-ipad.png">
+    <!--favicon Apple para Ipad-->
+    <script rel="preload" src="js/main.js" defer></script>
+
+
+</head>
+<body>
+    <div class="flex__grid contenedor__carrito">
+
+        <main class="flex__grid main-contenedor__carrito">
+
+
+            <section class="contenedor__tabla-carrito">
+
+                <h2>Favoritos</h2>
+
+                    <div class="tabla-carrito-checkouts">
+                        <ul class="cabecera-tabla">
+                            <li class="col-1">Producto</li>
+                            <li class="col-3">Cantidad</li>
+                            <li class="col-5">Precio</li>
+                            <li class="col-7">Eliminar</li>
+                        </ul>
+                        <div class="tabla-container">
+                        <form class="form__carrito" action="" method="POST">
+                        <ul class="body-tabla-chekouts">
+                            <li class="columna-tabla">
+                                <div class="cont-img-producto col-2">
+                                    <img src="./img/belleza-banner-1.png" width="90" height="90" alt="foto">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. incidunt?</p>
+                                </div>
+                                <div class="grupo__input-number">
+                                    <button class="qtyminus" id="decrement" tabindex="0">&minus;</button>
+                                        <input type="number" name="qty" id="qty" class="number__producto" value="1" min="1" max="10" step="1" readonly="readonly">
+                                    <button class="qtyplus" id="increment">&plus;</button>
+                                </div>
+                                <div class="col-6">33,99&nbsp;&euro;</div>
+                                <div class="papelera">
+                                    <img class="" src="./icons/papelera.svg" alt="Papelera" title="Eliminar" width="20" height="20">
+                                </div>
+                            </li>
+
+                            <li class="columna-tabla">
+                                <div class="cont-img-producto col-2">
+                                    <img src="./img/belleza-galeria-2.png" width="90" height="90" alt="foto">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. incidunt?</p>
+                                </div>
+                                <div class="grupo__input-number">
+                                    <button class="qtyminus" id="decrement" tabindex="0">&minus;</button>
+                                        <input type="number" name="qty" id="qty" class="number__producto" value="1" min="1" max="10" step="1" readonly="readonly">
+                                    <button class="qtyplus" id="increment">&plus;</button>
+                                </div>
+                                <div class="col-6">66,99&nbsp;&euro;</div>
+                                <div class="papelera">
+                                <img class="" src="./icons/papelera.svg" alt="Papelera" title="Papelera" width="20" height="20">
+                                </div>
+                            </li>
+                        </ul>
+                        </form>
+                        </div>
+                    </div>
+                </section>
+            <!-- Fin contenedor__tabla-carrito  -->
+
+                <div class="col-2 contenedor__botones-izquierda btn-favoritos">
+                    <div class=" col-3 div-btn">
+                        <button type="button" class="btn-form btn__actualizar-compra">Eliminar favoritos</button>
+                    </div>
+                        <!--<div class="contenedor__boton-derecha">-->
+                     <div class="col-3 div-btn">
+                        <a class="btn-form btn__seguir-comprando" oncharge="history.go(-1)">Seguir comprado</a>
+                    </div>
+                        <!--</div>-->
+                </div>
+                    <!-- Cerramos el DIV dos botóns actualizar la compara y seguir comprado-->
+        </main>
+
+    </div>
+    <footer class="pie__formulario">
+        <div class="contenedor-privacidad-form">
+            <ul class="condiciones-form">
+                <li><a href="#">Condiciones de uso</a></li>
+                <li><a href="#">Política de privacidad</a></li>
+                <li><a href="#">Política de Cookies</a></li>
+            </ul>
+            <ul class="favicon-footer">
+                <li class="">
+                    <img src="./icons/favicon.svg" width="20" height="20" alt="">
+                        <p>&copy;&nbsp;2020-2022 gatetes tiene todos los derechos reservados. Si no cumples la ley, te arañamos
+                        </p>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        var input = document.querySelector('#qty');
+        var btnminus = document.querySelector('.qtyminus');
+        var btnplus = document.querySelector('.qtyplus');
+
+        if (input !== undefined && btnminus !== undefined && btnplus !== undefined && input !== null && btnminus !== null && btnplus !== null) {
+            var min = Number(input.getAttribute('min'));
+            var max = Number(input.getAttribute('max'));
+            var step = Number(input.getAttribute('step'));
+
+            function qtyminus(e){
+                var current = Number(input.value);
+                var newval = (current - step);
+                if(newval < min) {
+                    newval = min;
+                }else if(newval > max) {
+                    newval = max;
+                }
+                input.value = Number(newval);
+                e.preventDefault();
+            }
+
+            function qtyplus(e) {
+                var current = Number(input.value);
+                var newval = (current + step);
+                if(newval > max) newval = max;
+                input.value = Number(newval);
+                e.preventDefault();
+            }
+
+            btnminus.addEventListener('click',qtyminus);
+            btnplus.addEventListener('click',qtyplus);
+        }
+        //Isto e apara que o input type non se poida introducir texto en firefox
+    document.querySelector('input').addEventListener('keydown', function (evt) {
+        !/(^\d*\.?\d*$)|(Backspace|Control|Meta|a)/.test(evt.key) && evt.preventDefault()
+    });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,478 @@
+@charset "utf-8";
+/* CSS Document */
+/*---------------------------*/
+/*----Menu de Navegacion----*/
+/*----------------------------*/
+@color-accent:                      #177E89;
+@color-light:                       #ffffff;
+@color-dark:                        #2a2a2a;
+@menu-link-padding:                 20px 25px;
+@breakpoint:                        950px;
+@mega-menu-multiLevel-colWidth:     100/3 + 0%;
+@mobile-menu-back-height:           ~"calc(1.4em + 40px)";
+@mobile-menu-back-offset:           ~"calc(0px - (1.4em + 40px))";
+@menu-mobile-width:                 350px;
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  background: #fafafa;
+  padding: 0;
+  margin: 0;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/*// ------------------ SHARED STYLES*/
+
+nav 
+   ul, li {
+     list-style: none;
+     padding: 0;
+     margin: 0;
+  } 
+
+
+  a {
+    display: block;
+    text-decoration: none;
+
+  }
+    a:hover, a:visited {
+      text-decoration: none;
+    }
+.menu-bar {
+  background: green;
+  display: flex;
+}
+
+.menu-link {
+  padding: 20px 25px;
+  background: #fff;
+  color: #177E89;;
+  transition: background .2s, color .2s;
+  position: relative;
+  z-index: 1;
+ 
+}
+
+.menu-link [aria-haspopup="true"] {
+    padding-right: 40px;
+  }
+.menu-link:after {
+      content: "";
+      background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1397521/arrowRight.svg#accent');
+      background-size: 14px;
+      width: 14px;
+      height: 14px;
+      font-size:12px;
+      position: absolute;
+      right: 10px;
+      top:50%;
+      transform: translateY(-50%);
+    }
+.mega-menu-header {
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #177E89;
+}
+
+.mega-menu {
+  background: #fff;
+  z-index: 10;
+}
+
+.mega-menu--multiLevel {
+  flex-direction: column;
+}
+
+
+/*// ------------------ MEDIA QUERIES*/
+
+@media all and (min-width: 950px) {
+ /* // Desktop only*/
+  .nav {
+    margin-top: 50px;
+    background: #fff;
+
+  }
+   nav {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+.menu ~ ul [aria-haspopup="true"] {
+	display: none;
+}
+  
+     /*dese aquí correngin--*/
+.menu-bar {
+	position: relative;
+	  }
+	
+.menu-bar > li [aria-haspopup="true"]
+      /*  // STYLING: Down arrow on desktop*/
+   .menu-bar > li:after {
+            background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1397521/arrowBottom.svg#accent');
+        }
+        .menu-bar > li:hover { background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1397521/arrowBottom.svg#light');
+          }
+          .menu-bar > li:after {
+            background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1397521/arrowBottom.svg#light');
+          }
+        
+        /*// FUNCTIONALITY: Open mega menu*/
+        .menu-bar ~ ul:focus {
+            display: flex;
+            transform-origin: top;
+            animation: dropdown .2s ease-out;
+          }
+        
+        /*// FUNCTIONALITY: Keep mega menu open*/
+        .menu-bar ~ ul:hover {
+        
+            display: flex;
+          }
+        
+      
+     /* // FUNCTIONALITY: Keep mega menu open*/
+      .menu-bar:focus-within [aria-haspopup="true"] {
+          
+  
+      }
+     .menu-bar ~ ul {
+            display: flex;
+          }
+     /* // STYLING: Hover/Active state*/
+      .menu-bar [aria-haspopup="true"]:focus,
+      .menu-bar:focus-within  [aria-haspopup="true"],
+      .menu-bar > a:hover {/*Histo cambieino o mellor telo que volver a deixalo como estaba*/
+        background:  #177E89;
+        color: #fff;
+      }
+    .menu-bar:after {
+          background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1397521/arrowTop.svg#light');
+        }
+  
+  .mega-menu {
+  /*  // LAYOUT: Mega menu*/
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+}
+   /* // FUNCTIONALITY: Keep mega menu open*/
+   .mega-menu:hover {
+      display: flex;
+    }
+    .mega-menu a:hover {
+        background: #177E89;
+        color: #177E89;
+      }
+  
+.mega-menu--multiLevel > li{
+    /*// LAYOUT: Multi level columns*/
+     width: 33,33%;
+}
+.mega-menu--multinivel ~ ul [aria-haspopup="true"]
+.mega-menu--multinivel ~ ul {
+	left: 33,33%;/*Isto e duda*/
+	width: 33,33%;
+}
+.mega-menu--multinivel ul {
+    width: 100%;
+    left: 100%;
+}
+        
+   /* // FUNCTIONALITY: Opening flyouts*/   
+    
+.mega-menu--multinivel li:hover [aria-haspopup="true"]/*aquí quiteille este sinbolo > o mellot teño que poñelo*/
+.mega-menu--multinivel ~ ul {
+    display: block;
+    transform-origin: left;
+    animation: flyout .2s ease-out;
+}
+        
+  /*    // FUNCTIONALITY: Keeping flyouts open*/
+.mega-menu--multinivel:focus-within [aria-haspopup="true"] /*aquí quiteille este sinbolo > o mellot teño que poñelo*/
+.mega-menu--multinivel ~ ul {
+            display: block;
+          }
+/*      // STYLING: Flyout link active states*/
+.mega-menu--multinivel:hover, .mega-menu--multinivel:focus-within [aria-haspopup="true"],
+.mega-menu--multinivel > a {
+          background: #177E89;
+          color: #177E89;
+        }
+
+ .mega-menu--multinivel [aria-haspopup="true"] ~ ul{
+		  border-left: 1px solid #f0f0f0;}
+     /*   // FUNCTIONALITY: Keeping flyouts open*/
+.mega-menu--multinivel:hover {
+          display: block;
+        }
+      
+    /*  // LAYOUT: Flyouts*/
+.mega-menu--multinivel ~ ul {
+        position: absolute;
+        top: 0;
+        height: 100%;
+      }
+    
+  
+  
+/*  // STYLING: Flat mega menu columns*/
+  .mega-menu--flat > * {
+      flex: 1;
+    }
+  
+  
+/*  // Hide mobile specific elements*/
+  .mobile-menu-trigger, .mobile-menu-header, .mobile-menu-back-item {
+    display: none;
+  }
+
+
+
+@media all and (max-width:  950px) {
+    
+  .nav {
+    padding: 20px;
+  }
+  
+  .mobile-menu-trigger, .mobile-menu-header, .mobile-menu-back-item {
+    display: block;
+  }
+  
+  .mobile-menu-trigger {
+    background: #177E89;
+    color: #fff;
+    border: 0;
+    padding: 10px;
+    font-size: 1.2em;
+    border-radius: 4px;
+  }
+  
+  .mobile-menu-header {
+    order: -1;
+    background: grey;
+	}
+  .mobile-menu-header a {
+      padding: 20px 25px;
+      color: #fff;
+      visibility: visible;
+    }
+ 
+  
+  .menu-bar {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 350px;
+    max-width: 350px;
+    max-width: 90%;
+    overflow-x: hidden;
+    transition: left .3s;
+    box-shadow: 1px 0px 2px 0px rgba(0,0,0,0.25);
+	}
+   .menu-bar > li  [aria-haspopup="true"],
+   .menu-bar ~ ul {
+          display: flex;
+          flex-direction: column;
+          background: #fff;
+          position: absolute;
+          left: 100%;
+          top: 0;
+          max-height: 100vh;
+          width: 100%;
+          transition: left .3s;
+	}
+          /*// Second level*/
+   .menu-bar > li [aria-haspopup="true"] {
+	   font-size: 1.2em;}
+        .menu-bar ~ ul a {
+         
+                  padding-left: 40px;
+                }
+               /* // Third level*/
+.menu-bar > li  [aria-haspopup="true"] 
+        .menu-bar ~ ul a {
+                      
+                        padding-left: 80px;
+                      }
+                  
+        .menu-bar  [aria-haspopup="true"] {
+			  color: #177E89;}
+            .menu-bar:after {
+              content: "+";
+              background: none;
+              font-size: 1em;
+              font-weight: normal;
+              height: 20px;
+              line-height: 1;
+            }
+           .menu-bar ~ ul {
+              max-height: 0px;
+              transform-origin: top;
+              transform: scaleY(0);
+              transition: max-height .1s;
+            }
+          }
+        
+ 
+  
+  .mega-menu-content {
+    padding: 20px 25px;;
+  }
+  
+  .mobile-menu-back-item {
+	  order: -1;}
+  .mobile-menu-back-item  a {
+      background: grey;
+      color:  #2a2a2a;
+      max-height: "calc(1.4em + 40px)";
+      margin-top: "calc(0px - (1.4em + 40px))";;
+	  pointer-events: none;}
+ .mobile-menu-back-item :before {
+        content: "";
+        width: 14px;
+        height: 12px;
+        background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1397521/arrowLeft.svg#default');
+        background-size: 14px;
+        margin-right: 10px;
+        display: inline-block;
+      }
+    
+  
+/*  // ------------------------ ALL DEVICES
+  */
+  
+    /*// FUNCTIONALITY: Open mobile menu*/
+    .mobile-menu-trigger:focus ~ ul {
+      
+        left: 0;
+      }
+ 
+  
+  
+    /*// FUNCTIONALITY: Keep menu open*/
+    .menu-bar:hover {
+      left: 0;
+    }
+	.menu-bar:focus-within {
+		left: 0;
+	}
+    .menu-bar > li [aria-haspopup="true"] ul:focus { /*Aqui quitei este ~ simbolo o mellor teño que poñelo*/
+       /* // FUNCTIONALITY: Open mega menu*/
+            left: 0;
+          }
+        
+  .menu-bar ~ ul {
+         /* // STYLING: Back button offset*/
+          margin-top: "calc(1.4em + 40px)";
+}
+         /* // FUNCTIONALITY: Keep mega menu open*/
+           .menu-bar:hover {
+            left: 0;
+          }
+	 .menu-bar:focus-within {
+		 left: 0;}
+         /* // FUNCTIONALITY: Open dropdowns*/
+     .menu-bar ul:focus [aria-haspopup="true"]  { /*Aqui quitei este ~ simbolo o mellor teño que poñelo* Aqui tamen fixen un cambio no Ul e no focus*/
+             
+               
+                max-height: 500px;
+                animation: dropdown .3s forwards;
+              }
+            
+         /* // FUNCTIONALITY: Keep dropdowns open*/
+        .menu-bar ul li:focus-within [aria-haspopup="true"] { /*creo que est ul hay que quilalo de aqui e poñelo entre menu-bar e li*/
+                 
+                  max-height: 500px;
+                  transform: scaleY(1);
+                }
+      /*// FUNCTIONALITY: Prevent clicks on link behind back button*/
+      .menu-bar:focus-within ~ .mobile-menu-header a {
+        visibility: hidden;
+      }
+  
+ /*  ------------------------ TOUCH DEVICES*/
+  
+  @media (hover: none) {
+    
+   /* // FUNCTIONALITY: Open mobile menu */
+    .mobile-menu-trigger ul:hover  {/*creo que est ul hay que quilalo de aqui e poñelo entre menu-bar e li*/
+                 
+          left: 0;
+        }
+      
+    
+/*    // FUNCTIONALITY: Open mega menu*/
+    .menu-bar ~ ul > li[aria-haspopup="true"]:hover   {/*sinbolo~ e puxen o ul detras do li^ tamen quitei o Hover de diante do true*/
+    
+              left: 0;
+            }
+          
+    .menu-bar ~ ul:hover {
+              left: 0;
+            }
+          /*  // FUNCTIONALITY: Open dropdowns*/
+  .menu-bar ~ ul [aria-haspopup="true"]:hover  {
+                  max-height: 500px;
+                  animation: dropdown .3s forwards;
+                }
+              
+   .menu-bar ~ ul:hover {
+  
+                  max-height: 500px;
+                  transform: scaleY(1);
+                }
+              
+        .menu-bar:hover ~ .mobile-menu-header a {
+  
+            visibility: hidden;
+          }
+        }
+ 
+
+/*// ------------------ ANIMATIONS*/
+
+@keyframes dropdown {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes flyout {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+
+
+
+
+
+
+
+
+

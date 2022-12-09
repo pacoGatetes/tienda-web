@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+</head>
+
+<body>
+<div id="box" contextmenu="powermenu"></div>
+
+<menu id="powermenu" type="context">
+  <menuitem label="Opción 1">
+  <menuitem label="Opción 2" disabled>
+  <hr>
+  <menuitem type="checkbox" label="Casilla 1">
+  <menuitem type="checkbox" label="Casilla 2" checked>
+  <hr>
+  <menuitem type="radio" radiogroup="img" label="Opción 3" checked>
+  <menuitem type="radio" radiogroup="img" label="Opción 4">
+  <hr>
+  <menu label="Más opciones">
+    <menuitem type="command" command="submitbutton" label="Enviar" onClick="alert('Test!')">
+  </menu>
+</menu>
+</body>
+</html>

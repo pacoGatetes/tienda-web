@@ -1,0 +1,687 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin: 0; padding: 0; border: 0; box-sizing: border-box;}
+html{scroll-behavior: smooth;}/*permite un desplazamiento suave por toda la página*/
+html, body {
+	outline: 0;
+	background: transparent;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, img, main {
+	display: block;
+}
+
+ol, ul {
+	list-style-type: none;
+    overflow: hidden;/*El desbordamieento de la caja se recorta y el resto se oculta*/
+}
+
+blockquote, q { /*Esto es para la comillas pero todavia no se muy bien lo que significa*/
+	quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+a {
+    display: block;/* las etiquetas <a> ocupan todo el bloque*/
+    text-align: center; /*El texto se alinea en el centro*/
+	font-size: 100%;/*esto es el tamaño de letra al 100%; pero creo que se pude quitar*/
+	vertical-align: baseline;
+	background: transparent;
+    text-decoration: none;
+}
+
+/* Esto cambia el el color de la etiqueta <hr> para adaptarlo a mis necesidades */
+hr {
+	display: block;
+	height: 1px;
+	borderA: 1px solid #E50914;
+	border-top: 1px solid #E50914;
+	margin: 1em 0;
+	padding: 0;
+    border-bottomA: 1px solid #E50914;
+    backgroundA: #999;
+}
+
+input, select {
+	vertical-align: middle;/*Esto es para poner los textos en la mitad de la caja*/
+}
+a[href],/* en los enlaces, input, label, select, button, el puntero es el dedo*/
+input[type='submit'],
+input[type='image'],
+label[for],
+select,
+button,
+.pointer {
+    cursor: pointer;
+}
+hr {
+	/*border: 0;
+	border-bottom: 3px dashed #1abc9c;
+	background: #999;*/
+}
+
+
+body{
+    font-family:'Roboto', "sans-serif";
+    text-align: justify;
+    vertical-align: baseline;
+    font-weight: 400;
+    font-size: 1em;
+    width: 100%;
+    /*display: block !important;/*Temporalmente quitamos esto para css GRID*/
+	min-height: 100%;/*min-height, define la altura minima del elemento body*/ 
+}
+input{caret-color: #E50914;}/*Cambiamos el color del cursor*/
+/*definimos el GRID container*/
+
+.main-grid > * { display: flex;} /*le damos al contendeor de la web un display flex*/
+
+
+/*  */
+.row:after{/*borramos espacios despues de la columna*/
+    content: "";
+    display: table;
+    clear: both;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.top-container{/*Este el el contenedor de la cabezera*/
+    backgroundA: #f5f5f5;/*Fondo gris*/
+    overflow: hidden;/*desdoblamiento oculto*/
+    padding: 25px 20px;
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column-logo, .column-buscador{ float: left;}/*La columna donde esta el logo y el buscador flota a la izquierda*/
+.left{ widthA: 20%;}
+.right{ widthA: 20%; float: right; margin-left: auto;}/*Esto es para iniciar sesión y Atención al cliente*/
+.middle{ widthA: 33.3%;}
+.logo{
+    float: left;
+    width: 100%;/*esto es para que la img sea responsive*/
+    height: auto;/*Esto es para que la img sea responsive*/
+}
+.middle{/*Esto es el contenedor del medio que contiene el buscador*/
+    background: #fff;/*fondo blanco*/
+    display: flex;/* display flex hace el contenedor flexible*/
+    border: 1px solid #dfe1e5;/*borde 1 pixel, color gris*/
+    box-shadowA: none;
+    height: 45px;/*alto 45px*/
+    width: 50%;/*ancho 50%*/
+    border-radius: 24px;/*borde con un radio de 24px*/
+    margin: 0 auto;
+    z-indexA: 2;/*nivel de apilamiento*/
+}
+/*enlaces iniciar sesión y ayuda*/
+li.sesion{
+    display: inline;/*Aquí ponemos los enlaces iniciar sesion y ayuda en linea*/
+    
+    float: left;/*los elemtos li se posicionan uno al lado del otro*/
+}
+.fa-headset, .fa-user, .lupa{/*color rojo del comentario del icon de ayuda*/
+    color: #E50914;/*Rojo Neflix*/
+    font-size: 0.8rem;
+    padding: 5px;
+}
+
+
+/*buscador*/
+form.search-container{/* etiqueta form contenedor donde esta el buscador*/
+    background-color: transparent;/*transparente*/
+    border: 0;/*esto creo que sobra*/
+    outline: none !important;
+    widthA: 100%;/*esto creo que sobra*/
+    margin: 0 auto;/*para que se quede centrado*/
+    display: flex;/*hace que el contenedor se vuelva flexible*/
+    flex: 100%;
+}
+.middle:hover{/*esto es el efecto hover de la caja donde esta el buscador*/
+    border-color: rgba(223,225,229,0);
+    box-shadow: 0 1px 4px 0 rgba(32,33,36,0.28);
+}
+input:first-child.bsc[type=text]{/*esto es la etiqueta input del buscador CON LA SEUDO CLASE FIRST-CHILD DAMOS ESTAS PROPIEDAES */
+    width: 100%;/*Ancho 100%*/
+    color: rgba(0,0,0,.87);/*Color del texto*/
+    padding: 0px 25px;
+    margin: auto;/*Esto para alienar el texto dentro del buscador*/
+    displayA: inline-block;/*permite establecer un ancho y un alto, no agrega salto de linea,puede añadir otros elementos a su lado*/
+    background-color: transparent;/*transparent*Esto es interesante*/
+    border: none;/*esto es para quitar el borde azul que por defecto ponen los navegadores****tengo que recordareme de poner un estilo de borde*/
+    outline: none !important;/*esto es para quitar el borde azul que por defecto ponen los navegadores*/
+    font-size: 16px;
+}
+
+form> button{
+    floatA: left;/*esto es de la lupa del buscador de momento lo voy a sacar, si da problemas lo tengo que volver a poner*/
+    padding: 6px 20px;
+    margin: auto;/*esto creo que sobra*/
+    background-color: transparent;
+    border: 0;/*quitamos el borde azul que por defecto ponen los navegadores*/
+    outline: none !important;/*quitamos el borde azul que por defecto ponen los navegadores*/
+
+}
+/*fin buscador*/
+
+.top-container a{/*estos son los enlaces de ayuda e iniciar sesión*/
+    color: rgba(0,0,0,.87);
+    padding: 8px;
+    font-size: 0,9em;
+    float: left;/*tengo que acordarme que para el footer esto igual no sirve*/
+}
+/*Fin enlaces incicar sesión y ayuda*/
+
+
+/*formularios de LOGIN, REGISTO Y CONTACTO*/
+
+.containerform {/*este contenedor contiene los formularios de registro, login y contacto*/
+    position: fixed; /* lo ponemos en un posicion fija ya que sobre el ira el formulario */
+    leftA: 0;
+    topA: 0;
+    width: 100%; /* Ancho total */
+    height: 100%; /* Altura completa */
+    background-color: #f5f5f5; /* Color de fondo gris */
+}
+form.reg {/*formulario de contato*/
+    border: 1px solid #f5f5f5;
+    padding: 30px;
+    background-color: #fff; 
+    width: 40%; 
+    margin: 40px auto 0px auto; 
+    border-radius: 5px; 
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+  
+}
+input[type=text], input[type=password] {
+    width: 100%;/*campos texto y contraseña ancho 100%*/
+    padding: 12px 10px;
+    display: inline-block;
+    border: 1px solid #c5c5c5;/*gris*/
+    border-radius: 5px;
+}
+input[type=email]:focus, input[type=text]:focus, input[type=password]:focus {/*Estos son los focus de las cajas donde se intoduce el texto*/
+    border: 2px solid #E50914;}/*borde rojo netflix, esto creo que sobra;*/
+input[type=text]:hover, input[type=password]:hover{
+    border-color: #E50914;/*rojo Neflix*/
+}
+input, label, button, .inicia-sesion, .inicia-reg{/*Estos son los botones delos formularios, de iniciar sesion e iniciar registro*/
+    font-weight: 200;/*peso de la fuente 200*/
+    font-size: 0.875rem; /*tamaño de la fuente 14px;*/
+}
+.inicia-reg{/*Boton del formulaio registro, aceder al registro*/
+    display: inline-flex;
+    margin: 10px 0px 10px 0px;
+    
+}
+
+label{
+    display: block;/*las etiqueta label ocupan el ancho compelto*/
+    clear: both;/*hacen un salto de linea para que los input ocupen la siguiente linea*/
+    color: #484848;/*Color gris*/
+    margin: 10px 0 10px 0;
+}
+
+button.login, .registro {/*Este es el boton que esta en formulario de contamos donde accedemos a nuestra cuenta de usuario y al registro*/
+    color: #E50914;/*Color del texto rojo Netflix*/
+    padding: 14px 20px;
+    margin: 25px 0 10px 0;
+    border: none;/*estro creo que sobra*/
+    border-radius: 5px;
+    width: 100%;
+    font-size: 0.9rem;
+    background-color: #f5f5f5;
+	text-align: center;
+	transition-duration: 0.6s;
+	letter-spacing: 2px;/*espaciado entre letras*/
+	font-weight: 600;
+}
+
+
+#subject{/*caja donde se introduce el texto del del mensaje a enviar en el formulario de contato*/
+	height: 150px;
+	width: 100%;
+	padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #c5c5c5;
+}
+#subject:focus{  border: 1px solid #E50914;
+}
+.cancelbtn{/*este el el boton de cancelar inicio de sesión*/
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f5f5f5;
+    color: #E50914;/*rojo Netflix*/
+    display: inline-flex;
+    border-radius: 5px;
+    border: 1px solid #E50914;
+    transition-duration: 0.6s;
+    font-size: 0.875rem;
+    
+}
+.cancelbtn:hover{
+    background-color: #E50914;
+    color: #f5f5f5;
+    
+}
+
+.logo-container {/*contenedor donde esta el logo*/    
+    text-align: center;
+    margin: 20px 0 20px 0;
+}
+img.logo-cont{
+    width: 30%;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+    font-size: 14px;
+    font-weight: 200;
+    display: inline-flex;
+
+}
+/*Fin formulario inicio sesión*/
+/*MENU DE NAVEGACION*/
+
+nav.navbar {
+    overflow: hidden;
+    clear: both;/*le damos un salto de linea al menu de nav para que se posicione debajo*/
+    width: 100%;
+    positionA:absolute;
+    display: flex;/*display flex hace que el menu mav sea flexible*/
+}
+
+.navbar a {
+   float: left;
+   font-size: 16px;
+   color: bla;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+   
+}
+    nav> ul{display: flex; width: 100%}
+    nav ul .subnav{flex: auto;}
+ul> li{
+    flex: auto;
+    text-align: center;
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  colorA: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+    
+}
+
+.bar-navegacion a:hover, .subnav:hover .subnavbtn {
+  background-color: red;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {/**esto creo que es para borrar*/
+  floatA: left;
+  color: black;
+  text-decoration: none; 
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+.bar-navegacion a:hover{ border-bottom: 2px solid red;}/* estos son los subrayados del menu de navegación*/
+.bar-navegacion a.active{border-bottom: 2px solid red;}
+
+/*FIN MENU NAVEGACION*/
+/*Contenedor donde estan las fotos de los gatitos*/
+section{
+    max-width: 1400px;
+    margin: auto;
+	background-colorA: chocolate;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;}
+
+
+/* aquí empieza la galeria de imgagenes de index*/
+*, *:before, *:after {/*Esto se utiliza para que herede en ancho de caja/////////*isto de momento quitamolo porque nos esta dando por saco e non sei porque*//
+    box-sizingA: inherit;
+}
+
+.img-geleria-index, .img-geleria-indexdos, .img-geleria-indextres {/*galeria de las imagenes del index*/
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16px;
+	margin-top: 30px;
+    padding: 0 12px;
+}
+.img-geleria-indexdos{/*galeria de las imagenes del index*/
+    width: 25%; 
+}
+.img-geleria-indextres{
+    width: 20%;
+}
+.img-geleria-index:nth-child(3n+1){padding-left: 0px;}/*quitamos el padding a derecha e izquierda de la fotos*/
+.img-geleria-indexdos:nth-child(4n+1){padding-left: 0px;}
+.img-geleria-indextres:nth-child(2n+1){padding-left: 0px;}
+.img-geleria-index:nth-child(1n+3){padding-right: 0px;}
+.img-geleria-indexdos:nth-child(1n+4){padding-right: 0px;}
+.img-geleria-indextres:nth-child(1n+2){padding-right: 0px;}
+/*Cerramos la galeria dentral*/
+/*abrimos el slider central*/
+.slider{/*Este es el contenedor que tiene todas las imagenes*/
+    borderA: 1px solid orange;
+    
+}
+.image-wrapper{/*El contenedor que tiene todas las fotos*/
+    borderA: 3px dashed red;
+    background-color: #f5f5f5;
+    overflow: hidden;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+.image-content{/*El contenedor de cada una de las imagenes*/
+    display: inline-block;
+    position: relative;
+    margin: 0 auto;
+    width: 14%;
+}
+
+.slider-title{/*El titulo de la página*/
+    text-align: center;
+}
+img.slider-image{/*Estos son las fotos*/
+    width: 100%;
+    heightA: 200px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: inline-block;
+    vertical-align: middle;
+    display: block;
+    
+}
+.post-info{
+    margin: 10px;
+    text-align: center;
+}
+.image-content a{
+    font-size: 0.9rem;
+    color: steelblue;
+    text-decoration: none;
+    font-family: sans-serif;
+    display: block; 
+}
+/*Cerramos el Slider central*/
+/*abrimos el contenedor que tiene la información de envio, entrega etc*/
+.info-compra-envio{
+    flex-direction: column;
+}
+.container-info-envio-compra{
+    display: flex;
+    flex-wrap: wrap;
+}
+/*Cerramos el contenedor que tiene la información de envio, entrega etc*/
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card-imgindex {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container-descripcion {
+  padding: 0 16px;
+}
+
+.containerform::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}/*aqui finaliza la geleria  de imagenes del index*/
+/*esto es el slider del index que esta hecho con svg*/
+.slidercentral{
+	margin: 20px 0px 20px 0px;
+	height: 139px;
+	background-color: aquamarine;
+}
+
+
+/*Boton carrito de la compra*/
+.btn{
+    background-color: #f1f1ff1;
+    border: none;
+    color: #ff0000;
+    padding: 12px 18px;
+    font-size: 16px;
+    border-radius: 4px;
+}
+.btn:hover{background-color: #ff0000; color: #fff;}
+
+/*Donde esta la descripción, Carateristicas, Envio, Garantia*/
+
+.tab{/*estilos de las pestañas*/
+    overflow: hidden;
+    border: 1px solid #FF0000;
+    background-color: #f1f1f1;
+}
+.tab> button{/* Estilo de los botones dentro de la pestaña */
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+.tab button:hover{/* Cambiar el color de fondo de los botones al pasar el mouse */
+    background-color: #ddd;
+}
+.tab button.active{/*Al estar este boton ativo tiene este color de fondo*/
+    background-color: #ccc;
+}
+.tabcontenido{/*El estilo del contenido de las pestañas*/
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ff0000;
+    border-top: none;
+}
+/*Cerramos donde esta los textos de descripción, Carateristicas, Envio, Garantia*/
+
+/*Acordeon de ayuda preguntas frecuentes*/
+.sidenav{/*Aqui es donde estan los enlaces verticales del tema de ayuda*/
+    height: 100%;
+    width: 230px;
+    position: fixed;/*ponemos una posicion fija para que se quede quieto*/
+    z-index: 1;/*Este elemento lo traemos al frente*/
+    top: 0;
+    left: 0;
+    background-color: #f2f2f2;
+    overflow-x: hidden;
+    padding-top: 20px;
+    margin-left: 120px;
+    border: 1px solid #e1e1e1;
+    box-shadow: 0.2em 0.2em 0.5em rgba(0,0,0,.05);
+}
+.sidenav a{/*Estos son los enlaces que estan en vertical a la derecha en el tema ayuda*/
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;/*Display block para que ocupen todo el ancho*/
+}
+.sidenav a:hover{/*El efecto hover de los enlaces de ayuda verticales*/
+    color: #f1f1f1;
+}
+.titulo-temas-ayuda{/*Esto es la etiqueta H1 de la página de preguntas frecuentes*/
+    font-size: .8em;
+    color: #757575;
+    border-bottom: 1px solid #E50914;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    line-height: 1.5em;
+    text-align: center;
+    padding: 2.5em 0 1.5em 0;
+    margin-bottom: 1em;
+}
+.main{ /*Este es el contenedor donde estan los textos de ayuda*/
+    margin-right: 70px;
+    margin-left: 400px;
+    font-size: 18px;
+    padding: 0px 10px;
+}
+.acordion{
+    background-color: #eee;
+    color: #444;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    font-size: 15px;
+    transition: 0.6s;
+}
+.active, .acordion:hover{
+    background-color: #ccc;
+}
+.acordion:after{/*Esto pone los signos + y - en los enlaces*/
+    content: '\002b';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+.active:after{
+    content: "\2212";
+}
+.panel{/* panel es donde estan los textos de la ayuda*/
+    padding: 0 18px;
+    background-color: #fff;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5 ease-out;
+    
+}
+
+/*pie de página*/
+footer {
+    border-top: 1px solid #CCD6DD;
+    float: left;
+    paddingA: 30px;
+    background-color: #f0f0f0;
+    margin-top: 70px;
+	clear: both;
+    width: 100%;
+}
+#contenedorpie {/*Esto es el contenedor del footer*/
+	background: red;
+	width: 1400px;
+    margin: 0 auto;
+}
+    
+/*DE AQUÍ PARA ABAJO PONEMOS EL DISEÑO RESPONSVE*/
+    
+    
+/* Cambiamos los estilos de los botones de los formularios para pantallas pequeñas */
+@media screen and (max-width: 300px) {
+  span.psw {/*esto es para dispositivos moviles*/
+     display: block;
+     float: none;
+  }
+
+}
+@media screen and (max-width: 600px) 
+    {form.reg{/*con esto sololucionamos el ancho del formulario para distintos anchos de navegador, para que este siempre al 100%, porque mira que no me llevaba tiempo comiendo la moral, esta mierda*/
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+        margin: 0 auto;
+        }
+    }
+    
+/*Cuando la pantalla tenga 500px de ancho o menos, apila los enlaces de la cabecera uno encima de otro;*/
+
+@media screen and (max-width: 500px){
+    .top-container a{
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .right{
+        float: none;
+    }
+    .middle{clear: both;
+    width: 100%;
+    }
+}
+
+
+
+
+
+

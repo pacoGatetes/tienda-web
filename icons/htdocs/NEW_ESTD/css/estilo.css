@@ -1,0 +1,486 @@
+@charset "utf-8";
+/* CSS Document */
+* {Padding: 0; margin: 0; outline: 0;}
+
+* {
+    box-sizing: border-box; /*Esto asegura que el relleno y el borde se incluyen en la anchura total y la altura de los elementos*/
+}
+article, footer, header, section, aside, body, nav, main, video,iframe
+{
+	width:100%;
+}
+article, footer, header, nav, section, aside, h1, h2, h3, h4, h5, h6, div, main, address, video, iframe /*div duda??*/
+{
+    display: block; /*pone los elementos en bloque ocupando todo el espacio*//*Un elemento en bloque siempre se inicia en una nueva línea y ocupa todo el ancho disponible (se extiende hacia la izquierda y la derecha tanto como sea posible)*//*.Un elemento en DISPLAY:INLINE no se inicia en una nueva línea y sólo ocupa tanto de ancho como sea necesario.*/
+}
+
+html 
+{ 	height: 100%;
+	overflow: scroll; 
+}
+body 
+{   
+   	font-family:'Roboto',arial,sans-serif;;
+   	font-size: 100%;
+   	background: #FFFFFF; 
+   	text-align: left; 
+   	line-height: 1.4;
+   	vertical-align: baseline; /*poner texto en linea*/
+   	word-wrap: break-word;
+   	text-overflow: ellipsis;
+   	border: #377F0A solid 2px;
+  	height: auto;
+	
+}
+
+#container { /* en el div= id container Aqui damos forma al contenedor donde esta el contenido de la web*/
+	max-width: 1300px;
+    margin: 0 auto;
+	height: 100%;
+	overflow: hidden;
+}
+#cabezera{ /******* ID cabezera Aqui esta los iconos de las redes sociales, logo, titulo, registarse y iniciar sesion*/
+	width: 100%;/* ancho 100%*/
+	
+}
+#regis_inic_mail_social{ /*Este es el div id que contiene las redes sociles y registro e iniciar sesión*/
+	background: #f0f0f0;/*fondo gris*/
+	border-bottom: 1px solid #CCD6DD;
+	z-index: 1;
+	padding: 6px;
+}
+
+
+/* Carros transparentes después de las columnas*/
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/*********fin clear both**************/
+/*-------------------FORMULARIO DE ACCESO--------------------------*/
+
+/* Este es el div que contiene el MODAL */
+.contacto, .login, .registro {
+    display: none; /* Display oculto por defecto */
+    position: fixed; /* Posicion fija */
+    z-index: 1; /* Especifica el orden de pila de un elemento*/
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho total */
+    height: 100%; /* Altura completa */
+    overflowA: auto; /* Habilita el desplazmiento si es necesario. */
+    background-color: rgb(0,0,0); /* Color de fondo en reposo */
+    background-color: rgba(0,0,0,0.4); /* Color de fondo negro con opacidad */
+    padding-top: 60px;
+	floatA: right;
+	
+}
+
+/* Contenido MODAL/CAJA */
+.modal-content {
+    background-colorA: #fefefe;
+	background-color: #f0f0f0;
+    margin: 5% auto 15% auto; /* 5% de la parte superior, 15% de la parte interior y centrada */
+    border: 1px solid #888;
+    width: 50%; /* este es el ancho podria ser mas o menos dependiendo del tamaño de la pantalla */
+}
+.container-contacto, .container-login, .container-registro { padding: 20px;}/*contenedor donde esta el login color gris*/
+
+
+.inc-sesiontienda{ /* etiqueta <legend> donde estan los textos mi cuenta y Registarse*****/
+	text-align: center;
+	borderS: 1px solid blue;
+	padding-bottom: 25px;
+	margin-bottomS: 20px;
+	line-height: 2.1;
+	color: #292F33;
+	width: 80%;
+	border-bottom: 1px solid #ed1c16;
+	margin: auto;
+	background-color: aqua;
+	
+}
+
+.asterisco{color: #FF0004;}
+
+/* Campos de entrada de ancho completo */
+input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    padding: 12px 10px;/*es padding el que da las medidas a los campos donde se introduce nombre y apellidos*/
+    margin: 8px 0;/* este margin separa los campos nombre y apellidos*/
+    display: inline-block;
+    border: 1px solid #ccc;
+	vertical-align:middle;
+}
+
+/* estabelecemos un estilo para los botones */
+button {/*===============este es el boton de LOGIN======================*/
+    background-color: #f0f0f0; /*este es el color gris de los botones */
+    color:  #ED1C16; /*color rojo das letras do boton*/
+    padding: 8px 10px;
+	font-weight: 500;/* o texto en negrita e duda ??*/
+    border: none;
+    cursor: pointer;
+    width: auto;
+	font-size: 0.9em;/*esto es el tamaño de las letras de los botones de registro*/
+	displayA: block;
+	letter-spacing: 2px;
+	
+}
+.cancelbtn, .inc-sesion{
+	background-color: #f0f0f0;
+	color: #ed1c16;
+	text-align: center;
+	transition-duration: 0.3s;
+	border: 2px solid #ed1c16; 
+	margin: 10px 0px 20px 0px; 
+	padding: 10px 10px;
+	font-size: 0.9em;
+	font-weight: 700;
+}/* este es el boton de inviar mail*/
+.inc-sesion:hover{background-color: #ed1c16; color:#fff;}
+.cancelbtn:hover{background-color: #ed1c16; color:#fff;}
+.mailcont .fa-angle-double-right{ font-size: 0.9em; margin-left: 4px;}
+
+#subject{/*caja donde se introduce el texto del correo*/
+	height: 200px;
+	width: 100%;
+	padding: 10px;
+}
+
+.iniciarsesion:after {/*esta son las propiedades del subrayado del los botones contacto iniciar sesión registrarse**/
+	content: '';
+	display: block;
+	margin: auto;
+	height: 2px; 
+	width: 0px;
+	background: transparent;
+	transition: width .5s ease, background-color .5s ease;
+}
+.iniciarsesion:hover:after{ /* este es el subrayado que aparece en los botenes inicar sesion registrarse contacto*/
+	width: 100%;
+	background: #ED1C16;
+}
+
+button:hover {
+    opacityA: 0.8;
+}
+
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Close Button (x) Esta es la X de cierre que hemos eliminado */
+.close {
+    position: absolute;
+    right: 60px;
+    top: 30px;
+    color: #000;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {width-webkit-transform: scale(0)} 
+    to {width-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* cambia los estilos de spam y cancelar del boton en pantallas pequeñas*/
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn, .cancelarbtn, .signupbtn {
+       width: 100%;
+    }
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/*---------------------FIN FORMULARIO DE REGISTRO------------------*/
+/*--Div donde se encuentran las redes sociales--*/
+.social-networks a {
+  	text-align: center;
+  	text-decoration: none;
+	display: inline-block;/*esta propiedad es el truco para que quepan en fila los login y las redes sociales*/
+}
+.networks{ 
+	float: right;/*hacemos flotar a los iconos de las redes sociales a la izquierda*/
+	margin-right: 5px;/*le damos un margen a la izquierda para separar los logos*/
+	padding: 2px;
+}
+
+.networks .fa-twitter, .networks .fa-facebook-f, .networks .fa-whatsapp, .networks .fa-phone{ text-align: center; height: 30px; width: 30px; border: 1px solid #fff; background-color: #E1E8ED; border-radius: 50px; color: #ed1c16; font-size: 20px; padding: 6px; }/* icono facebook*/
+
+.numphone{ text-align: center; float:inherit; font-size: 18px; padding: 3px 0 0 6px; color: #292F33; letter-spacing: 2px; font-weight: 500;}/*numeros de teléfono*/
+
+.shopping-cart .fa-shopping-cart{ text-align: center; border: 1px solid red; color:#ed1c16; font-size: 26px; float: right; margin:70px 15px 0 0px; }
+
+.car, .fav{ display: block; borderA: 1px solid blue; margin: 0px 0px 0px 0px; font-size: 0.6em; floatA: right; color: #292F33 }/*letras carrito*/
+.heart .fa-heart-o{text-align: center; borderA: 1px solid red; color:#ed1c16;font-size: 26px; float: right; margin:70px 15px 0 0px; }
+
+/*--Enlaces <a> redes sociales--*/
+
+
+.logo{
+	borderA: #22C935 1px solid;
+	float: left;
+	width: 150px;
+	height: 120px;
+	margin-left: 20px;}
+/* **********Fin logo***********/
+/**********Buscador****************/
+#busqueda{
+	align-content: center;
+	width: 70%;
+	float: left;
+}
+form.search input.buscador[type=text]{
+	padding: 6px;
+	font-size: 17px;
+	border: 1px solid #CCD6DD;/*color del borde del buscador*/
+	border-radius: 5px 0 0 5px;
+	float: left;
+	width: 40%;
+	background-color: #f0f0f0;
+	margin: 40px 0 0 60px;
+	border-right: none;
+}
+form.search button{
+	float: left;
+	margin-top: 40px;
+	width: 2%;
+	padding: 6px;
+	font-size: 17px;
+	border-radius: 0 5px 5px 0;
+	border: 1px solid #ed1c16;
+	position:absolute;/*posicion fixed hacemos que la lupa quede fijada al buscador*/
+	
+}
+form.search button:hover{background: #ed1c16;}
+i.fa-search{color: #ed1c16;}
+i.fa-search:hover{color: #fff;}
+form.search::after{
+	content: " ";
+	clear: both;
+	display: table;
+}
+/*Fin buscador*/
+
+/*************menu de navegacion**************/
+/*ESTILOS GENERALES*/
+
+
+nav {
+	background: #ed1c16;
+	margin-top:20px;
+	position: relative;
+}
+
+nav ul {
+	list-style:none;
+	padding:0;
+	margin:0;
+	overflow:hidden;
+}
+
+nav > ul > li {
+	float:left;
+}
+
+nav ul li a {
+	text-decoration:none;
+	color:#fff;
+	display:block;
+	padding:10px 20px;
+}
+
+nav ul li a:hover {
+	background:#f0f0f0;
+}
+
+nav > ul > li:hover div {
+	display:table;
+}
+
+/*Submenu*/
+nav ul li div {
+	width:1000px;
+	position: absolute;
+	left:0;
+	background:#f0f0f0;
+	box-sizing:border-box;
+	display:none;
+}
+
+nav ul li div ul{
+	width:20%;
+	display:table-cell;
+	border-right:1px solid rgba(255,255,255,.5);
+	box-sizing:border-box;
+}
+
+nav ul li div ul:last-child {
+	border:none;
+}
+
+nav ul li div ul .titulo {
+	background:#000;
+	color:#fff;
+}
+
+nav ul li div ul .titulo a {
+	color:#fff;
+	padding:10px 20px;
+}
+
+.titulo.azul {background:#3498db;}
+.titulo.verde{background:#27ae60;}
+.titulo.naranja {background:#e67e22;}
+.titulo.rojo {background:#c0392b; color:#000;}
+
+nav ul li div ul .titulo a:hover {
+	background:none;
+}
+
+nav ul li div ul li a {
+	color:#000;
+}
+
+nav ul li div ul li a:hover {
+	color:#fff;
+}
+
+
+nav .icon{ display: none;}
+
+
+
+/*li a{
+	display: block;
+	color:#ffffff;
+	text-align: center;
+	font-size: 20px;
+	padding: 14px;
+	text-decoration: none;	
+}*/
+.navigation li a:hover{background-color: #111111;}
+/***********fin menu de navegacio*************/
+	
+
+/*****************Section contenido principal de la web**********--*/
+
+
+@media (min-width: 769px) {
+  .float-right-lg {
+    float: right;
+  }
+}
+
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+
+/*==========Menu lateral==etiqueta aside*/
+aside{
+	background-color: crimson;
+	width: 20%;
+	float: left;
+}
+#menulateral{ margin: 0 0 10px 10px;
+	padding: 0px;
+	background-color: aquamarine;
+}
+
+#menulateral ul li{
+	list-style-type: none;
+	line-height: 17px;
+	font-size: 14px;
+	
+}
+#menulateral a{text-decoration: none;}
+
+
+
+/*=============menu fin lateral================*/
+section #catalogo-productos{
+	display: table;
+}
+#colum{
+	display: table-cell;
+}
+
+article{
+	widthA: 80%;
+	displaya: flex;
+}
+.galeria-articulos::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 200px;
+	
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  float: left;
+	flex: 33,33%;
+	padding: 5px;/*este padding da un relleno por adentro al contenido de las targetas*/
+}
+div .card img{
+	width: 100%;
+	height: 100%;
+}
+
+.price {
+  color: red;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}

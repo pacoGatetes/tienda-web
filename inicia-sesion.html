@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Una monada de gatitos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Informamos al navegador para que precarge las fuentes de Google-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap" rel="preconnect"
+        as="font"><!-- API Google roboto flex fonts-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#E50914">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#E50914">
+    <!--Esta etiqueta puede establecer si la página admite la función de zoom de la pantalla táctil -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet preload" href="css/hoja-estilo.css" as="style">
+    <link rel="icon" href="icons/favicon.svg" type="image/svg+xml" sizes="any"><!--Favicon-->
+    <!--<link rel="icon" href="icons/favicon.ico" sizes="16x16" type="image/vnd.microsoft.icon">-->
+    <link rel="apple-touch-icon" sizes="57x57" href="icons/touch-icon-iphone.png"><!--favicon para telf Apple-->
+    <link rel="apple-touch-icon" sizes="114x114" href="icons/touch-icon-ipad.png"><!--favicon Apple para Ipad-->
+    <script rel="preload" src="js/main.js" defer></script>
+    <script src="js/formulario-inicia-sesion.js" defer></script>
+</head>
+<body>
+    <div class="main-form">
+    <main>
+        <section class="contenedor__formulario">
+            <header>
+            <h2>Mi cuenta</h2>
+                <img class="logo logo__formularios" src="icons/gatetes.svg" alt="logo" title="logo">
+                    <p class="texto__inicia__registro">Inicia sesión para acceder a todos nuestros servicios</p>
+                    <div class="linea"></div>
+                </header>
+            <form action="" class="formulario" id="formulario">
+            <fieldset>
+                <legend>Datos de acceso</legend>
+                    <!--Grupo Cuenta de Acceso-->
+                <div class="formulario__grupo" id="grupo__usuario">
+                    <label for="usuario" class="formulario__label">Nombre de usuario</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Nombre de usuario" aria-describedby="usuarioNovalido" aria-invalid="true">
+                            <svg class="input__icon formulario__validacion-estado-verde fa-xmark" version="1.1" x="0px" y="0px" viewBox="0 0 320 512" xml:space="preserve">
+                                <path class="st0" d="M310.6,361.4c12.5,12.5,12.5,32.8,0,45.2c-6.2,6.2-14.4,9.4-22.6,9.4s-16.4-3.1-22.6-9.4L160,301.3L54.6,406.6 c-6.2,6.3-14.4,9.4-22.6,9.4s-16.4-3.1-22.6-9.4c-12.5-12.5-12.5-32.8,0-45.2L114.8,256L9.4,150.6c-12.5-12.5-12.5-32.8,0-45.2 s32.8-12.5,45.2,0L160,210.8l105.4-105.4c12.5-12.5,32.8-12.5,45.2,0s12.5,32.7,0,45.2L205.2,256L310.6,361.4z"/>
+                            </svg>
+
+                            <svg class="input__icon formulario__validacion-estado-rojo fa-check" version="1.1" x="0px" y="0px" viewBox="0 0 448 512" xml:space="preserve">
+                                <path d="M438.6,105.4c12.5,12.5,12.5,32.7,0,45.2l-256,256c-12.5,12.5-32.7,12.5-45.2,0l-128-128 c-12.5-12.5-12.5-32.7,0-45.2s32.8-12.5,45.3,0l104.5,105.3l234.3-233.3C405.9,92.9,426.1,92.9,438.6,105.4L438.6,105.4z"/>
+                            </svg>
+                    </div>
+                        <p class="formulario__input-error" id="usuarioNovalido" role="alert">Usuario no válido</p>
+                </div>
+                <!--Fin Grupo Usuario-->
+
+                <!--Grupo Contraseña-->
+                <div class="formulario__grupo" id="grupo__password">
+                    <label for="password" class="formulario__label">Contraseña</label>
+                    <div class="formulario__grupo-input">
+                        <input type="password" class="formulario__input" name="password" id="password" autocomplete="current-password" aria-describedby="contraseñaNovalida" aria-invalid="true">
+                            <svg class="input__icon formulario__validacion-estado-verde fa-xmark" version="1.1" x="0px" y="0px" viewBox="0 0 320 512" xml:space="preserve">
+                                <path d="M310.6,361.4c12.5,12.5,12.5,32.8,0,45.2c-6.2,6.2-14.4,9.4-22.6,9.4s-16.4-3.1-22.6-9.4L160,301.3L54.6,406.6 c-6.2,6.3-14.4,9.4-22.6,9.4s-16.4-3.1-22.6-9.4c-12.5-12.5-12.5-32.8,0-45.2L114.8,256L9.4,150.6c-12.5-12.5-12.5-32.8,0-45.2 s32.8-12.5,45.2,0L160,210.8l105.4-105.4c12.5-12.5,32.8-12.5,45.2,0s12.5,32.7,0,45.2L205.2,256L310.6,361.4z" />
+                            </svg>
+
+                            <svg class="input__icon formulario__validacion-estado-rojo fa-check" version="1.1" x="0px" y="0px" viewBox="0 0 448 512" xml:space="preserve">
+                                <path d="M438.6,105.4c12.5,12.5,12.5,32.7,0,45.2l-256,256c-12.5,12.5-32.7,12.5-45.2,0l-128-128 c-12.5-12.5-12.5-32.7,0-45.2s32.8-12.5,45.3,0l104.5,105.3l234.3-233.3C405.9,92.9,426.1,92.9,438.6,105.4L438.6,105.4z"/>
+                            </svg>
+                    </div>
+                        <p class="formulario__input-error" id="contraseñaNovalida" role="alert">La contraseña no es valida</p>
+                </div>
+                <!--Fin Grupo Contraseña-->
+
+                <!--Grupo: Termino y Condiciones-->
+                <div class="formulario__mensaje" id="formulario__mensaje">
+                    <p><svg class="input__icon-error" viewBox="0 0 67.16 60">
+                        <g id="Alerta">
+                            <path class="cls-1"
+                                d="M65.76,49.68,39.54,4.26C37.9,1.42,35.74,0,33.58,0s-4.32,1.42-6,4.26L1.4,49.68C-1.88,55.35.8,60,7.36,60H59.8C66.36,60,69,55.35,65.76,49.68Zm-3.62,4.78A3.52,3.52,0,0,1,59.8,55H7.36A3.66,3.66,0,0,1,5,54.47a3.59,3.59,0,0,1,.71-2.29L32,6.76C32.75,5.38,33.45,5,33.58,5s.83.38,1.63,1.76L61.43,52.18A3.58,3.58,0,0,1,62.14,54.46Z"/>
+                            <path class="cls-1" d="M33.58,41.61a3.74,3.74,0,1,0,3.74,3.74A3.75,3.75,0,0,0,33.58,41.61Z"/>
+                            <path class="cls-1"
+                                d="M33.67,18.83h-.18c-1.75,0-3.16,1.75-3.16,3.91V35.09c0,2.16,1.41,3.91,3.16,3.91h.18c1.75,0,3.16-1.75,3.16-3.91V22.74C36.83,20.58,35.42,18.83,33.67,18.83Z"/>
+                        </g>
+                    </svg><b>Error:</b>&nbsp;Por favor, rellena el formulario correctamente.</p>
+                </div>
+
+                <div class="formulario__grupo div-btn">
+                    <button type="submit" class="btn-form">Iniciar sesión</button>
+                    <!--<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">El mensaje se envio correctamente.</p>-->
+                </div>
+
+                <!-- Botón cancelar -->
+                <div class="formulario__grupo">
+                    <p class="texto__inicia-registro">
+                        <a href="iniciar_sesion.html">¿Se te olvidó tu contraseña?</a>
+                    </p>
+                </div>
+                <!-- Fin Botón cancelar -->
+
+                <!--Eres nuevo por aquí-->
+
+                <div class="formulario__grupo linea__separacion eres__nuevo-aqui">
+                    <h5>¿Eres nuevo aquí?</h5>
+                </div>
+                <!--Fin eres nuevo por aquí-->
+
+                <!-- Botón crear cuenta -->
+                <div class="formulario__grupo div-btn">
+                    <a class="a-cuenta-usario btn-form" href="./formulario-registro.html">Crea una cuenta de usuario</a>
+                </div>
+                <!-- Fin botón crear cuenta -->
+                <!--<a class="cancelbtn row" href="javascript: history.go(-1)">Cancelar</a>-->
+
+            </fieldset>
+            </form>
+        </section>
+    </main>
+        <footer class="pie__formulario">
+            <div class="contenedor-privacidad-form">
+                <ul class="condiciones-form">
+                    <li><a href="#">Condiciones de uso</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Política de Cookies</a></li>
+                </ul>
+                <ul class="favicon-footer">
+                    <li class="">
+                        <img src="./icons/favicon.svg" width="20" height="20" alt="">
+                            <p>&copy;&nbsp;2020-2022 gatetes tiene todos los derechos reservados. Si no cumples la ley, te arañamos
+                            </p>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+</div>
+</body>
+</html>

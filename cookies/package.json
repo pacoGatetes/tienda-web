@@ -1,0 +1,12 @@
+{
+  "name": "cookies",
+  "version": "1.0.0",
+  "main": "jshint.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "paco",
+  "license": "ISC",
+  "description": ""
+}

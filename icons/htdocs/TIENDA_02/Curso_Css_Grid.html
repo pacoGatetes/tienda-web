@@ -1,0 +1,412 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Mi grid</title>
+    <style>
+@charset "utf-8";
+/* CSS Document */
+*{margin: 0; padding: 0; border: 0; box-sizing: border-box;}
+html{scroll-behavior: smooth;}/*permite un desplazamiento suave por toda la página*/
+html, body {
+	outline: 0;
+	background: transparent;
+}
+body{
+    font-family:'Roboto', "sans-serif";
+    text-align: justify;
+    vertical-align: baseline;
+    font-weight: 400;
+    font-size: 1em;
+    /*width: 100%;
+    /*display: block !important;/*Temporalmente quitamos esto para css GRID*/
+	/*min-height: 100%;*//*min-height, define la altura minima del elemento body*/ 
+}
+input{caret-color: #E50914;}/*Cambiamos el color del cursor*/
+a {
+    display: block;/* las etiquetas <a> ocupan todo el bloque*/
+    text-align: center; /*El texto se alinea en el centro*/
+	font-size: 100%;/*esto es el tamaño de letra al 100%; pero creo que se pude quitar*/
+	vertical-align: baseline;
+	background: transparent;
+    text-decoration: none;
+}
+ol, ul{
+	list-style-type: none;
+    overflow: hidden;/*El desbordamieento de la caja se recorta y el resto se oculta*/
+}
+.row:after{/*borramos espacios despues de la columna*/
+    content: "";
+    display: table;
+    clear: both;
+}
+.grid-container{
+  display: grid;
+  grid-template-columns: auto;/*esta cuadricula elige las columnas auto*/
+  background-color: transparent;
+ /* padding: 10px;*/
+  grid-gap: 20px;
+    height: 100vh;
+    /*width: 100vw;*//*esto creo que sobra*/
+     
+}
+
+
+.grid-item{
+  background-color: rgba(255, 255, 255, 0.8);
+ /* border: 1px solid rgba(0, 0, 0, 0.8);*/
+  /*padding: 10px;*/
+  font-size: 30px;
+  text-align: center;
+display: grid;
+
+     
+}
+        
+        section{margin: 0 6% 0 6%;}
+.header{/*Esta es el contenedor cabezera donde esta el logo, el buscardor, login, ayuda, carrito, favoritos.*/
+    display: grid;
+    grid-template-columns: 2fr 4fr 2fr;
+   /* padding: 15px;*/
+    grid-gap: 50px;
+   /* background-color: antiquewhite;*/
+    
+}
+#inner-grid{/*Esto so los enlaces del login, ayuda, carrito, fav*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+}
+#inner-grid>li{/*Color de fondo y padding, del login, ayuda, carrito, fav*/
+   /* background-color: crimson;*/
+    padding: 10px;
+    font-size: 0.9rem;
+    vertical-align: baseline;
+    list-style-type: none;
+}
+        img.at{vertical-align: baseline;}
+nav.navbar{
+    overflow: hidden;
+    clear: both;/*le damos un salto de linea al menu de nav para que se posicione debajo*/
+    width: 100%;
+    grid-template-columns: auto;
+    background-color: blue;
+ /*   position:absolute;*/
+    /*display: flex;/*display flex hace que el menu mav sea flexible*/*/
+    
+}
+.navbar a{
+   float: left;
+   text-align: center;
+   padding: 14px 16px;
+   /*text-decoration: none;*/
+   font-size: 0.9rem;
+}
+nav> ul{display: flex; width: 100%}
+nav ul .subnav{flex: auto;}
+ul> li{
+    flex: auto;
+    text-align: center;
+}
+
+.dos{
+  /*  display: flex;*/
+    grid-template-columns: repeat(3, 1fr);
+    /*padding: 10px;*/
+    grid-gap: 25px;
+    /*background-color: coral;*/
+    justify-content: space-between;/*vale ya tenemos los elementos alineados a la izquierda y derecha*/
+}
+.tres{
+    grid-template-columns: repeat(6, 1fr);
+    padding: 15px;
+    grid-gap: 12px;
+    background-color: #f5f5f5;
+    justify-content: space-between;/*vale ya tenemos los elementos alineados a la izquierda y derecha*/
+}
+.cuatro{
+    grid-template-columns: repeat(4, 1fr);
+    /*padding: 20px;*/
+    grid-gap: 12px;
+  /*  margin-top: 60px;*/
+    background-color: aquamarine;
+    justify-content: space-between;/*vale ya tenemos los elementos alineados a la izquierda y derecha*/
+}
+.cinco{
+    grid-template-columns: repeat(4, 1fr);
+    padding: 15px;
+    grid-gap: 10px;
+    background-color: royalblue;
+        }
+.seis{
+    grid-template-columns: repeat(2, 1fr);
+    padding: 15px;
+    grid-gap: 10px;
+    background-color: darkcyan;
+}
+.pie{
+    grid-template-columns: repeat(3, 1fr);
+    padding: 15px;
+    grid-gap: 15px;
+    background-color: blueviolet;
+}
+/*a>img{align-content: space-between;
+    background-color: chartreuse;
+    display: grid;}    
+        */
+.logo{
+    float: left;
+    width: 100%;/*esto es para que la img sea responsive*/
+    height: auto;/*Esto es para que la img sea responsive*/
+    margin: 0 auto;
+}
+     /*   a img{margin: 0 auto;}*/
+ .buscador{/*Esto es el contenedor del medio que contiene el buscador*/
+    background: #fff;/*fondo blanco*/
+    display: flex;/* display flex hace el contenedor flexible*/
+    border: 1px solid #dfe1e5;/*borde 1 pixel, color gris*/
+    box-shadowA: none;
+    height: 45px;/*alto 45px*/
+    width: 100%;/*ancho 100%*/
+    border-radius: 24px;/*borde con un radio de 24px*/
+    margin: 0 auto;
+    z-index: 2;/*nivel de apilamiento*/
+}
+/*buscador*/
+form.search-container{/*etiqueta form contenedor donde esta el buscador*/
+    background-color: transparent;/*transparente*/
+    border: 0;/*esto creo que sobra*/
+    outline: none !important;
+    /*width: 100%;*//*esto creo que sobra*/
+   /* margin: 0 auto;*//*para que se quede centrado*/
+    display: flex;/*hace que el contenedor se vuelva flexible*/
+    flex: 100%;
+}
+.buscador:hover{/*esto es el efecto hover de la caja donde esta el buscador*/
+    border-color: rgba(223,225,229,0);
+    box-shadow: 0 1px 4px 0 rgba(32,33,36,0.28);
+}
+input:first-child.bsc[type=text]{/*esto es la etiqueta input del buscador CON LA SEUDO CLASE FIRST-CHILD DAMOS ESTAS PROPIEDAES */
+    width: 100%;/*Ancho 100%*/
+    color: rgba(0,0,0,.87);/*Color del texto*/
+    padding: 0px 25px;
+   /* margin: auto;*//*Esto para alienar el texto dentro del buscador*/
+    display: inline-block;/*permite establecer un ancho y un alto, no agrega salto de linea,puede añadir otros elementos a su lado*/
+    background-color: transparent;/*transparent*Esto es interesante*/
+    border: none;/*esto es para quitar el borde azul que por defecto ponen los navegadores****tengo que recordareme de poner un estilo de borde*/
+    outline: none !important;/*esto es para quitar el borde azul que por defecto ponen los navegadores*/
+    font-size: 16px;
+}
+
+form> button{
+    floatA: left;/*esto es de la lupa del buscador de momento lo voy a sacar, si da problemas lo tengo que volver a poner*/
+    padding: 6px 20px;
+    margin: auto;/*esto creo que sobra*/
+    background-color: transparent;
+    border: 0;/*quitamos el borde azul que por defecto ponen los navegadores*/
+    outline: none !important;/*quitamos el borde azul que por defecto ponen los navegadores*/
+
+}
+/*fin buscador*/
+
+.top-container a{/*estos son los enlaces de ayuda e iniciar sesión*/
+    color: rgba(0,0,0,.87);
+    padding: 8px;
+    font-size: 0,9em;
+    float: left;/*tengo que acordarme que para el footer esto igual no sirve*/
+}
+/*Fin enlaces incicar sesión y ayuda*/
+
+
+/*formularios de LOGIN, REGISTO Y CONTACTO*/
+.fa-headset, .fa-user, .lupa{/*color rojo del comentario del icon de ayuda*/
+    color: #E50914;/*Rojo Neflix*/
+    font-size: 0.8rem;
+    padding: 5px;
+}
+.imgindex {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.container-descripcion {
+  padding: 0 16px;
+    font-size: 0.899rem;
+}
+.image-wrapper{/*El contenedor que tiene todas las fotos*/
+    /*border: 3px dashed red;*/
+   /* background-color: #f5f5f5;*/
+    overflow: hidden;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    /*display: flex; Este display flex sobra*/
+    flex-wrap: wrap;
+  /*  background: transparent;*/
+}
+.image-content{/*El contenedor de cada una de las imagenes*/
+   /* display: inline-block;
+    position: relative;
+    margin: 0 auto;
+    width: 14%;*/
+    background-color: #f5f5f5;
+}
+img.slider-image{/*Estos son las fotos*/
+    width: 100%;
+    heightA: 200px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: inline-block;
+    vertical-align: middle;
+    display: block;
+    
+}
+.post-info{
+    margin: 10px;
+    text-align: center;
+    font-size: 0.988rem;
+}
+    </style>
+<body class="" aria-hidden="true">
+<div class="main-gird grid-container"><!--Este es el contenerod de la web, es un container grid-->
+    <header class="grid-item uno"><!--Esta es la cabezera de la web, donde estan el logo, buscardor,login, carrito, favorito-->
+      <div class="header">
+          <div class="logo"><a href="index.html"><img src="icons/gatetes.svg" alt="logo" title="Logo" style="width: 220px"></a><!--este div es que contiene el logo-->
+            </div>
+          <div class="buscador"><!--div donde esta el buscador-->
+               <form class="search-container" action="" role="form">
+                  <input class="bsc" type="text" placeholder="Busqueda" name="buscador" role="search">
+                  <button type="submit"><img class="lupa" src="icons/search.svg" alt="buscador" role="button"></button> 
+               </form> 
+          </div><!--cerramos el div donde esta el buscador-->
+          <div id="inner-grid">
+              <li class="izquieda"><a href="acordeon_ayuda.html"><img class="at" src="icons/Atencion al cliente.svg" alt="Atencion al cliente" title="Atención al cliente" style="width: 12%">Atención al cliente</a></li>
+              <li class="izquieda"><a href="iniciar_sesion.html"><img src="icons/usuario.svg" alt="Iniciar sesión" title="Usuario" style="width: 10%">Iniciar sesión</a></li>
+              <li class="izquieda"><a href="#"><img src="icons/carrito.svg" alt="Carrito de la compra" title="Carrito" style="width: 12%">Carrito</a></li>
+              <li class="izquieda"><a href="#"><img src="icons/favorito.svg" alt="Favorito" title="Favorito" style="width: 10%">Favorito</a></li>
+          </div>
+      </div>
+        <nav class="grid-item navbar">
+            <ul>
+                <li class="grid-item li"><a href="#">Novedades</a></li>
+                <li class="grid-item li"><a href="#">Lencería</a></li>
+                <li class="grid-item li"><a href="#">Jueguetes erótico</a></li>
+                <li class="grid-item li"><a href="#">Masturbadores</a></li>
+                <li class="grid-item li"><a href="#">Penes</a></li>
+                <li class="grid-item li"><a href="#">Vibradores</a></li>
+                <li class="grid-item li"><a href="#">Bondage</a></li>
+                <li class="grid-item li"><a href="#">Lubricantes</a></li>
+                <li class="grid-item li"><a href="#">Juegos de pareja</a></li>
+                <li class="grid-item li"><a href="#">Preservativos</a></li>
+                <li class="grid-item li"><a href="#">Ofertas</a></li>
+            </ul>
+        </nav>
+    </header><!--Cerramos la cabezera-->
+    <main>
+        <section id="section">
+    
+            <div class="grid-item dos row">
+              <div class="grid-item imgindex box">
+                  <img src="img/gatito_blanco_010.jpg" alt="Jane" style="width:100%">
+                  <div class="container-descripcion">
+                    <h2>Jane Doe</h2>
+                    <p class="title">CEO & Founder</p>
+                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <p>example@example.com</p>
+                    <p><button class="button">Contact</button></p>
+                  </div>
+              </div>
+              <div class="grid-item imgindex box ">
+                <img src="img/gatito_blanco_03.jpg" alt="Jane" style="width:100%">
+                  <div class="container-descripcion">
+                    <h2>Jane Doe</h2>
+                    <p class="title">CEO & Founder</p>
+                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <p>example@example.com</p>
+                    <p><button class="button">Contact</button></p>
+                  </div>  
+              </div>  
+              <div class="grid-item imgindex box">
+                  <img src="img/gatito_blanco_04.jpg" alt="Jane" style="width:100%">
+                  <div class="container-descripcion">
+                    <h2>Jane Doe</h2>
+                    <p class="title">CEO & Founder</p>
+                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <p>example@example.com</p>
+                    <p><button class="button">Contact</button></p>
+                  </div> 
+              </div>
+          </div>
+            <div class="grid-item tres image-wrapper">
+                <!--<h2 style="text-align: center">Titulo del slider</h2>-->
+                <div class="grid-item image-content">
+                  <a href="#"><img src="img/gatito_blanco_04.jpg" class="slider-image">
+                        <div class="post-info">
+                            <h4>La musica es un lenguaje univesal</h4>
+                        </div>
+                  </a>
+                </div>
+                <div class="grid-item image-content">
+                    <a href="#"><img src="img/gatito_negro_04.jpg" class="slider-image">
+                        <div class="post-info">
+                            <h4>La musica es un lenguaje univesal</h4>
+                        </div>
+                  </a>
+                </div>  
+                <div class="grid-item image-content">
+                    <a href="#"><img src="img/gatito_castaño_05.jpg" class="slider-image">
+                        <div class="post-info">
+                            <h4>La musica es un lenguaje univesal</h4>
+                        </div>
+                  </a>
+                </div>
+                <div class="grid-item image-content ">
+                    <a href="#"><img src="img/gatito_pardo_06.jpg" class="slider-image">
+                        <div class="post-info">
+                            <h4>La musica es un lenguaje univesal</h4>
+                        </div>
+                  </a>
+                </div>
+              <div class="grid-item image-content">
+                  <a href="#"><img src="img/gatito_gris_04.jpg" class="slider-image">
+                        <div class="post-info">
+                            <h4>La musica es un lenguaje univesal</h4>
+                        </div>
+                  </a>
+                </div>
+              <div class="grid-item image-content">
+                  <a href="#"><img src="img/gatito_castaño_07.jpg" class="slider-image">
+                        <div class="post-info">
+                            <h4>La musica es un lenguaje univesal</h4>
+                        </div>
+                  </a>
+                </div>
+            </div>
+    <div class="grid-item cuatro">
+      <div class="grid-item box">11</div>
+      <div class="grid-item">12</div>  
+      <div class="grid-item siete">13</div>
+      <div class="grid-item ocho">14</div>
+    </div>
+    <div class="grid-item cinco">
+      <div class="grid-item box">15</div>
+      <div class="grid-item">16</div>  
+      <div class="grid-item siete">17</div>
+      <div class="grid-item ocho">18</div>
+    </div>
+    <div class="grid-item seis">
+      <div class="grid-item box">19</div>
+      <div class="grid-item">20</div>  
+    </div>
+            </section>
+        </main>
+    <footer class="grid-container">
+        <div class="pie grid-item">
+            <div class="grid-item box">21</div>
+            <div class="grid-item">22</div>
+            <div class="grid-item">23</div>
+        </div>
+    
+    </footer>
+</div>
+    
+</body>
+</html>

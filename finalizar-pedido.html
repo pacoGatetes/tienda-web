@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Una monada de gatitos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Informamos al navegador para que precarge las fuentes de Google-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap" rel="preconnect"
+        as="font"><!-- API Google roboto flex fonts-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#E50914">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#E50914">
+    <!--Esta etiqueta puede establecer si la página admite la función de zoom de la pantalla táctil -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet preload" href="css/hoja-estilo.css" as="style">
+    <link rel="icon" href="icons/favicon.svg" type="image/svg+xml" sizes="any"><!--Favicon-->
+    <!--<link rel="icon" href="icons/favicon.ico" sizes="16x16" type="image/vnd.microsoft.icon">-->
+    <link rel="apple-touch-icon" sizes="57x57" href="icons/touch-icon-iphone.png"><!--favicon para telf Apple-->
+    <link rel="apple-touch-icon" sizes="114x114" href="icons/touch-icon-ipad.png"><!--favicon Apple para Ipad-->
+    <script rel="preload" src="js/main.js" defer></script>
+</head>
+<body>
+    <main class="row-fila contenedor__formulario-pago">
+        <section class="contenedor__datos-cliente col-50">
+
+            <header>
+                <div class="icon-contenedor">
+                    <h2>Tarjetas aceptadas</h2>
+                    <ul>
+                        <li><img src="icons/Mastercard-icon-formulario-pago.svg" alt="Tarjeta Mastercard" width="45" height="45">
+                        </li>
+                        <li><img src="icons/Visa-icon-formulario-pago.svg" alt="Tarjeta Visa" width="50" height="50">
+                        </li>
+                        <li><img src="icons/PayPal-icon-formulario-pago.svg" alt="Tarjeta PayPal" width="65" height="65">
+                        </li>
+                    </ul>
+                </div>
+                <div class="linea"></div>
+                <h3>Dirección de Envio</h3>
+            </header>
+            <div class="container">
+                <form action="/action_page.php">
+
+                <div class="row-fila">
+                    <div class="formulario__pago grid-item">
+
+                        <div class="formulario__grupo-label nombre">
+                            <label for="nombre" class="formulario__label">Nombre</label>
+                            <div class="formulario__grupo-input">
+                                <input type="text" class="formulario__input" id="nombre" name="nombre" placeholder="Nombre " maxlength="50"
+                                    pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" required>
+                                <p class="formulario__input-error" role="alert">Por favor, introduzca un nombre válido</p>
+                            </div>
+                        </div>
+                        <div class="formulario__grupo-label apellidos">
+                            <label for="apellidos" class="formulario__label">Apellidos</label>
+                            <div class="formulario__grupo-input">
+                                <input type="text" class="formulario__input" id="apellidos" name="apellidos" placeholder="Apellidos " autocomplete="on" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" maxlength="50" required>
+                                <p class="formulario__input-error" role="alert">Por favor, introduzca apellidos válidos</p>
+                            </div>
+                        </div>
+                        <div class="formulario__grupo-label direccion">
+                            <label for="direccion" class="formulario__label">Dirección</label>
+                            <div class="formulario__grupo-input">
+                                <input type="text" class="formulario__input" id="direccion" name="direccion" maxlength="50"
+                                    placeholder="Nombre de la calle y número del portal." pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required>
+                                <p class="formulario__input-error" role="alert">Por favor, introduzca una dirección válida</p>
+                            </div>
+                        </div>
+
+                        <div class="formulario__grupo-label piso">
+                            <label for="piso" class="formulario__label">Piso</label>
+                            <div class="formulario__grupo-input">
+                                <input type="text" class="formulario__input" id="piso" name="piso" maxlength="25"
+                                    placeholder="Local, piso, letra, escalera." required>
+                                <p class="formulario__input-error" role="alert">Por favor, introduzca una dirección válida</p>
+                            </div>
+                        </div>
+                        <div class="formulario__grupo-label codigo-postal">
+                            <label for="codigo__postal" class="formulario__label">Código postal</label>
+                            <div class="formulario__grupo-input">
+                                <input type="text" class="formulario__input" id="codigo__postal" name="codigo__postal" placeholder=" "
+                                    pattern="^[0-9]{5}$" maxlength="10" required>
+                                <p class="formulario__input-error" role="alert">Por favor, introduzca un código postal válido</p>
+                            </div>
+                        </div>
+                        <div class="formulario__grupo-label email">
+                            <label for="email" class="formulario__label">Email</label>
+                            <div class="formulario__grupo-input">
+                                <input type="email" class="formulario__input" id="email" name="email" placeholder=" "
+                                    pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required>
+                                <p class="formulario__input-error" role="alert">Por favor, introduzca un correo válido</p>
+                            </div>
+                        </div>
+                        <div class="formulario__grupo-label-icon-telf telf-cont">
+                            <div class="label">
+                                <label class="formulario__label" for="telefono">Número de Teléfono</label>
+                                <div class="formulario__grupo-input">
+                                    <div class="contenedor__icon-telf">
+                                        <span id="output" class="tooltip__info"
+                                            data-tip="Su número de teléfono, se puede utilizar para ayudar a la entrega.">
+                                            <img id="myButton" class="alert__info-telf-icon" width="18" height="18"
+                                                src="icons/info-telf.svg" alt="Información">
+                                        </span>
+                                    </div>
+                                </div>
+                                <input type="tel" class="formulario__input" id="telefono" name="telefono" placeholder=" " maxlength="15"
+                                    pattern="^[9|8|7|6]\d{8}$" required>
+                                <p class="formulario__input-error" role="alert">Por favor, introduzca un número de teléfono valido</p>
+                            </div>
+                        </div>
+                        <!-- Grupo mensaje -->
+                        <div class="formulario__grupo mensaje" id="">
+                            <label for="mensaje" class="formulario__label">Observaciones</label>
+                                <textarea class="mensaje__formulario-contacto" id="mensaje" rows="5" cols="50" name="mensaje" minlength="20"
+                            spellcheck="true" placeholder="Escriba su mensaje..."></textarea>
+                        </div>
+                            <!--Fin Grupo mensaje -->
+
+                            <div class="formulario__grupo-pago div-btn enviar">
+                                <input type="submit" class="btn-form" value="Finalizar pedido">
+                            </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+
+        </section><!-- Cerramos o div col-75 -->
+        <div class="contenedor__productos-cantidad row-fila position-sticky-checkout col-25">
+
+            <table class="tabla-productos">
+                <thead class="cabezera">
+                    <tr>
+                        <th><h4>Carrito</h4></th>
+
+                        <th><img src="icons/shopping-cart_01.svg" width="24" heighy="24" alt=""><b>4</b></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Producto 1</td>
+                        <td>20€</td>
+                    </tr>
+                        <td>Producto 2</td>
+                        <td>30€</td>
+                    </tr>
+                        <td>Producto 3</td>
+                        <td>40€</td>
+                    </tr>
+                        <td>Producto 4</td>
+                        <td>50€</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td class="td-pago">Total</td>
+                        <td class="td-pago"><b>140€</b></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+    </main>
+    <footer class="pie__formulario checkout-footer">
+        <div class="contenedor-privacidad-form">
+            <ul class=" condiciones-form">
+                <li><a href="#">Condiciones de uso</a></li>
+                <li><a href="#">Política de privacidad</a></li>
+                <li><a href="#">Política de Cookies</a></li>
+            </ul>
+                <ul class="favicon-footer">
+                    <li class="">
+                        <img src="./icons/favicon.svg" width="20" height="20" alt="">
+                        <p>&copy;&nbsp;2020-2022 gatetes tiene todos los derechos reservados. Si no cumples la ley, te arañamos
+                        </p>
+                    </li>
+                </ul>
+        </div>
+    </footer>
+</body>
+</html>

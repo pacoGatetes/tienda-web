@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "msjsdiag.debugger-for-chrome",
+        "hookyqr.beautify",
+        "ms-azuretools.vscode-docker",
+        "felixfbecker.php-debug",
+        "MS-CEINTL.vscode-language-pack-es"
+    ]
+}

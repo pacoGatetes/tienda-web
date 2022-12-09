@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>tienda</title>
+    <link href="icons/favicon.svg" rel="icon" type="image/x-icon"/>
+    <script src="https://kit.fontawesome.com/65e2b874ef.js" crossorigin="anonymous"></script><!--icon_fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"><!--Google roboto fonts-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/estilocss.css">
+</head>
+
+<body>
+    <!--Botón para abrir el formulario de incio sesión-->
+    <div class="container-formulario">     
+          <form class="reg" action="/action_page.php" method="post">
+      
+            <h2 style="text-align: center; font-weight: 400; font-size: 15px; margin-top: 25px; letter-spacing: 3px;">MI CUENTA</h2>
+          
+                <div class="logo-container">
+                    <img class="logo-cont" src="icons/gatetes.svg" alt="logo" >
+                </div>
+                <p class="inicia-sesion">Inicia sesión para acceder a tu cuenta de usuario<br><br>
+                    Los campos marcados con &nbsp;<span style="color: #E50914">&#42; &nbsp;</span>son obligatorios</p>
+                     <br><br>
+
+            <fieldset><!--la etiqueta <fieldset> se utiliza para agrupar datos relacionados en un formulario.-->
+                <legend>Datos de acceso</legend>
+                <hr>
+                <label for="nombre-usuario"><span>Usuario&nbsp;</span><abbr title="requerido">&#42;</abbr></label><!--Esto es para hacer una prueba donde va el "title requerido", sin entre  la etiqueta <abbr> o se puede poner diretamente el la etiqueta <span>-->
+                <input type="text" placeholder="Introduzca su nombre de usuario" name="nombre" required>
+
+                <label for="psw"><span title="requerido">Contraseña&nbsp;</span>&#42;</label>
+                <input type="password" placeholder="Introduzca su contraseña" name="psw" required>
+
+                <button class="login" type="submit">Acceder</button>
+    
+                <label><input type="checkbox" checked="checked" name="recuerdame">&nbsp;Recordarme</label>
+             </fieldset>
+                    <a style="align-content: center; width: 30%; margin: auto; font-size: 14px;"  href="formulario_registro.html"><span>¿No tienes cuenta?Regístrate</span></a>
+                 <div class="container-cancel" style="margin-top: 10px"><!--en este div estan los bontes de cancelar sesión-->
+                   <a class="cancelbtn clearfix" href="index.html">Cancelar</a>
+                    <span class="psw">Olvido su&nbsp;<a href="#">contraseña</a></span>
+                 </div><!--div donde se encuentra el boton cerrar-->
+             </form>
+     
+          
+       
+    </div>  
+</body>
+</html>

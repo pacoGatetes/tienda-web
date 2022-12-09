@@ -1,0 +1,12 @@
+[
+{
+    "editor.wordWrap": "on",
+    "editor.fontFamily": "\"Source Code Pro\"",
+    "px-to-rem.px-per-rem": 16,
+    "editor.fontSize": 15
+},
+{
+"php.validate-executablePath": "C\\xampp\\php\\php.exe",
+"php.executablePath": "C:\\xampp\\php\\.exe"
+}
+]

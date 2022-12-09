@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+.contenedor{
+	width: 90%;
+	margin: auto;
+}
+/*---Contenedor principal y flechas-------*/
+.peliculas-recomendadas{
+	margin-bottom: 70px;
+}
+.peliculas-recomendadas .contenedor-principal{
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda,
+.peliculas-recomendadas .contenedor-principal .flecha-derecha{
+	position: absolute;
+	border: none;
+	background-color: rgba(0,0,0,0.3);
+	font-size: 40px;
+	height: 50%;
+	top: calc(50% - 25%);
+	line-height: 40px;
+	width: 50px;
+	color: #fff;
+	cursor: pointer;
+	z-index: 500;
+	transition:.2s ease all; 
+}
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda{
+	left: 0;
+}.peliculas-recomendadas .contenedor-principal .flecha-derecha{
+	right: 0;
+}

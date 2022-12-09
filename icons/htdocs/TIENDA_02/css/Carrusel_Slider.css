@@ -1,0 +1,61 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+    background-color: #e4e8e85c;
+}
+.slider{/*Este es el contenedor que tiene todas las imagenes*/
+    border: 1px solid orange;
+    
+}
+.image-wrapper{/*El contenedor que tiene todas las fotos*/
+    border: 3px dashed red;
+    width: calc(100% - 2em);
+    overflow: hidden;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+.image-content{/*El contenedor de cada una de las imagenes*/
+    background: #trasparete;
+    display: inline-block;
+    position: relative;
+    margin: 0 auto;
+ 
+}
+
+.slider-title{/*El titulo de la página*/
+    text-align: center;
+}
+img.slider-image{/*Estos son las fotos*/
+    width: 100%;
+    heightA: 200px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: inline-block;
+    vertical-align: middle;
+    display: block;
+    
+}
+.post-info{
+    margin: 10px;
+    text-align: center;
+}
+.image-content a{
+    font-size: 0.9rem;
+    color: steelblue;
+    text-decoration: none;
+    font-family: sans-serif;
+    display: block; 
+}
+
+
+
+
+
+
+
+
+
+

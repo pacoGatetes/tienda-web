@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<title>SexShopelsitiodetudeseos</title>
+	<meta name="description" content="ejemplo de una web"/> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Alex Brush" rel="stylesheet"><!--fonts de google----->
+	<script src="js/mainScript.js"></script>
+
+</head>
+
+<body>
+	<div id="container">
+
+		<header id="cabezera">
+			
+<!----------------Formulario iniciar sesión----------------->
+	
+		<div id="regis_inic_mail_social" class="row clerafix" ><!--row?-->
+		<!--********Formulario de contacto*************--->
+		<div class="column right">
+			<button class="float-right-lg iniciarsesion" onclick="document.getElementById('inc-cont').style.display='block'">Contacto&#32;<i class="fa fa-envelope-o"></i></button><!--Al hacer clic se despliega la ventana del formulario de contacto-->
+
+			<div id="inc-cont" class="contacto">
+			<span class="close" onclick="document.getElementById('inc-cont').style.display='none'" title="Cerrar">&times;</span>
+				<form class="modal-content animate" action="/action_page.php">
+  					<fieldset>
+					 <div class="container-contacto">
+						 <legend class="inc-sesiontienda">FORMULARIO DE CONTACTO<br></legend>
+						 <label for="fname"><b>Nombre</b></label>
+						 <input type="text" id="frist" name="fristname" placeholder="Introduzca su nombre" required>
+
+						<label for="lname"><b>Apellidos</b></label>
+						<input type="text" id="last" name="lastname" placeholder="Introduzca sus apellidos" required>
+						 
+						 <label for="suject"><b>Escriba su mensaje</b></label>
+						<textarea id="subject" name="subject" placeholder="Escriba su mensaje..."></textarea>
+						 <button class="inc-sesion mailcont" type="submit">Enviar<i class="fa fa-angle-double-right"></i></button>
+						 <div class="container_cancel clearfix" style="">
+						<button class="cancelbtn" type="button" onclick="document.getElementById('inc-cont').style.display='none'">Cancelar</button>
+						</div>
+					</div>
+					</fieldset>
+				</form>	
+			</div>
+			 <!--=================FIN formulario contacto====================-->
+			<!--***********Formulario iniciar sesion*********-->
+			<button class="float-right-lg iniciarsesion" onclick="document.getElementById('inc-log').style.display='block'">Iniciar sesión</button><!--Al hacer clic se despliega la ventana de formulario para inciar sesión-->
+
+			<div id="inc-log" class="login">
+  
+				<form class="modal-content animate" action="/action_page.php">
+ 					
+					<span class="close" onclick="document.getElementById('inc-log').style.display='none'" title="Cerrar">&times;</span>
+					<fieldset>
+					 <div class="container-login">
+						 <legend class="inc-sesiontienda">MI CUENTA<br>Inicia sesión para acceder a tu cuenta de usuario<br>Los campos marcados con<i class="asterisco">*</i>&#32;son obligatorios</legend>
+						 
+						 <label><b>Usuario *</b></label>
+						 <input type="text" placeholder="Introduzca su nombre de usuario" name="uname" required>
+
+						<label><b>Contraseña *</b></label>
+						<input type="password" placeholder="Introduzca su contraseña" name="psw" required>
+
+						<button class="inc-sesion" type="submit">Iniciar sesión</button>
+						<br>
+						<input type="checkbox" checked="checked">&#32;Recuérdame
+						<div class="container_cancel clearfix" style="">
+						<button class="cancelbtn" type="button" onclick="document.getElementById('inc-log').style.display='none'">Cancelar</button>
+						<span class="psw"><a href="#">Recuperar contraseña</a></span>
+						</div> 
+					</div>	
+	  				</fieldset>
+				</form>
+				</div>
+			
+		  <!--====Fin formulario inciar sesión===-->
+		  <!---------------- Formulario de Registro ---------->
+			
+		<button class="float-right-lg iniciarsesion" onclick="document.getElementById('inc-reg').style.display='block'">Registrarse</button>
+
+			<div id="inc-reg" class="registro">
+			  <span onclick="document.getElementById('inc-reg').style.display='none'" class="close" title="Cerrar">×</span>
+			  
+			  <form class="modal-content animate" action="/action_page.php">
+				<fieldset>
+				<div class="container-registro">
+					<div class="inc-sesiontienda">CREAR NUEVO USUARIO<br>Regístrate rapidamente con estos sencillos pasos<br> Por favor rellene este fomulario para crear una cuenta<br>Los campos marcados con<i class="asterisco">*</i>&#32;son obligatorios</div>
+					<legend>
+				  		<label><b>Email *</b></label>
+				  		<input type="email" placeholder="Introduzca su Email" name="email" required/>
+
+				  		<label><b>Contraseña *</b></label>
+				  		<input type="password" placeholder="Introducir contraseña" name="contraseña" required/>
+				  
+
+				  		<label><b>Repite la contraseña *</b></label>
+				  	<input type="password" placeholder="Repite la contraseña" name="repeat-contraseña" required/>
+				  </legend>
+				  <input type="checkbox" checked="checked"/>&#32;Recuérdame
+				  
+				  	<p>Al crear una cuenta, usted acepta nuestros <a href="#">Términos & Privacidad.</a></p>
+					<button class="inc-sesion" type="submit">Registrarse</button>
+				<div class="container_cancel clearfix" style="">
+					<button class="cancelbtn" type="button" onclick="document.getElementById('inc-reg').style.display='none'">Cancelar</button>
+				</div>
+				</div>
+				</fieldset>  
+			  </form>
+			</div><!--cerramos div registro--->
+			</div><!--cerramos div columna izquierda donde estan los formularios-->
+			<!--------FIN FORMULARIOs ---------->
+			
+			
+				<div class="column left social-networks">
+					<div class="networks"><i class="fa fa-phone" title="teléfono"></i><span class="numphone">615366890</span></div>
+					<a class="networks" href="#"><i class="fa fa-whatsapp" title="whatsapp"></i></a>
+					<a class="networks" href="#"><i class="fa fa-twitter" title="twitter"></i></a>  
+					<a class="networks" href="#"><i class="fa fa-facebook-f" title="facebook"></i></a>
+			
+				</div><!--******Cerramos div donde estan los logos de las redes sociales****-->
+		
+			</div><!-- *********cerramos div donde estan los registros y redesdes sociales--********-->
+			<!--=============Logo==============-->
+		<h1 id="logo"><a  href="#"><img class="logo" src="images/logo.jpg" alt="logo"></a></h1>
+			<!-----======Fin logo===========-->
+			<a class="shopping-cart" href="#"><i class="fa fa-shopping-cart "><samp class="car">carrito</samp></i></a>
+			<a class="heart" href="#"><i class="fa fa-heart-o"><samp class="fav">favoritos</samp></i></a>
+			<!--<div id="busqueda">-->
+			<form class="search" action="aquí llamamos a la pagina php">
+				<input class=" buscador" type="text" onfocus="this.value=''" value="" name="search" placeholder="Buscar...">
+				<button type="submit"><i class="fa fa-search"></i></button>	
+			</form>
+			<!--</div>-->
+		
+	  </header>
+	<!--*********Cerramos header*************-->
+		
+		<nav>
+			<ul>
+				<li><a href="#"><i class="fa fa-home" style="font-size: 25px; color: #fff;"></i>Inicio</a></li>
+				<li><a href="#">Jugetes eróticos</a>
+ 
+				<div>
+ 
+					<ul>
+						<li class="titulo"><a href="">Categoria #1</a></li>
+						<li><a href="">Categoria #2</a></li>
+						<li><a href="">Categoria #3</a></li>
+						<li><a href="">Categoria #4</a></li>
+						<li><a href="">Categoria #5</a></li>
+					</ul>
+ 
+					<ul>
+						<li class="titulo azul"><a href="">Categoria #1</a></li>
+						<li><a href="">Categoria #2</a></li>
+						<li><a href="">Categoria #3</a></li>
+						<li><a href="">Categoria #4</a></li>
+						<li><a href="">Categoria #5</a></li>
+					</ul>
+ 
+					<ul>
+						<li class="titulo verde"><a href="">Categoria #1</a></li>
+						<li><a href="">Categoria #2</a></li>
+						<li><a href="">Categoria #3</a></li>
+						<li><a href="">Categoria #4</a></li>
+						<li><a href="">Categoria #5</a></li>
+					</ul>
+ 
+					<ul>
+						<li class="titulo rojo"><a href="">Categoria #1</a></li>
+						<li><a href="">Categoria #2</a></li>
+						<li><a href="">Categoria #3</a></li>
+						<li><a href="">Categoria #4</a></li>
+						<li><a href="">Categoria #5</a></li>
+					</ul>
+ 
+					<ul>
+						<li class="titulo naranja"><a href="">Categoria #1</a></li>
+						<li><a href="">Categoria #2</a></li>
+						<li><a href="">Categoria #3</a></li>
+						<li><a href="">Categoria #4</a></li>
+						<li><a href="">Categoria #5</a></li>
+					</ul>
+				</div>
+ 
+				</li>
+				<li><a href="#">Lencería</a></li>
+				<li><a href="#">Bondage</a></li>
+				<li><a href="#">Lubricantes</a></li>
+			</ul>
+		</nav>
+		
+	<!--<nav id="nav">
+		<ul class="menu">
+			<li><a href="#"><i class="fa fa-home" style="font-size: 25px; color: #fff;"></i></a></li>
+			<li><a href="#incio">Incio</a></li>
+			<li><a href="#novedades">Novedades</a>
+				<ul id="submenu">
+					<li><a href="#">Articulos eróticos</a></li>
+					<li><a href="#">Lencería</a></li>
+					<li><a href="#">BMSD</a></li>
+				
+				</ul>
+			
+			
+			</li>
+			<!--<li><a href="#">Jugetes eróticos</a>
+				<ul id="navdesplegable">
+					<li><a href="#">Jugetes01</a></li>
+					<li><a href="#">Jugetes02</a></li>
+					<li><a href="#">Jugetes03</a></li>
+					<li><a href="#">Jugetes04</a>
+						<ul>
+							<li><a href="#">Jugetes0002</a></li>
+							<li><a href="#">Jugetes0003</a></li>
+							<li><a href="#">Jugetes0004</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Jugetes08</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Lencería</a></li>
+			<li><a href="#">Bondage</a></li>
+			<li><a href="#">Lubricantes</a></li>
+			<li><a href="#">Parafarmacia</a></li>
+			<li><a href="#">Varios</a></li>
+			<li><a href="#">Oulet</a></li>
+			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    			<i class="fa fa-bars"></i></a>--
+		</ul>
+	</nav>
+		
+	<!--***************Cerramos nav*************-->	
+		
+
+	
+	<main role= "main"><!---*********dentro de main va todo el contendio principal de la web*******-->
+		<section id="catalogo-productos">
+		<aside class="colum filtros">
+			<h3>Filtar resutados para marcas</h3>
+			
+			<ul id="menumarca">
+				<li class="eligemarca"><a href=""><label class="container"><input type="checkbox" checked="checked">UN0<samp class="checmerk"></samp></label></a></li>
+				<li class="eligemarca"><a href=""><label class="container"><input type="checkbox" checked="checked">DOS<samp class="chemerk"></samp></label></a></li>
+				<li class="eligemarca"><a href=""><label class="container"><input type="checkbox" checked="checked">DOS<samp class="chemerk"></samp></label></a></li>
+				<li class="eligemarca"><a href=""><label class="container"><input type="checkbox" checked="checked">DOS<samp class="chemerk"></samp></label></a></li>
+				<li class="eligemarca"><a href=""><label class="container"><input type="checkbox" checked="checked">DOS<samp class="chemerk"></samp></label></a></li>
+				<li class="eligemarca"><a href=""><label class="container"><input type="checkbox" checked="checked">DOS<samp class="chemerk"></samp></label></a></li>
+				<li class="eligemarca"><a href=""><label class="container"><input type="checkbox" checked="checked">DOS<samp class="chemerk"></samp></label></a></li>
+				<li class="eligemarca"><a href=""><label class="container"><input type="checkbox" checked="checked">DOS<samp class="chemerk"></samp></label></a></li>
+			</ul>
+					<h4>Precio</h4>
+			<ul id ="menuprecio">
+				<li class="eligeprecio"><a href=""><label class="container"><input type="checkbox" checked="checked">0-20 €<samp class="checmerk"></samp></label></a></li>
+				<li class="eligeprecio"><a href=""><label class="container"><input type="checkbox" checked="checked">20-50 €<samp class="chemerk"></samp></label></a></li>
+				<li class="eligeprecio"><a href=""><label class="container"><input type="checkbox" checked="checked">50-100 €<samp class="chemerk"></samp></label></a></li>
+				<li class="eligeprecio"><a href=""><label class="container"><input type="checkbox" checked="checked">100-150 €<samp class="chemerk"></samp></label></a></li>
+				<li class="eligeprecio"><a href=""><label class="container"><input type="checkbox" checked="checked">150-200 €<samp class="chemerk"></samp></label></a></li>
+				<li class="eligeprecio"><a href=""><label class="container"><input type="checkbox" checked="checked">200-250 €<samp class="chemerk"></samp></label></a></li>
+				<li class="eligeprecio"><a href=""><label class="container"><input type="checkbox" checked="checked">250-300 €<samp class="chemerk"></samp></label></a></li>
+				<li class="eligeprecio"><a href=""><label class="container"><input type="checkbox" checked="checked">Más de 300 €<samp class="chemerk"></samp></label></a></li>
+				
+				<h4>Talla</h4>
+				
+				
+			</ul>
+		</aside>
+		
+		
+		<article class="colum  galeria-articulos">
+		<h2 style="text-align:center">Juegetes eróticos</h2>
+
+			<div class="card">
+				<a target="#" href="">
+				  <img src="images/gato_01.jpg" alt="Denim Jeans" style="width:100%">
+				  <h1>Tailored Jeans</h1>
+				  <p class="price">$19.99</p>
+				  <p class="descripcion">Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+				  <p><button>Add to Cart</button></p>
+			</a>
+			</div>
+			
+			<div class="card">
+			  <img src="images/gato_02.jpg" alt="Denim Jeans" style="width:100%">
+			  <h1>Tailored Jeans</h1>
+			  <p class="price">$19.99</p>
+			  <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+			  <p><button>Add to Cart</button></p>
+			</div>
+			<div class="card">
+			  <img src="images/gato_03.jpg" alt="Denim Jeans" style="width:100%">
+			  <h1>Tailored Jeans</h1>
+			  <p class="price">$19.99</p>
+			  <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+			  <p><button>Add to Cart</button></p>
+			</div>
+			<div class="card">
+			  <img src="images/gato_04.jpg" alt="Denim Jeans" style="width:100%">
+			  <h1>Tailored Jeans</h1>
+			  <p class="price">$19.99</p>
+			  <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+			  <p><button>Add to Cart</button></p>
+			</div>
+			<div class="card">
+			  <img src="images/gato_05.jpg" alt="Denim Jeans" style="width:100%">
+			  <h1>Tailored Jeans</h1>
+			  <p class="price">$19.99</p>
+			  <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+			  <p><button>Add to Cart</button></p>
+			</div>
+			<div class="card">
+			  <img src="images/gato_09.jpg" alt="Denim Jeans" style="width:100%">
+			  <h1>Tailored Jeans</h1>
+			  <p class="price">$19.99</p>
+			  <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+			  <p><button>Add to Cart</button></p>
+			</div>
+			<div class="card">
+			  <img src="images/gato_07.jpg" alt="Denim Jeans" style="width:100%">
+			  <h1>Tailored Jeans</h1>
+			  <p class="price">$19.99</p>
+			  <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+			  <p><button>Add to Cart</button></p>
+			</div>
+			<div class="card">
+			  <img src="images/gato_08.jpg" alt="Denim Jeans" style="width:100%">
+			  <h1>Tailored Jeans</h1>
+			  <p class="price">$19.99</p>
+			  <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+			  <p><button>Add to Cart</button></p>
+			</div>
+
+		</article>	
+		
+		
+		
+		
+		
+		</section>
+
+	
+	</main>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</div><!--***********Cerramos div container************-->	
+	
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+    <style>
+        body{
+            font-family: Lato, sans-serif
+        }
+        
+        section{
+			position: relative;
+			width: 70%;
+			margin: 0 auto;
+            padding: 1rem;
+            background: #fff;
+            box-shadow: 0 3px 10px 0 rgba(#000, 0.1);
+            border-radius: 5px;
+        }
+        
+        h2{
+            margin-bottom: 1rem;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .images-list{
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            scroll-snap-type: x;
+        }
+        
+        img{
+            scroll-snap-align: start;
+            flex: 0 0 150px;
+            width: 150px;
+            height: 150px;
+            border-radius: 5px;
+        }
+        .wrapper{/*Este es el contenedor*/
+			width: 100%;
+			background-color: antiquewhite;
+       /*     max-width: 800px;*/
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        /* Next & previous buttons */
+
+		
+
+
+
+    
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        
+        <section>
+    <h2>Gatitos populares</h2>
+    
+    <div class="images-list fade">
+        <img src="img/gatito_blanco_01.jpg" alt="">
+        <img src="img/gatito_castaño_06.jpg" alt="">
+        <img src="img/gatito_gris_02.jpg" alt="">
+        <img src="img/gatito_gris_y_blanco_07.jpg" alt="">
+        <img src="img/gatito_negro_06.jpg" alt="">
+        <img src="img/gatito_blanco_04.jpg" alt="">
+        <img src="img/gatito_castaño_09.jpg" alt="">
+        <img src="img/gatito_gris_03.jpg" alt="">
+        <img src="img/gatito_gris_y_blanco_09.jpg" alt="">
+        <img src="img/gatito_negro_01.jpg" alt="">
+    </div>
+        </section>
+    </div>
+	
+
+</body>
+</html>

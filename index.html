@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Una monada de gatitos</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com"><!-- Informamos al navegador para que precarge las fuentes de Google-->
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap" rel="preconnect" as="font"><!-- API Google roboto flex fonts-->
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#E50914">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#E50914">
+	<!--Esta etiqueta puede establecer si la página admite la función de zoom de la pantalla táctil -->
+	<meta name ="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet preload" href="css/hoja-estilo.css" as="style">
+	<link rel="icon" href="icons/favicon.svg" type="image/svg+xml" sizes="any"><!--Favicon-->
+	<!--<link rel="icon" href="icons/favicon.ico" sizes="16x16" type="image/vnd.microsoft.icon">-->
+	<link rel="apple-touch-icon" sizes="57x57" href="icons/touch-icon-iphone.png"><!--favicon para telf Apple-->
+	<link rel="apple-touch-icon" sizes="114x114" href="icons/touch-icon-ipad.png"><!--favicon Apple para Ipad-->
+	<script rel="preload" src="js/main.js" defer></script>
+</head>
+<body>
+	<div class="flex__grid grid-container"><!--Este es el contenedor de la web, es un container css-grid-->
+
+	    <header class="header">
+	       <div class="menu-nav contenedor-cabezera row" id="menu-nav">
+			    <div class="contenedor-logo-buscador-enlaces grid-item">
+
+		            <div class="contenedor-botones-menu">
+			            <button type="buttom" id="btn-menu-barras" class="btn-menu-barras" title="menu" aria-controls="grid-menu-nav" aria-labelledby="grid-menu-nav" aria-expanded="false"><!--Esta son as barras de menú móvil-->
+							<svg class="menu-fa-bars" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" role="img" xml:space="preserve" width="24" height="24" viewBox="0 0 448 512">
+								<path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
+								</path>
+							</svg>
+						</button>
+
+
+		            </div><!--Cerramo contenedor contenedor-botones-menú-->
+
+		            <div class="contenedor-enlaces-nav">
+			            <div class="btn-departamentos" id="btn-departamentos">
+				            <p>Todos los<span>Departamentos</span></p>
+				            <svg class="fa-caret-down" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" role="img" width="24" height="24" viewBox="0 0 320 512">
+								<path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 78-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z">
+								</path>
+							</svg>
+			            </div>
+		            </div>
+
+					<!--este div es que contiene el logo-->
+					<div class="cont__logo-index">
+			        	<a class="logo" href="./index.html">
+							<picture>
+							<!--<source media="(min-width: 650px)" srcset="icons/gatetes.svg">-->
+								<source media="(min-width: 361px)" srcset="icons/gatetes.svg" width="200" height="50" type="image/svg+xml">
+								<img class="logo-peque" src="icons/favicon.svg" width="24" height="24" alt="Logo" title="Logo">
+							</picture>
+						</a>
+					</div>
+			        <div class="buscador">
+                       <form class="contenedor-buscador" role="search" action="" >
+                          <input class="bsc" id="search" type="search" placeholder="Busqueda" name="buscador" aria-label="Search through site content">
+						  <!-- <span class="clear" onclick="document.getElementById('search').value = ''"></span> -->
+
+                          <button class="container-icon-lupa" type="submit" aria-label="search">
+							<img class="icon-lupa" src="icons/search.svg" alt="icon-lupa" width="24" height="24" aria-hidden="true">
+						</button>
+                       </form>
+          	        </div><!--cerramos el div donde esta el buscador-->
+					<div class="icons-header-info-sesion-fav-cart cont-icon">
+						<ul class="icons-header">
+							<li>
+								<a href="./preguntas-fecuentes.html">
+									<svg version="1.1"  x="0px" y="0px" width="24" height="24" viewBox="0 0 28.4 28.3" style="enable-background:new 0 0 28.4 28.3;" xml:space="preserve" role="img">
+										<title>Atención al cliente</title>
+										<ellipse class="atencion__cliente-ellipse" cx="14.2" cy="14.2" rx="12.1" ry="12.1"/>
+										<path class="atencion__cliente-path" d="M10.7,10.8c-0.1-4.1,7.2-4.6,7.1,0.2c-0.3,3.5-3.8,3.2-3.9,7.1"/>
+										<circle class="atencion__cliente-circle st12" cx="13.9" cy="21.5" r="1"/>
+									</svg>
+								</a>
+							</li>
+
+							<li>
+								<a href="./inicia-sesion.html">
+									<svg version="1.1" x="0px" y="0px" width="24" height="24" viewBox="0 0 19.8 22.2" style="enable-background:new 0 0 19.8 22.2;" xml:space="preserve">
+										<title>Iniciar sesión</title>
+										<ellipse class="iniciar__sesion-ellipse" cx="9.9" cy="6.7" rx="4.5" ry="4.4"/>
+										<path class="iniciar__sesion-path" d="M14.4,12.9h0.4c1.4,0,2.5,1,2.7,2.3l0.4,2.8c0.1,1-0.6,1.9-1.6,1.9c0,0,0,0,0,0H3.9c-1,0-1.8-0.9-1.8-1.9 c0,0,0-0.1,0-0.1l0.4-2.8c0.2-1.3,1.3-2.3,2.7-2.3h0.3"/>
+									</svg>
+								</a>
+						</li>
+
+						<li>
+							<a href="./inicia-sesion.html">
+								<span class="insignia-fav">8</span>
+								<svg version="1.1" x="0px" y="0px" width="24" height="24" viewBox="0 0 23.8 23.5" style="enable-background:new 0 0 23.8 23.5;" xml:space="preserve">
+									<title>Favoritos</title>
+									<path class="favoritos-path" d="M19.5,5.1c-1.6-1.8-4.2-1.8-5.9,0L11.9,7l-1.8-1.9c-1.6-1.8-4.2-1.8-5.9,0c-0.8,0.9-1.2,2-1.2,3.2 c0,1.1,0.4,2.3,1.2,3.2l1.8,2l5.8,6.4l5.8-6.4l1.8-2c0.8-0.9,1.2-2,1.2-3.2C20.7,7.1,20.3,5.9,19.5,5.1z"/>
+								</svg>
+							</a>
+							</li>
+
+							<li>
+								<a href="./carrito-compra.html">
+									<span class="insignia-cart">2</span>
+									<svg version="1.1" x="0px" y="0px" width="24" height="24" viewBox="0 0 19.5 17.8" style="enable-background:new 0 0 19.5 17.8;" xml:space="preserve">
+										<title>Carrito de la compra</title>
+										<circle class="carrito__compra-circle st0" cx="6.5" cy="16.3" r="1.3"/>
+										<circle class="carrito__compra-circle st0" cx="15.5" cy="16.4" r="1.3"/>
+										<polyline class="carrito__compra-polyline st1" points="17.9,13.2 4.8,13.1 6.9,9.4 3.6,2.4 6.9,9.4 15.1,9.4 19,2.5 3.6,2.5 2.7,0.5 0,0.5"/>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</div>
+		        </div><!--Cerramos el contenedor logo, buscador, enlaces izquierda-->
+
+		    	<!--<nav class="contenedor contenedor-grid-nav">-->
+				<nav class="grid-menu-nav" id="grid-menu-nav">
+					<button type="button" id="btn-menu-cerrar" class="btn-menu-cerrar" title="Cerrar" aria-label="close">
+						<svg class="x-cerrar" aria-hidden="true" focusable="false" role="img" version="1.1" x="0px" y="0px" width="24" height="24" viewBox="0 0 24 24" xml:space="preserve">
+							<path class="x-cerrar" d="M3.9,20.1c-0.6-0.6-0.6-1.5,0-2L10,12L3.9,5.9c-0.6-0.6-0.6-1.5,0-2s1.5-0.6,2,0L12,10l6.1-6.1 c0.6-0.6,1.5-0.6,2,0c0.6,0.6,0.6,1.5,0,2L14,12l6.1,6.1c0.6,0.6,0.6,1.5,0,2c-0.6,0.6-1.5,0.6-2,0L12,14l-6.1,6.1C5.4,20.6,4.5,20.6,3.9,20.1z"/>
+						</svg><!-- Este e o botón de cerrar -->
+					</button>
+				<div class="categorias">
+					<h3 class="subtitulo">Categorias</h3>
+					<ul>
+						<li>
+							<a href="#" data-categoria="tecnologia-y-computadoras">Tecnología y Computadoras<svg class="fa-angle-right" aria-hidden="true" focusable="false" version="1.1" width="24" height="24" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+							<path class="chevron-izquierda" d="M19,36l-2.1-2.2l9.9-9.9l-9.9-9.9l2.1-2.2l12,12.1L19,36z"/>
+							</svg>
+						</a>
+						</li>
+						<li><a href="#" data-categoria="libros">Libros<svg class="fa-angle-right" aria-hidden="true" focusable="false" version="1.1" width="24" height="24" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+							<path class="chevron-izquierda" d="M19,36l-2.1-2.2l9.9-9.9l-9.9-9.9l2.1-2.2l12,12.1L19,36z"/>
+						</svg></a>
+						</li>
+						<li><a href="#" data-categoria="ropa-y-accesorios">Ropa y Accesorios<svg class="fa-angle-right" aria-hidden="true" focusable="false" version="1.1" width="24" height="24" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+							<path class="chevron-izquierda" d="M19,36l-2.1-2.2l9.9-9.9l-9.9-9.9l2.1-2.2l12,12.1L19,36z"/>
+						</svg></a>
+						</li>
+						<li><a href="#" data-categoria="hogar-y-cocina">Hogar y Cocina<svg class="fa-angle-right" aria-hidden="true" focusable="false" version="1.1" width="24" height="24" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+							<path class="chevron-izquierda" d="M19,36l-2.1-2.2l9.9-9.9l-9.9-9.9l2.1-2.2l12,12.1L19,36z"/>
+						</svg></a></li>
+						<li><a href="#" data-categoria="juegos-y-juguetes">Juegos y Juguetes<svg class="fa-angle-right" aria-hidden="true" focusable="false" version="1.1" width="24" height="24" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+							<path class="chevron-izquierda" d="M19,36l-2.1-2.2l9.9-9.9l-9.9-9.9l2.1-2.2l12,12.1L19,36z"/>
+						</svg></a>
+						</li>
+						<li><a href="#" data-categoria="salud-y-belleza">Salud y Belleza<svg class="fa-angle-right" aria-hidden="true" focusable="false" version="1.1" width="24" height="24" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+							<path class="chevron-izquierda" d="M19,36l-2.1-2.2l9.9-9.9l-9.9-9.9l2.1-2.2l12,12.1L19,36z"/>
+						</svg></a>
+						</li>
+						<li><a href="#" data-categoria="alimentos-y-bebidas">Alimentos y Bebidas<svg class="fa-angle-right" aria-hidden="true" focusable="false" version="1.1" width="24" height="24" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+							<path class="chevron-izquierda" d="M19,36l-2.1-2.2l9.9-9.9l-9.9-9.9l2.1-2.2l12,12.1L19,36z"/>
+						</svg></a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="contenedor-subcategorias">
+					<div class="subcategoria" data-categoria="tecnologia-y-computadoras">
+						<div class="enlaces-subcategoria br">
+							<button type="button" class="btn-regresar">
+								<svg class="fa-arrow-left" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left" role="img" width="24" height="24" viewBox="0 0 448 512">
+									<path fill="currentColor" d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z">
+									</path>
+								</svg>Regresar
+							</button>
+							<h3 class="subtitulo">Tecnología y Computadoras</h3>
+							<ul>
+								<li><a href="#">Laptops</a></li>
+								<li><a href="#">Tablets</a></li>
+								<li><a href="#">Computadoras de Escritorio</a></li>
+								<li><a href="#">Monitores</a></li>
+								<li><a href="#">Componentes</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="subcategoria" data-categoria="libros">
+						<div class="enlaces-subcategoria br">
+							<button type="button" class="btn-regresar">
+								<svg class="fa-arrow-left" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left" role="img" width="24" height="24" viewBox="0 0 448 512">
+									<path fill="currentColor" d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z">
+									</path>
+								</svg>Regresar
+							</button>
+							<h3 class="subtitulo">Libros</h3>
+							<ul>
+								<li><a href="#">Top Sellers</a></li>
+								<li><a href="#">Ciencia Ficción</a></li>
+								<li><a href="#">Fantasia</a></li>
+								<li><a href="#">Miedo</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="subcategoria" data-categoria="ropa-y-accesorios">
+						<div class="enlaces-subcategoria br">
+							<button type="button" class="btn-regresar">
+								<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left"
+								class="fa-arrow-left" role="img" width="24" height="24" viewBox="0 0 448 512">
+									<path fill="currentColor" d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z">
+									</path>
+								</svg>Regresar
+							</button>
+							<h3 class="subtitulo">Ropa y Accesorios</h3>
+							<ul>
+								<li><a href="#">Ropa</a></li>
+								<li><a href="#">Zapatos</a></li>
+								<li><a href="#">Accesorios</a></li>
+								<li><a href="#">Relojes</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="subcategoria" data-categoria="hogar-y-cocina">
+						<div class="enlaces-subcategoria br">
+							<button type="button" class="btn-regresar">
+								<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left"
+									class="fa-arrow-left" width="24" height="24" role="img" viewBox="0 0 448 512">
+									<path fill="currentColor" d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z">
+									</path>
+								</svg>Regresar
+							</button>
+							<h3 class="subtitulo">Hogar y Cocina</h3>
+							<ul>
+								<li><a href="#">Cocina</a></li>
+								<li><a href="#">Electrodomesticos</a></li>
+								<li><a href="#">Limpieza</a></li>
+								<li><a href="#">Baño</a></li>
+								<li><a href="#">Decoracion</a></li>
+								<li><a href="#">Arte</a></li>
+								<li><a href="#">Manualidades</a></li>
+								<li><a href="#">Jardin</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="subcategoria" data-categoria="juegos-y-juguetes">
+						<div class="enlaces-subcategoria br">
+							<button type="button" class="btn-regresar">
+								<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left" 	class="fa-arrow-left" role="img" width="24" height="24" viewBox="0 0 448 512">
+									<path fill="currentColor" d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z">
+								</path>
+								</svg>Regresar
+							</button>
+							<h3 class="subtitulo">Juegos y Juguetes</h3>
+							<ul>
+								<li><a href="#">Juguetes</a></li>
+								<li><a href="#">Juegos de Mesa</a></li>
+								<li><a href="#">Aire Libre</a></li>
+								<li><a href="#">Muñecas</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="subcategoria" data-categoria="salud-y-belleza">
+						<div class="enlaces-subcategoria br">
+							<button type="button" class="btn-regresar">
+								<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left" class="fa-arrow-left" role="img" width="24" height="24" viewBox="0 0 448 512">
+									<path fill="currentColor" d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z">
+								</path>
+								</svg>Regresar
+							</button>
+							<h3 class="subtitulo">Salud y Belleza</h3>
+							<ul>
+								<li><a href="#">Cuidado de la Piel</a></li>
+								<li><a href="#">Maquillaje</a></li>
+								<li><a href="#">Lociones</a></li>
+								<li><a href="#">Shampoo</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="subcategoria" data-categoria="alimentos-y-bebidas">
+						<div class="enlaces-subcategoria br">
+							<button type="button" class="btn-regresar" aria-label="regresar">
+								<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left"
+									class="fa-arrow-left" role="img" width="24" height="24" viewBox="0 0 448 512">
+									<path fill="currentColor" d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z">
+									</path>
+								</svg>Regresar
+							</button>
+							<h3 class="subtitulo">Alimentos y Bebidas</h3>
+							<ul>
+								<li><a href="#">Alimentos</a></li>
+								<li><a href="#">Bebidas</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!--Contenedor subcategorias-->
+				</nav><!--Contenedor Grid--><!--</nav>--><!--Contenedor contenedor grid-menu-nav-->
+	    	</div><!--Aquí Cerramo o DIV Menú navegación-->
+		</header><!--Cerramos la cabecera del la web, donde esta el nav, logo, buscardo...-->
+        <main>
+            <section class="section-contendor-pricipal-index row">
+				<h1 translate="no">Gatatín, gatatán, gatatero, gatatón</h1>
+
+                <div class="fila-dos grid-item row">
+
+                  <div class="img-index-fila-dos">
+					  <a href="#">
+                      	<img src="img/gatito_blanco_010.jpg" width="320" height="320" loading="lazy" alt="gatito blanco">
+					  </a>
+                        <h2>Gatito Blanco</h2>
+					  	<div class="container-descripcion-fila-dos">
+							<a href="#">
+                        		<p class="descripcion-foto-fila-dos">me lorem ipsum ipsum lorem. Some text that describes me lorem ipsum </p><br>
+                        		<p class="text">Contact text that describes</p>
+							</a>
+						</div>
+                  </div>
+                  <div class="img-index-fila-dos">
+					  <a href="#">
+                      	<img src="img/gatito_castaño_09.jpg" width="320" height="320" loading="lazy" alt="gatito castaño">
+					  </a>
+                        <h2>Gatito Castaño</h2>
+					  	<div class="container-descripcion-fila-dos">
+							<a href="#">
+                        		<p class="descripcion-foto-fila-dos">me lorem ipsum ipsum lorem. Some text that describes </p><br>
+                        		<p class="text">Contact text that describes</p>
+							</a>
+						</div>
+                  </div>
+                   <div class="img-index-fila-dos">
+					  <a href="#">
+                      	<img src="img/gatito_gris_09.jpg" width="320" height="320" loading="lazy" alt="gatito gris">
+					  </a>
+                        <h2>Gatito Gris</h2>
+					  	<div class="container-descripcion-fila-dos">
+							<a href="#">
+                        		<p class="descripcion-foto-fila-dos">me lorem ipsum ipsum lorem. Some text that describes me lorem ipsum </p><br>
+                        		<p class="text">Contact text that describes</p>
+							</a>
+						</div>
+                  </div>
+                  <div class="img-index-fila-dos">
+					  <a href="#">
+                      	<img src="img/gatito_negro_06.jpg" width="320" height="320" loading="lazy" alt="gatito negro">
+					  </a>
+                        <h2>Gatito Negro</h2>
+					  	<div class="container-descripcion-fila-dos">
+							<a href="#">
+                        		<p class="descripcion-foto-fila-dos">me lorem ipsum ipsum lorem. Some text that describes me lorem ipsum </p><br>
+                        		<p class="text">Contact text that describes</p>
+							</a>
+						</div>
+                  </div>
+              </div><!--Cerramos el grid-item fila-dos-->
+
+
+			<div class="articulos-recomendados contenedor row">
+			<div class="contenedor-titulo-controles">
+				<h3>Gatitos Recomendados</h3>
+				<div class="indicadores"></div>
+			</div>
+
+			<div class="contenedor-principal">
+				<button type="button" id="flecha-izquierda" class="flecha-izquierda" aria-labelledby="flecha-izquierda">
+					<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-left" class="svg-angle-left" role="img" width="25" height="45" viewBox="0 0 266 522">
+						<path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z">
+						</path>
+					</svg>
+				</button>
+
+				<div class="contenedor-carousel">
+					<div class="carousel">
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_gris_y_blanco_01.jpg" width="250" height="250" loading="lazy" alt="gatito">
+                            	<h4>Blanco</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_castaño_06.jpg" width="250" height="250" loading="lazy" alt="gatito">
+                            	<h4>Castaño</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_gris_01.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Gris</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_gris_y_blanco_01.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Blanco</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_negro_01.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Negro</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_pardo_01.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Pardo</h4>
+							</a>
+
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_blanco_02.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Blanco</h4>
+							</a>
+
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_castaño_02.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Castaño</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_gris_02.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Gris</h4>
+							</a>
+
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_gris_y_blanco_02.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Blanco</h4>
+							</a>
+
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_negro_02.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Negro</h4>
+							</a>
+
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_pardo_02.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Pardo</h4>
+							</a>
+
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_blanco_03.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Blanco</h4>
+							</a>
+
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_castaño_03.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Castaño</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_gris_03.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Gris</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_gris_y_blanco_03.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Blanco</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_negro_03.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Negro</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_pardo_03.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Pardo</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_blanco_04.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Blanco</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_castaño_04.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Castaño</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_gris_04.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>útimo</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_pardo_02.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Pardo</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_blanco_03.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Blanco</h4>
+							</a>
+
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_castaño_03.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Castaño</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_gris_03.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Gris</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_gris_y_blanco_03.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Blanco</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_negro_03.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Negro</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_pardo_03.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Pardo</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_blanco_04.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Blanco</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_gris_y_blanco_03.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Blanco</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_negro_03.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Negro</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_pardo_03.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Pardo</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_blanco_04.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Blanco</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_gris_y_blanco_03.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Blanco</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_negro_03.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Negro</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_pardo_03.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Pardo</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_blanco_04.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Blanco</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_pardo_03.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Pardo</h4>
+							</a>
+						</div>
+						<div class="articulo-recomendado-index">
+							<a href="#"><img src="img/gatito_blanco_04.jpg" width="250" height="250" loading="lazy" alt="gatito">
+								<h4>Blanco</h4>
+							</a>
+						</div>
+
+					</div>
+				</div>
+					<button type="button"  id="flecha-derecha" class="flecha-derecha" aria-label="flecha-derecha">
+						<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-right" class="svg-angle-right" role="img" width="25" height="45" viewBox="0 0 266 522">
+							<path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z">
+							</path>
+					</svg>
+				</button>
+				</div>
+			</div><!--Cerramos el carousel del fotos del index-->
+				<!--///////////////////////////////////////////////-->
+			<div class="fila-cuatro grid-item row">
+                <div class="img-index-fila-cuatro">
+					<a href="#">
+                  		<img src="img/gatito_blanco_07.jpg" loading="lazy" alt="gatito">
+					</a>
+						<h2>Gatito Blanco</h2>
+						<div class="container-descripcion-fila-cuatro">
+							<a href="#">
+      							<p class="text-fila-cuatro">Some text that describes me lorem ipsum ipsum lorem.</p>
+							</a>
+						</div>
+                </div>
+                <div class="img-index-fila-cuatro">
+					<a href="#">
+                  		<img src="img/gatito_gris_04.jpg" loading="lazy" alt="gatito">
+					</a>
+						<h2>Gatito Gris</h2>
+						<div class="container-descripcion-fila-cuatro">
+							<a href="#">
+      							<p class="text-fila-cuatro">Some text that describes me lorem ipsum ipsum lorem.</p>
+							</a>
+						</div>
+                </div>
+                <div class="img-index-fila-cuatro">
+					<a href="#">
+                  		<img src="img/gatito_pardo_06.jpg" loading="lazy" alt="gatito">
+					</a>
+						<h2>Gatito Triste</h2>
+						<div class="container-descripcion-fila-cuatro">
+							<a href="#">
+      							<p class="text-fila-cuatro">Some text that describes me lorem ipsum ipsum lorem.</p>
+							</a>
+						</div>
+                </div>
+                <div class="img-index-fila-cuatro">
+					<a href="#">
+                  		<img src="img/gatito_gris_y_blanco_07.jpg" loading="lazy" alt="gatito">
+					</a>
+						<h2>Gatito Bubolico</h2>
+							<div class="container-descripcion-fila-cuatro">
+								<a href="">
+      								<p class="text-fila-cuatro">Some text that describes me lorem ipsum.</p>
+								</a>
+                			</div>
+				</div>
+            </div>
+			<!--Cerramos el contedeor de la fila cuatro-->
+			<!--Fila Cinco-->
+			<div class="fila-cinco grid-item row">
+        		<div class="icons-info-index envio"><img class="icons-info" src="icons/recycling.svg" width="55" height="55" alt="recycling" title="recycling">
+            		<h4>Reciclables</h4>
+                		<a class="mas-info" href="#">Más info...</a>
+        		</div>
+
+				<div class="icons-info-index devolucion"><img class="" src="icons/devolucion.svg" width="55"  height="55" alt="Devoluciones" title="Devolución">
+					<h4>Devoluciones</h4>
+						<a class="mas-info" href="#"><span>Más info...</span></a>
+				</div>
+
+        		<div class="icons-info-index entrega"><img class="" src="icons/camion.svg" width="55" height="55"  alt="Entrega" title="Entrega 24/72 H">
+					<h4>Entrega 24/72 H</h4>
+                		<a class="mas-info" href="#"><span>Más info...</span></a>
+        		</div>
+
+        		<div class="icons-info-index pago-seguro"><img class="" src="icons/pago-seguro.svg" width="55" height="55"  alt="Pago seguro" title="Pago seguro">
+					<h4>Pago seguro</h4>
+                		<a class="mas-info" href="#"><span>Más info...</span></a>
+        		</div>
+
+        		<div class="icons-info-index formas-de-pago"><img class="" src="icons/tarjeta-de-credito.svg" width="55" height="55" alt="tarjeta de credito" title="Formas de pago">
+            		<h4>Formas de pago</h4>
+                		<a class="mas-info" href="#"><span>Más info...</span></a>
+        		</div>
+    		</div><!--Cerramos el contenedor de la fila cinco-->
+			<div class="fila-seis grid-item row">
+
+            	<div class="grid-item diapositivas-index">
+					<h3>Mira que riquiños</h3>
+						<ul class="ul-diap-index">
+                			<li><a href="#"><img src="img/gatito_blanco_01.jpg" loading="lazy" alt="gatos"><span>Lindo</span></a></li>
+                			<li><a href="#"><img src="img/gatito_castaño_04.jpg" loading="lazy" alt="gatos"><span>Lindo</span></a></li>
+                			<li><a href="#"><img src="img/gatito_gris_08.jpg" loading="lazy" alt="gatos"><span>Lindo</span></a></li>
+                			<li><a href="#"><img src="img/gatito_gris_y_blanco_09.jpg" loading="lazy" alt="gatos"><span>Lindo</span></a></li>
+						</ul>
+					<div>
+						<a class="ver-mas-info" href="#"><span>Ver más</span></a>
+					</div>
+              	</div>
+
+              	<div class="grid-item diapositivas-index">
+				  	<h3>Los más deseados</h3>
+				  		<ul class="ul-diap-index">
+             				<li><a href="#"><img src="img/gatito_blanco_05.jpg" loading="lazy" alt="gatos"><span>Lindo</span></a></li>
+                			<li><a href="#"><img src="img/gatito_castaño_06.jpg" loading="lazy" alt="gatos"><span>Lindo</span></a></li>
+                			<li><a href="#"><img src="img/gatito_gris_01.jpg" loading="lazy" alt="gatos"><span>Lindo</span></a></li>
+                			<li><a href="#"><img src="img/gatito_gris_y_blanco_010.jpg" loading="lazy" alt="gatos"><span>Lindo</span></a></li>
+						</ul>
+					<div>
+						<a class="ver-mas-info" href="#"><span>Ver más</span></a>
+					</div>
+              	</div>
+				<div class="grid-item diapositivas-index">
+					<h3>Gatitos lindos</h3>
+						<ul class="ul-diap-index">
+             				<li><a href="#"><img src="img/gatito_blanco_07.jpg" loading="lazy" alt="gatos"><span>Lindo</span></a></li>
+                			<li><a href="#"><img src="img/gatito_castaño_06.jpg" loading="lazy" alt="gatos"><span>Lindo</span></a></li>
+                			<li><a href="#"><img src="img/gatito_gris_010.jpg" loading="lazy" alt="gatos"><span>Lindo</span></a></li>
+                			<li><a href="#"><img src="img/gatito_gris_y_blanco_02.jpg" loading="lazy" alt="gatos"><span>Lindo</span></a></li>
+						</ul>
+					<div>
+						<a class="ver-mas-info" href="#"><span>Ver más</span></a>
+					</div>
+              	</div>
+            </div><!--Cerramos la fila seis-->
+           </section>
+        </main>
+
+	</div><!--aquí cerramos o contenedor da web-->
+
+		<footer class="pie-de-pagina grid-item row">
+			<div class="contenedor-pie-pagina grid-item">
+				<div class="container-icons-redes-sociales">
+					<h4>Cotillea los gatetes en:</h4>
+					<ul class="lista-resdes-sociales">
+						<li>
+							<a href="#">
+								<img class="icon-rss twitter" src="icons/twitter.svg" width="24" height="24" title="Twitter" loading="lazy" alt="twitter">
+								<span>Twitter</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img class="icon-rss facebook" src="icons/facebook.svg" width="24" height="24"  title="Facebook" loading="lazy" alt="facebook">
+								<span>Facebook</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img class="icon-rss instagram" src="icons/instagran.svg" width="24" height="24"  title="Instagram" loading="lazy" alt="instagran">
+								<span>Instagram</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img class="icon-rss telegram" src="icons/telegran.svg" width="24" height="24"  title="Telegram" loading="lazy" alt="telegram">
+								<span>Telegram</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img class="icon-rss whatsApp" src="icons/whatsapp.svg" width="24" height="24"  title="WhatsApp" loading="lazy" alt="whatsapp">
+								<span>WhatsApp</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="container-formas-pago">
+					<h4>Formas de pago</h4>
+					<ul class="opciones-pago">
+						<li>
+							<a href="#">
+								<img class="icons-pago" src="icons/tarjeta-paypal.svg" width="24" height="24" alt="Pay Pal" title="Pay Pal">
+								<span>PayPal</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img class="icons-pago" src="icons/tarjeta-mastercard.svg" width="24" height="24" alt="MasterCard" title="MasterCard">
+								<span>MasterCard</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img class="icons-pago" src="icons/tarjeta-visa.svg" width="24" height="24" alt="Visa" title="Visa">
+								<span>Visa</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img class="icons-pago" src="icons/apple-pay.svg" width="24" height="24" alt="Apple Pay" title="Apple Pay">
+								<span>Apple Pay</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img class="icons-pago" src="icons/google-pay-logo.svg" width="24" height="24" alt="Google Pay" title="Google Pay">
+								<span>Google Pay</span>
+							</a>
+						</li>
+						<!--<li><a href="#"><img class="iconspago-amazonpay" src="icons/amazon_pay_logo.svg" alt="Amazon Pay" title="Amazon Pay"><span>Amazon Pay</span></a>
+										</li>-->
+					</ul>
+				</div>
+				<div class="container-compra-online">
+					<h4>Compra online</h4>
+					<ul class="opciones-compra-online">
+						<li><a href="#"><span>Mi cuenta</span></a></li>
+						<li><a href="#"><span>Mis pedidos</span></a></li>
+						<li><a href="#"><span>Formas de pago</span></a></li>
+						<li><a href="#"><span>Gastos de envío</span></a></li>
+						<li><a href="#"><span>Devoluciones</span></a></li>
+						<li><a href="#"><span>Pago seguro</span></a></li>
+					</ul>
+				</div>
+				<div class="container-corporativa">
+					<h4>Información corporativa</h4>
+						<ul class="opciones-compra-online">
+							<li><a href="#">Condiciones de uso</a></li>
+							<li><a href="#">Politica de privacidad</a></li>
+							<li><a href="#">Politica de Cookies</a></li>
+							<li><a href="#">Entidad</a></li>
+						</ul>
+				</div>
+
+			</div>
+			<!--Aquí cerramos el contenedor redes Sociales, Compra online y Formas de Pago-->
+
+			<div class="contenedor-privacidad">
+					<div class="condiciones favicon-footer">
+						<img src="./icons/favicon.svg" width="20" height="20" alt="">
+						<p>&copy;&nbsp;2020-2022 gatetes tiene todos los derechos reservados. Si no cumples la ley, te arañamos
+						</p>
+					</div>
+
+			</div><!--Cerramos el Contenedo de plitica de Privacidad-->
+		</footer>
+
+</body>
+</html>

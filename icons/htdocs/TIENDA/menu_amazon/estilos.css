@@ -1,0 +1,858 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin: 0; padding: 0; border: 0; box-sizing: border-box;}
+html{scroll-behavior: smooth; font-size:100%;}/*permite un desplazamiento suave por toda la página*/
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, img, main, div {
+	display: block;
+}
+:root{
+	--rojo: #E50914;
+	--color-textos: #202124;
+	--gris-claro: #f1f3f4;
+	--gris-google-04: #5F6368;
+	--sombra: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	--blanco: #fff;
+}
+
+html, body {
+	outline: 0;
+	background: transparent;
+   /* height: 100%;*/
+    overflow: auto;
+}
+body{
+    
+    font-family:'Roboto', "sans-serif";
+    text-align: justify;
+    vertical-align: baseline;
+    /*font-weight: 400;*/
+    /*font-size: .875rem;esto creo que sobra teño que velo*/
+    line-height: 1.3;
+    width: 100vw;
+	height: 100vh;
+    display: block !important;/*Temporalmente quitamos esto para css GRID*/
+	min-height: 100%;/*min-height, define la altura minima del elemento body*/ 
+}
+
+input{caret-color: #E50914;}/*Cambiamos el color del cursor*/
+blockquote, q { /*Esto es para la comillas pero todavia no se muy bien lo que significa*/
+	quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;/*Esto elimina la separacion entre celdas de la tabla*/
+	border-spacing: 0;/*Establece el espaciado de los bordes de una tabla*/
+}
+hr { /* Esto cambia el el color de la etiqueta <hr> para adaptarlo a mis necesidades */
+	display: block;
+	height: 1px;
+	borderA: 1px solid #E50914;
+	border-top: 1px solid #E50914;
+	margin: 1em 0;
+	padding: 0;
+    border-bottomA: 1px solid #E50914;
+    backgroundA: #999;
+}
+input, select {
+	vertical-align: middle;/*Esto es para poner los textos en la mitad de la caja del texto*/
+}
+a[href],/* en los enlaces, input, label, select, button, el cursor es el pointer (dedo)*/
+input[type='submit'],
+input[type='image'],
+label[for],
+select,
+button,
+.pointer {
+    cursor: pointer;
+}
+a{
+    display: block;/* las etiquetas <a> ocupan todo el bloque*/
+    text-align: center; /*El texto se alinea en el centro*/
+	font-size: 100%;/*esto es el tamaño de letra al 100%; pero creo que se pude quitar*/
+	vertical-align: baseline;
+	background: transparent;
+    text-decoration: none;
+}
+ol, ul{
+	list-style-type: none;
+    overflow: hidden;/*El desbordamiento de la caja se recorta y el resto se oculta*/
+}
+
+.row::after{/*Las columnas dentro de una fila están todas flotando a la izquierda y, por lo tanto, se eliminan del flujo de la página y los demás elementos se colocarán como si las columnas no existieran. Para evitar esto, agregaremos un estilo que borre el flujo:*/
+    content: "";
+    display: table;
+    clear: both;
+}
+.main-grid>*{ display: flex;} /*le damos al contendeor de la web un display flex*/
+.grid-item{ display: grid;}
+.grid-container{/*Este es el contenedor que contiene toda la web*/
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(1, minmax(10px, 1fr));/*isto aquí creo que sobra*/
+    grid-template-rows: repeat(1, minmax(10px, 1fr));
+    grid-gap: 3rem;
+    background-color: transparent;
+}
+
+.header{/*Este es el contenedor del la cabezera de la web*/
+    
+}
+.contenedor-cabezera{
+    display: grid;
+    grid-column: 2 / span 12;
+	background-color: #fff;
+	padding: 20px 25px;
+    justify-content: space-between;
+}
+.contenedor-logo-buscador-enlaces{
+	display: grid;
+	grid-template-columns: 1fr 2fr 7fr 3fr;
+	grid-gap: 42px;
+}
+
+/* ------------------------- */
+/* Enlaces del NAV */
+/* ------------------------- */
+
+.menu-nav .contenedor-botones-menu {
+	display: none;/*los iconos de dispositivo movil los tenemos ocultos en escritorio*/
+	justify-content: space-between;
+}
+
+.menu-nav .contenedor-botones-menu button {
+	font-size: 20px;/*tamaño de fuente de los iconos de escritorio*/
+	color: var(--rojo); /**/
+	padding: 10px;/* un relleno de 10px*/
+	border: 1px solid transparent;/*Este borde se puede quitar*/
+	display: inline-block;
+	cursor: pointer;
+	background: none;/*le quitamos el fondo que por defecto tienen los botones*/
+}
+
+.menu-nav .contenedor-botones-menu button:hover {
+	border: 1px solid rgba(255,255,255, .4);/*Este hover tambien lo puedo quitar*/
+}
+
+.menu-nav .contenedor-botones-menu .btn-menu-cerrar {
+	display: none;/*Los botones del menu solo en dispositvo movil,En tamaño escritorio esta oculto*/
+}
+
+.menu-nav .contenedor-botones-menu .btn-menu-cerrar.activo {
+	display: inline-block;/*botones de escritorio*/
+}
+
+.menu-nav .contenedor-enlaces-nav {
+	display: flex;/*Esto es para posicionar los enlaces del menu*/
+	justify-content: space-between;
+	align-items: center;
+}
+
+.menu-nav .btn-departamentos {
+	color: var(--color-textos);
+	padding: 7px;/*relleno*/
+	border-radius: 3px;
+	display: flex;/**/
+	align-items: flex-end;/*El icono de departamentos lo posicionamos al centro y hacia abajo, isto e interesnte para a lupa*/
+	border: 1px solid transparent;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.menu-nav .btn-departamentos i {
+	margin-left: 10px;/* esto es para posicionar la flechita que esta al lado del texto departamentos*/
+	position: relative;/**/
+	bottom: 3px;/**/
+}
+
+.menu-nav .btn-departamentos:hover {/*este borde se pode borrar*/
+	border: 1px solid rgba(255,255,255, .4);
+}
+
+.menu-nav .btn-departamentos span {/*Este span esta cerrando la palabra departamentos*/
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.menu-nav .contenedor-enlaces-nav .enlaces a {/*ESto creo que se pode borrar*/
+	color: #ccc;
+	border: 1px solid transparent;
+	padding: 7px;
+	border-radius: 3px;
+	font-size: 14px;
+}
+
+.menu-nav .contenedor-enlaces-nav .enlaces a:hover {/*isto porque e para os enlaces do nav sobra*/
+	border: 1px solid rgba(255,255,255, .4);
+}
+
+/* ------------------------- */
+/* GRID */
+/* ------------------------- */
+.contenedor-grid-nav {
+	position: relative;
+}
+
+.grid-menu-nav {
+	width: 30%;
+	display: none;/*ESto es para que este oculto por defecto*/
+	position: absolute;/*Con position absolute sacamos grid de contenedor nav*/
+	top: 5px;/*lo separamos de la parte superior 5px*/
+	z-index: 1000;/*Para que el menu quede porencima de otros elementos*/
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 1fr;
+	grid-template-areas: "categorias subcategorias";/*Creamos las areas de las  categorias*/	
+}
+
+.grid-menu-nav.activo {
+	display: grid;/*Cuando con javascript tenga la clase de activo se muestra el menu*/	
+}
+
+.grid-menu-nav::before {/*Esto es triangulito gris*/
+	content: "";
+	display: block;
+	background: transparent;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-bottom: 8px solid #F2F2F2;
+	position: absolute;
+	top: -8px;
+	left: 65px;	
+}
+
+.grid-menu-nav > ul {/*Todos del div del grid tienen...*/
+	background: #fff;/*fondo blanco*/
+	box-shadow: 0px 3px 6px rgba(0,0,0,.10);/*sombra*/
+/*	border: 1px solid #F2F2F2;*//* borde de color*/
+}
+
+/* ------------------------- */
+/* Categorias */
+/* ------------------------- */
+
+.grid-menu-nav .btn-regresar {/*Estos son los botones de regresar*/
+	background: #232F3E;
+	color: #fff;
+	border: none;
+	padding: 10px;
+	border-radius: 3px;
+	margin: 20px;
+	font-size: 16px;
+	cursor: pointer;
+	display: none;
+}
+
+.grid-menu-nav .btn-regresar i {
+	margin-right: 10px;
+}
+
+.grid-menu-nav .categorias {
+	grid-area: categorias;
+	padding-top: 10px;
+	min-height: 300px;
+	overflow: auto;
+}
+
+.grid-menu-nav .categorias .subtitulo {
+	display: none;/*para quitarlo de pantalla*/
+}
+
+.grid-menu-nav .categorias a {/*Esto es para la flechita de categorias*/
+	color: #000;/*color negro*/
+	font-size: 14px;/*tamaño de fuente*/
+	display: flex;/*Display flex*/
+	justify-content: space-between;/*Esto es para posicinnar los elemento a derecha e izquierda*/
+	padding: 10px 20px;/*Padding arriba y abajo de 20px y a la izquierda y derecha de 10px*/
+}
+
+.grid-menu-nav .categorias a i {
+	display: none;/*para que no se muestre el flechita de todas las categorias*/
+}
+
+.grid-menu-nav .categorias a:hover {/*A los enlaces al pasar el cursor por encina color Naranja*/
+	color: var(--rojo);
+	font-weight: bold;
+}
+
+.grid-menu-nav .categorias a:hover i {
+	display: inline-block;/*Esto es la pasar el cursor por en cima*/
+}
+
+/* ------------------------- */
+/* Subcategorias */
+/* ------------------------- */
+
+.grid-menu-nav ul> .contenedor-subcategorias {
+	grid-area: subcategorias;/*Esta grid-area abarcar el espacio subcategorias, es donde estan las subcategorias del menu*/
+}
+
+.grid-menu-nav .subcategoria {/*acedemos a cada una de las subcategorias*/
+	display: none;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	height: 100%;
+}
+
+.grid-menu-nav .subcategoria.activo {
+	display: grid;
+}
+
+.grid-menu-nav .subcategoria img {/*Esto lo puedo eliminar del menu*/
+	width: 100%;
+	vertical-align: top;
+	height: 100%;
+	object-fit: cover;/*esto es para que la img no se deforme*/
+}
+
+.grid-menu-nav .enlaces-subcategoria {
+	padding-top: 10px;
+	height: 100%;
+	max-height: 300px;/*Esto es el alto maximo del menu*/
+	overflow: auto;
+}
+
+.grid-menu-nav .enlaces-subcategoria a {
+	color: #000;
+	display: block;/**/
+	font-size: 14px;
+	padding: 10px 20px;/*Padding arriba y abajo de 20px y a la izquierda y derecha de 10px*/
+}
+
+.grid-menu-nav .enlaces-subcategoria a:hover {
+	color: var(--rojo);
+}
+
+.grid-menu-nav .subtitulo {/*Estilos de los subtitulos*/
+	font-size: 18px;
+	font-weight: normal;
+	color: #E47911;
+	padding: 10px 20px;
+}
+
+.grid-menu-nav .banner-subcategoria a {/*Esto es delas fotos y creo que se puede eliminar*/
+	display: block;
+	height: 100%;
+}
+
+.grid-menu-nav .galeria-subcategoria {
+	display: flex;
+	flex-wrap: wrap;/*Esto es para que los elementos puedean ocupar varias lineas de espacio*/
+	align-content: start;/*esto permite que la imagen abarque todo el menu*/
+}
+
+.grid-menu-nav .galeria-subcategoria a {/*Esto es de las fotos y creo que tambien se puede eliminar*/
+	width: 50%;
+	height: 50%;
+}
+
+/* ------------------------- */
+/* Mediaqueies */
+/* ------------------------- */
+@media screen and (max-width: 1000px) {/*Pantalla menor de 1000px*/
+	.menu-nav .contenedor-enlaces-nav {
+		padding: 0 10px;
+	}
+
+	.menu-nav .contenedor-nav {
+		width: 100%;
+	}
+
+}
+/*--------Dispositivos medianos tebletas horizontales-------*/
+@media screen and (max-width: 768px) {/*Pantalla menor de 768px*/
+	.menu-nav .contenedor-nav {
+		width: 90%;/*ancho del contenedor 90%*/
+	}
+
+	.menu-nav .contenedor-botones-menu {
+		display: flex;/*Esto es para que se muestre el menu en dispositivos moviles*/
+        /*width: 30px;*//*Isto e para quitar*/
+	}
+
+	.menu-nav .contenedor-enlaces-nav {
+		padding: 20px;
+		flex-direction: column;/*los enlaces en vez de quedar uno a lado del otro, se ponen en columna*/
+		align-items: flex-start;/*los elementos se pone a la izquierda y hacia la pare de arriba*/
+		justify-content: flex-start;/*los elementos se pone a la izquierda y hacia la pare de arriba*/
+		position: fixed;/*para posicionar el menu a la izquierda*/
+		left: 0;
+		height: 100vh;
+		width: 70%;
+		z-index: 2000;
+		transition: .3s ease all;
+		transform: translate(-100%);/*sacamos el menu fuera de pantalla*/
+	}
+
+	.menu-nav .contenedor-enlaces-nav.activo {
+		transform: translate(0%);
+	}
+
+	.menu-nav .btn-departamentos {
+		width: 100%;
+		align-items: center;
+		justify-content: space-between;
+		cursor: pointer;
+	}
+
+	.menu-nav .btn-departamentos i {
+		position: static;
+		margin-left: 20px;
+		transform: rotate(-90deg);
+	}
+
+	.menu-nav .enlaces {
+		width: 100%;
+	}
+
+	.menu-nav .enlaces a {
+		display: block;
+		margin: 10px 0;
+		padding: 10px;
+	}
+
+	.grid-menu-nav {
+		display: grid;
+		transition: .3s ease all;
+		transform: translateX(-100%);
+		z-index: 3000;
+		width: 80%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100vh;
+		grid-template-areas: "categorias categorias categorias categorias";
+	}
+
+	.grid-menu-nav.activo {
+		transform: translateX(0%);
+	}
+
+	.grid-menu-nav::before {
+		display: none;
+	}
+
+	.grid-menu-nav .btn-regresar {
+		display: inline-block;
+	}
+
+	.grid-menu-nav .categorias .subtitulo {
+		display: block;
+	}
+
+	.grid-menu-nav .contenedor-subcategorias {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		transition: .3s ease all;
+		transform: translateX(-100%);
+		overflow: auto;
+	}
+
+	.grid-menu-nav .contenedor-subcategorias.activo {
+		transform: translateX(0%);
+	}
+
+	.grid-menu-nav .contenedor-subcategorias .subcategoria {
+		grid-template-columns: 1fr;
+	}
+
+	.grid-menu-nav .contenedor-subcategorias .banner-subcategoria {
+		width: 100%;
+		min-height: 250px;
+		max-height: 350px;
+	}
+
+	.grid-menu-nav .enlaces-subcategoria {
+		min-height: 50vh;
+		overflow: auto;
+	}
+
+	.grid-menu-nav .contenedor-subcategorias .galeria-subcategoria a {
+		width: 25%;
+		height: 100%;
+	}
+	/*------------------------------*/
+	/*---Fin del menu de navegación*/
+	/*----------------------------*/
+	/*-----Contenedor Cabezera----*/
+   .contenedor-cabezera{
+        margin-bottom: 0px;
+    }
+	/*----Fin contenedor cabezera-----*/
+	/*-----Buscador----*/
+    .buscador{
+        grid-row: 2/3;
+        grid-column: 1 / 8;
+        width: 100%;
+    }
+	.buscador::after{
+		content: "";
+		clear: both;
+		display: table;
+	}
+	/*------Fin del Buscador-----*/
+	.section-contendor-pricipal-index>.fila-dos, .section-contendor-pricipal-index>.fila-cuatro{
+    grid-template-columns: repeat(2, minmax(10px, 1fr)); 
+    grid-gap: 2rem;
+    justify-content: space-between;/*vale, ya tenemos los elementos alineados a la izquierda y derecha*/
+}
+	/*---Slider del index------*/
+	.articulos-recomendados .contenedor-carousel .carousel .articulo-recomendado-index img {
+		width: 100%;
+		height: auto;
+		vertical-align: top;
+		border-radius: 50%;
+		object-fit: cover;
+		scroll-snap-align: start;
+		scroll-snap-stop: always;
+    	flex: 0 0 150px;
+}
+	.articulos-recomendados .contenedor-carousel .carousel{
+		 display: flex;
+         gap:5px;
+         overflow-x: auto;
+         scroll-snap-type: x mandatory;
+		 scroll-padding: 0 0 0 50px;
+		-webkit-overflow-scrolling: touch; /* Importante para el sistema iOS */
+		
+	}
+	.articulos-recomendados .contenedor-carousel .carousel .articulo-recomendado-index{
+		/*min-width: 10%;*/
+		width: 100%;
+		height: auto;
+		transition: .6s ease all;
+}
+	.articulos-recomendados .indicadores,/*isto e para ocultar as flechas*/
+	.articulos-recomendados .flecha-izquierda,
+	.articulos-recomendados .flecha-derecha {
+		display: none;
+	}
+	
+	/*------Fin del slider del index----*/
+
+}
+/*-------Dispositivos pequeños, teléfonos y pantallas de menos de 600px----*/
+@media only screen and (max-width: 600px) {
+	
+	}
+.logo img{
+    display: flex;
+    margin: 0 auto;
+	width: 100%;
+    height: auto;
+}
+.logo {
+    top: 0;
+    left: 0;
+    margin: auto 0;
+}
+/*-------------------------------------------------*/
+/*---------Cerramos Mediaqueies de 600px----------*/
+/*-----------------------------------------------*/
+
+.buscador{
+    background: #fff;/*fondo blanco*/
+    display: grid;
+    grid-template-columns: repeat(1, minmax(10px, 1fr));
+    border: 1px solid #dfe1e5;/*borde 1 pixel, color gris*/
+    height: auto;/*alto 45px*/
+    width: 100%;/*ancho 100%*/
+    border-radius: 30px;/*borde con un radio de 24px*/
+    margin: 0 auto;
+	justify-content: space-between;/*Distribuir items uniformemente el primer item al inicio, el último al final */
+    /*z-index: 2;/*nivel de apilamiento*/
+	flex: 100%;
+}
+
+form.contenedor-buscador{/*etiqueta form contenedor donde esta el buscador*/
+    background-color: transparent;/*transparente*/
+	flex: 100%;
+    /*border: 0;*//*esto creo que sobra*/
+    outline: none !important;
+    width: 100%;/*esto creo que sobra*/
+    margin: 0 auto;/*para que se quede centrado*/
+    display: flex;/*hace que el contenedor se vuelva flexible*/
+	
+}
+.icon-lupa{ padding: 5px; width: 35px;  margin: 0 auto; }
+
+input:first-child.bsc[type=search]{/*esto es la etiqueta input del buscador CON LA SEUDO CLASE FIRST-CHILD DAMOS ESTOS ESTILOS*/
+    width: 100%;/*Ancho 100%*/
+    color: rgba(0,0,0, .87);/*Color del texto*/
+    padding: 0px 25px;
+    margin: 0 auto;/*Esto para alienar el texto dentro del buscador*/
+    display: inline-block;/*permite establecer un ancho y un alto, no agrega salto de linea,puede añadir otros elementos a su lado*/
+    background-color: transparent;/*transparent*Esto es interesante*/
+    border: 0;/*esto es para quitar el borde azul que por defecto ponen los navegadores****tengo que recordareme de poner un estilo de borde*/
+    outline: none !important;/*esto es para quitar el borde azul que por defecto ponen los navegadores*/
+    font-size: 16px;
+	
+}
+
+.buscador:hover{/*esto es el efecto hover de la caja donde esta el buscador*/
+    border-color: rgba(223,225,229,0);
+    box-shadow: 0 1px 4px 0 rgba(32,33,36,0.28);
+}
+
+form> button{
+    /*float: right;*//*esto es de la lupa del buscador de momento lo voy a sacar, si da problemas lo tengo que volver a poner*/
+    padding: 6px 20px;
+    margin: auto;/*esto creo que sobra*/
+    background-color: transparent;
+    border: 0;/*quitamos el borde azul que por defecto ponen los navegadores*/
+    outline: 0 !important;/*quitamos el borde azul que por defecto ponen los navegadores*/
+	
+}
+
+.contenedor-cabezera .contenedor-nav {/*Este es el contenedor que contiene el botón departamentos*/
+	margin: auto;
+	width: 100%;/*Este width creo que podo quitalo*/
+	/*max-width: 1200px;*/
+}
+
+.icons-header-info-sesion-fav-cart{/*Este el el ul que contiene la lista de los iconos*/
+    display: flex;
+    flex-direction: row;/*iconos ordenados del izquierda a derecha*/
+    order: 5;/*establece los elementos en orden dentro de un display flex*/
+}
+.icons-header-info-sesion-fav-cart> li{
+    width: 20%;
+}
+.icons-header-info-sesion-fav-cart li a{
+    float: left;
+    /*width: 30%;*/
+    text-align: center;
+    padding: 12px 0;
+}
+/*Este es el primer <div> del index, contiene 3 fotos*/
+.section-contendor-pricipal-index{margin: auto; width: 90%;}
+.fila-dos{
+    grid-template-columns: repeat(4, minmax(10px, 1fr)); 
+    grid-gap: 2rem;
+    justify-content: space-between;/*vale, ya tenemos los elementos alineados a la izquierda y derecha*/
+}
+
+.img-index {box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);}
+.img-index>img{width: 100%; height: auto; object-fit: cover;}/*esto es para que la img no se deforme*/
+/*--------Fin del primer <div> del index, que contiente 4 fotos------------*/
+
+/*-----Este es el contenedor que contiene el carousel de fotos del index----*/
+
+/* ---- ----- ----- Contenedor Titulo y Controles ----- ----- ----- */
+.contenedor-titulo-controles {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+	margin-bottom: 1rem;
+}
+
+.contenedor-titulo-controles h3 {
+	color: var(--rojo);
+	font-size: 1.5rem;
+}
+
+.contenedor-titulo-controles .indicadores button {
+	background-color: var(--gris-google-04);
+	height: 5px;
+	width: 20px;
+	cursor: pointer;
+	border: none;
+	margin-right: 5px;
+	vertical-align: bottom;/*Alineamos los botoncitos a la parte baja del contenedor*/
+}
+
+.contenedor-titulo-controles .indicadores button:hover,
+.contenedor-titulo-controles .indicadores button.activo {
+	background-color: var(--rojo);
+}
+
+
+/* ---- ----- ----- Contenedor Principal y Flechas ----- ----- ----- */
+.articulos-recomendados {
+	margin-bottom: 2rem;
+}
+
+.articulos-recomendados .contenedor-principal {
+	display: flex;
+	align-items: center;
+	position: relative;
+	box-shadow: var(--sombra);
+	background-color: var(--gris-claro);
+}
+
+.articulos-recomendados .contenedor-principal .flecha-izquierda,
+.articulos-recomendados .contenedor-principal .flecha-derecha {
+	position: absolute;
+	border: none;
+	background: rgba(0,0,0,0.3);
+	font-size: 40px;
+	height: 50%;
+	top: calc(50% - 25%);
+	line-height: 40px;
+	width: 50px;
+	color: #fff;
+	cursor: pointer;
+	z-index: 500;
+	transition: .2s ease all;
+}
+
+.articulos-recomendados .contenedor-principal .flecha-izquierda:hover,
+.articulos-recomendados .contenedor-principal .flecha-derecha:hover {
+	background: rgba(0,0,0, .9);
+}
+
+.articulos-recomendados .contenedor-principal .flecha-izquierda {
+	left: 0;
+}
+
+.articulos-recomendados .contenedor-principal .flecha-derecha {
+	right: 0;
+}
+
+/* ---- ----- ----- Carousel ----- ----- ----- */
+.articulos-recomendados .contenedor-carousel {
+	width: 100%;
+	padding: 20px 0 10px 0px;
+	overflow: hidden;
+	scroll-behavior: smooth;
+}
+
+.articulos-recomendados .contenedor-carousel .carousel {
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 0.6rem;
+}
+
+.articulos-recomendados .contenedor-carousel .carousel .articulo-recomendado-index{
+	min-width: 10%;
+	height: auto;
+	transition: .6s ease all;
+}
+
+
+.articulos-recomendados .contenedor-carousel .carousel .articulo-recomendado-index img {
+	width: 100%;
+	height: auto;
+	vertical-align: top;
+	border-radius: 50%;
+	object-fit: cover;
+}
+.contenedor-carousel .carousel .post-info h4{
+	align-items: center;
+	vertical-align: middle;
+	padding-top: 3px;
+	color: var(--gris-google-04);
+	margin-bottom: 1.5rem;
+}
+/*----------Fin del carousel del index------------*/
+/*Contenedor que tiene las cuatro fotos del index*/
+ .fila-cuatro{
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+    justify-content: space-between;/*vale ya tenemos los elementos alineados a la izquierda y derecha*/
+}
+/*Fin del contenedor que tiene las cuatro fotos del index*/
+/*Container envio discreto, entrega, pago seguro, tarjeta de credito*/
+.fila-cinco{
+    grid-template-columns: repeat(5, 1fr);
+   	background-color: var(--gris-claro);
+	box-shadow: var(--sombra);
+}
+.fila-cinco .icons-info-index{
+	width: 100%;
+	padding: 2rem;
+	min-width: 10%;
+	height: auto;
+	
+	
+
+}
+.fila-cinco .icons-info-index img{
+	width: 30%;
+	height: auto;
+	margin: 0 auto;
+
+}
+.fila-cinco .icons-info-index h4{
+	align-items:center;
+    text-align: center;
+    color: var(--color-textos);/*color de texto, gris Google*/
+    font-size: 0.938rem;
+    font-weight: 500;
+	margin-top: 1rem;
+}
+.fila-cinco .icons-info-index .mas-info{
+    color: var(--rojo);
+    font-size: 0.875rem;
+    line-height: 1.7142;
+	text-decoration: underline;
+	margin-top: 0.625rem;
+
+}
+
+/*Fin container, envio discreto, entrega, pago seguro, tarjeta de credito*/
+/*Fin container, envio discreto, entrega, pago seguro, tarjeta de credito*/
+.fila-seis{
+    grid-template-columns: repeat(3, 1fr);
+    /*padding: 15px;*/
+    grid-gap: 3rem;
+    /*background-color: darkcyan;*/
+    margin-top: 40px;
+}
+.diapositivas-index{
+	padding: 1rem;
+    background-color: var(--gris-claro);
+    justify-content: space-between;
+	box-shadow: var(--sombra);
+}
+.diapositivas-index h3{
+	color: var(--rojo);
+	font-size: 1rem;
+}
+.diapositivas-index .ul{
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-gap: 1rem;
+}
+
+
+.diapositivas-index img{
+    width: 100%;
+    height: auto;
+	padding: 10px;
+}
+/*-----------Cerramos la fila seis-------*/
+/*-------Pie de página-------------*/
+.pie-de-pagina{
+    background-color: var(--gris-claro);
+}
+.pie{
+  
+    grid-template-columns: repeat(3, 1fr);
+    /*padding: 15px;*/
+    width: 88%;
+    margin: 0 auto;
+    grid-gap: 15px;
+   /* background-color: blueviolet;*/
+}
+.icons{display: inline-flex; /*background-color:aliceblue;*/ align-items: center;}
+.icons img{margin-right: 10px;}
+
+.resdes-sociales>li{text-align:left; margin: 0 0 10px 0;}
+.compra-online>li{ margin: 0 0 10px 0;}
+
+.comp-online{text-align: left;}
+/*main article {
+	background: #fff;
+	margin: 20px 0;
+	padding: 20px;
+	height: 1000px;
+}*/
+
+

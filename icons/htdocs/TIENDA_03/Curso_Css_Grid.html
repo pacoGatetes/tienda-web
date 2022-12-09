@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="utf-8">
+<title>Mi grid</title>
+<link href="icons/favicon.svg" rel="icon" type="image/x-icon"/><!--Favicon-->
+    <script src="https://kit.fontawesome.com/65e2b874ef.js" crossorigin="anonymous"></script><!--icon_fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"><!--Google roboto fonts-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+</head>
+<body class="" aria-hidden="true">
+<div class="main-gird grid-container"><!--Este es el conteneror de la web, es un container css-grid-->
+    <header class="grid-item uno"><!--Esta es la cabezera de la web, donde estan el logo, buscardor,login, carrito, favorito-->
+      <div class="header">
+          <div class="logo"><a href="index.html"><img src="icons/gatetes.svg" alt="logo" title="Logo" style="width: 70%"></a><!--este div es que contiene el logo-->
+          </div>
+          <div class="buscador"><!--div donde esta el buscador-->
+               <form class="search-container" action="" role="form">
+                  <input class="bsc" type="text" placeholder="Busqueda" name="buscador" role="search">
+                  <button type="submit"><img class="lupa" src="icons/search.svg" alt="buscador" role="button"></button> 
+               </form> 
+          </div><!--cerramos el div donde esta el buscador-->
+          <div id="inner-grid">
+            <li class="izquieda"><a class="attcliente" href="acordeon_ayuda.html"><img src="icons/Atencion al cliente.svg" alt="Atencion al cliente" title="Atención al cliente" style="width: 12%">Atención al cliente</a>
+            </li>
+            <li class="izquieda"><a class="inc-sesion" href="iniciar_sesion.html"><img src="icons/usuario.svg" alt="Iniciar sesión" title="Usuario" style="width: 10%">Iniciar sesión</a>
+            </li>
+            <li class="izquieda"><a href="#"><img src="icons/carrito.svg" alt="Carrito de la compra" title="Carrito" style="width: 12%"></a>
+            </li>
+            <li class="izquieda"><a href="#"><img src="icons/favorito.svg" alt="Favorito" title="Favorito" style="width: 10%"></a>
+            </li>
+          </div>
+      </div>
+        <nav class="grid-item navbar">
+            <ul>
+                <li class="grid-item li"><a href="#">Novedades</a></li>
+                <li class="grid-item li"><a href="#">Lencería</a></li>
+                <li class="grid-item li"><a href="#">Jueguetes eróticos</a></li>
+           <!--     <li class="grid-item li"><a href="#">Masturbadores el</a></li>-->
+<!--                <li class="grid-item li"><a href="#">Penes</a></li>
+                <li class="grid-item li"><a href="#">Plugs</a></li>
+                <li class="grid-item li"><a href="#">Vibradores</a></li>-->
+                <li class="grid-item li"><a href="#">Bondage</a></li>
+                <li class="grid-item li"><a href="#">Aceites&amp;Lubricantes</a></li>
+                <li class="grid-item li"><a href="#">Preservativos</a></li>
+                <li class="grid-item li"><a href="#">Juegos de pareja</a></li>
+                <!--<li class="grid-item li"><a href="#">bolas chinas</a></li>-->
+                <li class="grid-item li"><a href="#">Cuidados&amp;Higiene</a></li>
+                <li class="grid-item li"><a href="#">Ofertas</a></li>
+            </ul>
+        </nav>
+    </header><!--Cerramos la cabezera-->
+    <main role=main>
+        <section id="section">
+    
+            <div class="grid-item dos row">
+              <div class="grid-item imgindex">
+                  <img src="img/gatito_blanco_010.jpg" alt="Jane" style="width:100%">
+                  <div class="container-descripcion">
+                    <h2>Jane Doe</h2>
+                    <p class="title">CEO & Founder</p>
+                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <p>example@example.com</p>
+                    <p><button class="button">Contact</button></p>
+                  </div>
+              </div>
+              <div class="grid-item imgindex">
+                <img src="img/gatito_blanco_03.jpg" alt="Jane" style="width:100%">
+                  <div class="container-descripcion">
+                    <h2>Jane Doe</h2>
+                    <p class="title">CEO & Founder</p>
+                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <p>example@example.com</p>
+                    <p><button class="button">Contact</button></p>
+                  </div>  
+              </div>  
+              <div class="grid-item imgindex box">
+                  <img src="img/gatito_blanco_04.jpg" alt="Jane" style="width:100%">
+                  <div class="container-descripcion">
+                    <h2>Jane Doe</h2>
+                    <p class="title">CEO & Founder</p>
+                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <p>example@example.com</p>
+                    <p><button class="button">Contact</button></p>
+                  </div> 
+              </div>
+          </div>
+            <div class="grid-item tres image-wrapper row">
+                <!--<h2 style="text-align: center">Titulo del slider</h2>-->
+                <div class="grid-item image-content">
+                  <a href="#"><img src="img/gatito_blanco_04.jpg" class="slider-image">
+                        <div class="post-info">
+                            <h4>La musica es un lenguaje univesal</h4>
+                        </div>
+                  </a>
+                </div>
+                <div class="grid-item image-content">
+                    <a href="#"><img src="img/gatito_negro_04.jpg" class="slider-image">
+                        <div class="post-info">
+                            <h4>La musica es un lenguaje univesal</h4>
+                        </div>
+                  </a>
+                </div>  
+                <div class="grid-item image-content">
+                    <a href="#"><img src="img/gatito_castaño_05.jpg" class="slider-image">
+                        <div class="post-info">
+                            <h4>La musica es un lenguaje univesal</h4>
+                        </div>
+                  </a>
+                </div>
+                <div class="grid-item image-content ">
+                    <a href="#"><img src="img/gatito_pardo_06.jpg" class="slider-image">
+                        <div class="post-info">
+                            <h4>La musica es un lenguaje univesal</h4>
+                        </div>
+                  </a>
+                </div>
+              <div class="grid-item image-content">
+                  <a href="#"><img src="img/gatito_gris_04.jpg" class="slider-image">
+                        <div class="post-info">
+                            <h4>La musica es un lenguaje univesal</h4>
+                        </div>
+                  </a>
+                </div>
+              <div class="grid-item image-content">
+                  <a href="#"><img src="img/gatito_castaño_07.jpg" class="slider-image">
+                        <div class="post-info">
+                            <h4>La musica es un lenguaje univesal</h4>
+                        </div>
+                  </a>
+                </div>
+            </div>
+            <div class="grid-item cuatro row">
+                <div class="grid-item imgindex">
+                  <img src="img/gatito_blanco_07.jpg" alt="Jane" style="width:100%">
+                    <div class="container-descripcion">
+                        <h2>Jane Doe</h2>
+                        <p class="title">CEO & Founder</p>
+                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                        <p>example@example.com</p>
+                        <p><button class="button">Contact</button></p>
+                    </div>
+                </div>
+                <div class="grid-item imgindex">
+                   <img src="img/gatito_castaño_06.jpg" alt="Jane" style="width:100%">
+                     <div class="container-descripcion">
+                        <h2>Jane Doe</h2>
+                        <p class="title">CEO & Founder</p>
+                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                        <p>example@example.com</p>
+                        <p><button class="button">Contact</button></p>
+                     </div>
+                </div>  
+                <div class="grid-item imgindex">
+                    <img src="img/gatito_pardo_03.jpg" alt="Jane" style="width:100%">
+                     <div class="container-descripcion">
+                        <h2>Jane Doe</h2>
+                        <p class="title">CEO & Founder</p>
+                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                        <p>example@example.com</p>
+                        <p><button class="button">Contact</button></p>
+                     </div>
+                </div>
+                <div class="grid-item imgindex">
+                    <img src="img/gatito_negro_03.jpg" alt="Jane" style="width:100%">
+                     <div class="container-descripcion">
+                        <h2>Jane Doe</h2>
+                        <p class="title">CEO & Founder</p>
+                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                        <p>example@example.com</p>
+                        <p><button class="button">Contact</button></p>
+                     </div>
+                </div>
+            </div>
+    <div class="grid-item cinco">
+        <div class="grid-item"><img class="icons-info" src="icons/enviodiscreto.svg" alt="Envio discreo" title="Envio discreto">
+            <h4 class="title_index">Envio discreto</h4>
+                <a class="mas-info" href="#">Más info...</a>
+        </div>
+        
+        <div class="grid-item"><img class="icons-info" src="icons/camion.svg" alt="Entrega" title="Entrega 24/72 H">                <h4>Entrega en 24/72 H</h4>
+                <a class="mas-info" href="#">Más info...</a>
+        </div>
+        
+        <div class="grid-item"><img class="icons-info" src="icons/pagoseguro.svg" alt="Pago seguro" title="Pago seguro">            <h4>Pago seguro</h4>
+                <a class="mas-info" href="#">Más info...</a>
+        </div>
+        
+        <div class="grid-item"><img class="icons-info" src="icons/tarjeta-de-credito.svg" alt="tarjeta de credito" title="tarjeta de credito">
+            <h4>Tarjeta de credito</h4>
+                <a class="mas-info" href="#">Más info...</a>
+        </div>
+    </div>
+            
+            <div class="grid-item seis">
+              <div class="grid-item diapositivas-index">
+                <li><img class="diap" src="img/gatito_blanco_01.jpg" alt="" </li>
+                <li><img class="diap" src="img/gatito_castaño_01.jpg" alt="" </li>
+                <li><img class="diap" src="img/gatito_gris_01.jpg" alt="" </li>
+                <li><img class="diap" src="img/gatito_gris_y_blanco_01.jpg" alt="" </li>
+              </div>
+        
+              <div class="grid-item diapositivas-index">
+                <li><img class="diap" src="img/gatito_blanco_01.jpg" alt="" </li>
+                <li><img class="diap" src="img/gatito_castaño_01.jpg" alt="" </li>
+                <li><img class="diap" src="img/gatito_gris_01.jpg" alt="" </li>
+                <li><img class="diap" src="img/gatito_gris_y_blanco_01.jpg" alt="" </li>
+               </div>  
+            </div>
+        </section>
+        </main>
+    <footer class="grid-container">
+        <div class="pie grid-item">
+            <div class="grid-item box">21</div>
+            <div class="grid-item">22</div>
+            <div class="grid-item">23</div>
+        </div>
+    
+    </footer>
+</div>
+    <!--<script>
+        //Carrusel uno
+        var myIndex= 0;
+        carousel();
+        
+        function carousel(){
+            var i;
+            var x = document.getElementsByClassName("diap");
+            for (i = 0; i < x.length; i++){
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) {myIndex = 1}
+            x[myIndex-1].style.display = "block";
+            setTimeout(carousel, 2000);//Se carga cada imagen cada dos segundos
+        }
+    </script>
+     -->
+</body>
+</html>
