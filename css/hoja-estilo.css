@@ -472,7 +472,7 @@ form>.container-icon-lupa {
 }
 
 .container-icon-lupa:focus{
-    outline: 0.063rem solid var(--contorno);
+    outline: none;
 	outline-offset: -2px;
 }
 
