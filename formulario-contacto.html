@@ -22,7 +22,7 @@
     <!--favicon para telf Apple-->
     <link rel="apple-touch-icon" sizes="114x114" href="icons/touch-icon-ipad.png">
     <!--favicon Apple para Ipad-->
-    <script rel="preload" src="js/main.js" defer></script>
+    <!-- <script rel="preload" src="js/main.js" defer></script> -->
     <script src="js/formulario-contacto.js" defer></script>
 
 </head>
@@ -33,14 +33,16 @@
         <section class="contenedor__formulario frc">
             <header>
                 <h2>Formulario contacto</h2>
-                <img class="logo logo__formularios" src="icons/gatetes.svg" alt="logo" title="logo">
+                <a href="./index.html">
+                    <img class="logo logo__formularios" src="icons/gatetes.svg" alt="logo" title="logo">
+                </a>
                 <p class="texto__inicia__registro">Rellene este formulario para ponerse en contacto con nosotros</p>
             </header>
             <div class="linea"></div>
             <form action="" class="formulario" id="formulario">
                 <fieldset class="formulario__contacto grid-item">
                     <!--Grupo Cuenta de Acceso-->
-                    <div class="formulario__grupo fr-cont" id="grupo__nombre">
+                    <div class="formulario__grupo" id="grupo__nombre">
                         <label for="nombre" class="formulario__label">Nombre</label>
                         <div class="formulario__grupo-input">
                             <input type="text" class="formulario__input" name="nombre" id="nombre"
@@ -60,7 +62,7 @@
                     <!--Fin Grupo Nombre-->
 
                     <!--Grupo Apellidos-->
-                    <div class="formulario__grupo fr-cont" id="grupo__usuario">
+                    <div class="formulario__grupo" id="grupo__usuario">
                         <label for="usuario" class="formulario__label">Apellidos</label>
                         <div class="formulario__grupo-input">
                             <input type="text" class="formulario__input" name="usuario" id="usuario"
@@ -114,7 +116,7 @@
                     <!-- Grupo mensaje -->
                     <div class="formulario__grupo mensaje-frcont" id="">
                         <label for="mensaje" class="formulario__label ">Mensaje</label>
-                        <textarea class="mensaje__formulario-contacto" id="mensaje" rows="5" cols="50" name="mensaje" minlength="20" spellcheck="true" required="required" placeholder="Escriba su mensaje..."></textarea>
+                        <textarea class="mensaje__formulario-contacto" id="mensaje" rows="5" cols="50" name="mensaje" minlength="20" spellcheck="true" placeholder="Escriba su mensaje..."></textarea>
                     </div>
                     <!--Fin Grupo mensaje -->
 

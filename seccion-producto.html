@@ -26,7 +26,7 @@
 
 </head>
 
-<body>
+<body aria-haspopup="dialog">
     <div class="flex__grid grid-container">
         <!--Este es el contenedor de la web, es un container css-grid-->
 
@@ -36,20 +36,17 @@
 
                     <div class="contenedor-botones-menu">
                         <button type="buttom" id="btn-menu-barras" class="btn-menu-barras" title="menu"
-                            aria-controls="grid-menu-nav" aria-labelledby="grid-menu-nav" aria-expanded="false">
-                            <!--Esta son as barras de menú móvil-->
-                            <svg class="menu-fa-bars" aria-hidden="true" focusable="false" data-prefix="fas"
-                                data-icon="bars" role="img" xml:space="preserve" width="24" height="24"
-                                viewBox="0 0 448 512">
+                            aria-controls="grid-menu-nav" aria-labelledby="grid-menu-nav"
+                            aria-expanded="false"><!--Esta son as barras de menú móvil-->
+                            <svg class="menu-fa-bars" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars"
+                                role="img" xml:space="preserve" width="24" height="24" viewBox="0 0 448 512">
                                 <path fill="currentColor"
                                     d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
                                 </path>
                             </svg>
                         </button>
 
-
-                    </div>
-                    <!--Cerramo contenedor contenedor-botones-menú-->
+                    </div><!--Cerramo contenedor contenedor-botones-menú-->
 
                     <div class="contenedor-enlaces-nav">
                         <div class="btn-departamentos" id="btn-departamentos">
@@ -65,13 +62,12 @@
 
                     <!--este div es que contiene el logo-->
                     <div class="cont__logo-index">
-                        <a class="logo" href="index.html">
+                        <a class="logo" href="./index.html">
                             <picture>
                                 <!--<source media="(min-width: 650px)" srcset="icons/gatetes.svg">-->
                                 <source media="(min-width: 361px)" srcset="icons/gatetes.svg" width="200" height="50"
                                     type="image/svg+xml">
-                                <img class="logo-peque" src="icons/favicon.svg" width="24" height="24" alt="Logo"
-                                    title="Logo">
+                                <img class="logo-peque" src="icons/favicon.svg" width="24" height="24" alt="Logo" title="Logo">
                             </picture>
                         </a>
                     </div>
@@ -86,17 +82,15 @@
                                     aria-hidden="true">
                             </button>
                         </form>
-                    </div>
-                    <!--cerramos el div donde esta el buscador-->
+                    </div><!--cerramos el div donde esta el buscador-->
                     <div class="icons-header-info-sesion-fav-cart cont-icon">
                         <ul class="icons-header">
                             <li>
-                                <a href="#">
+                                <a href="./preguntas-fecuentes.html">
                                     <svg version="1.1" x="0px" y="0px" width="24" height="24" viewBox="0 0 28.4 28.3"
                                         style="enable-background:new 0 0 28.4 28.3;" xml:space="preserve" role="img">
                                         <title>Atención al cliente</title>
-                                        <ellipse class="atencion__cliente-ellipse" cx="14.2" cy="14.2" rx="12.1"
-                                            ry="12.1" />
+                                        <ellipse class="atencion__cliente-ellipse" cx="14.2" cy="14.2" rx="12.1" ry="12.1" />
                                         <path class="atencion__cliente-path"
                                             d="M10.7,10.8c-0.1-4.1,7.2-4.6,7.1,0.2c-0.3,3.5-3.8,3.2-3.9,7.1" />
                                         <circle class="atencion__cliente-circle st12" cx="13.9" cy="21.5" r="1" />
@@ -105,7 +99,7 @@
                             </li>
 
                             <li>
-                                <a href="#">
+                                <a href="./inicia-sesion.html">
                                     <svg version="1.1" x="0px" y="0px" width="24" height="24" viewBox="0 0 19.8 22.2"
                                         style="enable-background:new 0 0 19.8 22.2;" xml:space="preserve">
                                         <title>Iniciar sesión</title>
@@ -117,7 +111,7 @@
                             </li>
 
                             <li>
-                                <a href="#">
+                                <a href="./favoritos.html">
                                     <span class="insignia-fav">8</span>
                                     <svg version="1.1" x="0px" y="0px" width="24" height="24" viewBox="0 0 23.8 23.5"
                                         style="enable-background:new 0 0 23.8 23.5;" xml:space="preserve">
@@ -129,7 +123,7 @@
                             </li>
 
                             <li>
-                                <a href="#">
+                                <a href="./carrito-compra.html">
                                     <span class="insignia-cart">2</span>
                                     <svg version="1.1" x="0px" y="0px" width="24" height="24" viewBox="0 0 19.5 17.8"
                                         style="enable-background:new 0 0 19.5 17.8;" xml:space="preserve">
@@ -143,15 +137,13 @@
                             </li>
                         </ul>
                     </div>
-                </div>
-                <!--Cerramos el contenedor logo, buscador, enlaces izquierda-->
+                </div><!--Cerramos el contenedor logo, buscador, enlaces izquierda-->
 
                 <!--<nav class="contenedor contenedor-grid-nav">-->
                 <nav class="grid-menu-nav" id="grid-menu-nav">
-                    <button type="button" id="btn-menu-cerrar" class="btn-menu-cerrar" title="Cerrar"
-                        aria-label="close">
-                        <svg class="x-cerrar" aria-hidden="true" focusable="false" role="img" version="1.1" x="0px"
-                            y="0px" width="24" height="24" viewBox="0 0 24 24" xml:space="preserve">
+                    <button type="button" id="btn-menu-cerrar" class="btn-menu-cerrar" title="Cerrar" aria-label="close">
+                        <svg class="x-cerrar" aria-hidden="true" focusable="false" role="img" version="1.1" x="0px" y="0px"
+                            width="24" height="24" viewBox="0 0 24 24" xml:space="preserve">
                             <path class="x-cerrar"
                                 d="M3.9,20.1c-0.6-0.6-0.6-1.5,0-2L10,12L3.9,5.9c-0.6-0.6-0.6-1.5,0-2s1.5-0.6,2,0L12,10l6.1-6.1 c0.6-0.6,1.5-0.6,2,0c0.6,0.6,0.6,1.5,0,2L14,12l6.1,6.1c0.6,0.6,0.6,1.5,0,2c-0.6,0.6-1.5,0.6-2,0L12,14l-6.1,6.1C5.4,20.6,4.5,20.6,3.9,20.1z" />
                         </svg><!-- Este e o botón de cerrar -->
@@ -160,67 +152,80 @@
                         <h3 class="subtitulo">Categorias</h3>
                         <ul>
                             <li>
-                                <a href="#" data-categoria="tecnologia-y-computadoras">Tecnología y Computadoras<svg
-                                        class="fa-angle-right" aria-hidden="true" focusable="false" version="1.1"
-                                        width="24" height="24" x="0px" y="0px" viewBox="0 0 48 48"
-                                        style="enable-background:new 0 0 48 48;" xml:space="preserve">
+                                <a href="#" data-categoria="enlace-uno">Enlace-uno
+                                    <svg class="fa-angle-right" aria-hidden="true" focusable="false" version="1.1" width="24"
+                                        height="24" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;"
+                                        xml:space="preserve">
                                         <path class="chevron-izquierda"
                                             d="M19,36l-2.1-2.2l9.9-9.9l-9.9-9.9l2.1-2.2l12,12.1L19,36z" />
                                     </svg>
                                 </a>
                             </li>
-                            <li><a href="#" data-categoria="libros">Libros<svg class="fa-angle-right" aria-hidden="true"
-                                        focusable="false" version="1.1" width="24" height="24" x="0px" y="0px"
-                                        viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;"
+                            <li>
+                                <a href="#" data-categoria="enlace-dos">Enlace-dos
+                                    <svg class="fa-angle-right" aria-hidden="true" focusable="false" version="1.1" width="24"
+                                        height="24" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;"
                                         xml:space="preserve">
                                         <path class="chevron-izquierda"
                                             d="M19,36l-2.1-2.2l9.9-9.9l-9.9-9.9l2.1-2.2l12,12.1L19,36z" />
-                                    </svg></a>
+                                    </svg>
+                                </a>
                             </li>
-                            <li><a href="#" data-categoria="ropa-y-accesorios">Ropa y Accesorios<svg
-                                        class="fa-angle-right" aria-hidden="true" focusable="false" version="1.1"
-                                        width="24" height="24" x="0px" y="0px" viewBox="0 0 48 48"
-                                        style="enable-background:new 0 0 48 48;" xml:space="preserve">
-                                        <path class="chevron-izquierda"
-                                            d="M19,36l-2.1-2.2l9.9-9.9l-9.9-9.9l2.1-2.2l12,12.1L19,36z" />
-                                    </svg></a>
-                            </li>
-                            <li><a href="#" data-categoria="hogar-y-cocina">Hogar y Cocina<svg class="fa-angle-right"
-                                        aria-hidden="true" focusable="false" version="1.1" width="24" height="24"
-                                        x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;"
+                            <li>
+                                <a href="#" data-categoria="enlace-tres">Enlace-tres
+                                    <svg class="fa-angle-right" aria-hidden="true" focusable="false" version="1.1" width="24"
+                                        height="24" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;"
                                         xml:space="preserve">
                                         <path class="chevron-izquierda"
                                             d="M19,36l-2.1-2.2l9.9-9.9l-9.9-9.9l2.1-2.2l12,12.1L19,36z" />
-                                    </svg></a></li>
-                            <li><a href="#" data-categoria="juegos-y-juguetes">Juegos y Juguetes<svg
-                                        class="fa-angle-right" aria-hidden="true" focusable="false" version="1.1"
-                                        width="24" height="24" x="0px" y="0px" viewBox="0 0 48 48"
-                                        style="enable-background:new 0 0 48 48;" xml:space="preserve">
-                                        <path class="chevron-izquierda"
-                                            d="M19,36l-2.1-2.2l9.9-9.9l-9.9-9.9l2.1-2.2l12,12.1L19,36z" />
-                                    </svg></a>
+                                    </svg>
+                                </a>
                             </li>
-                            <li><a href="#" data-categoria="salud-y-belleza">Salud y Belleza<svg class="fa-angle-right"
-                                        aria-hidden="true" focusable="false" version="1.1" width="24" height="24"
-                                        x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;"
+                            <li>
+                                <a href="#" data-categoria="Enlace-cuatro">Enlace-cuatro
+                                    <svg class="fa-angle-right" aria-hidden="true" focusable="false" version="1.1" width="24"
+                                        height="24" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;"
                                         xml:space="preserve">
                                         <path class="chevron-izquierda"
                                             d="M19,36l-2.1-2.2l9.9-9.9l-9.9-9.9l2.1-2.2l12,12.1L19,36z" />
-                                    </svg></a>
+                                    </svg>
+                                </a>
                             </li>
-                            <li><a href="#" data-categoria="alimentos-y-bebidas">Alimentos y Bebidas<svg
-                                        class="fa-angle-right" aria-hidden="true" focusable="false" version="1.1"
-                                        width="24" height="24" x="0px" y="0px" viewBox="0 0 48 48"
-                                        style="enable-background:new 0 0 48 48;" xml:space="preserve">
+                            <li>
+                                <a href="#" data-categoria="Enlace-cinco">Enlace-cinco
+                                    <svg class="fa-angle-right" aria-hidden="true" focusable="false" version="1.1" width="24"
+                                        height="24" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;"
+                                        xml:space="preserve">
                                         <path class="chevron-izquierda"
                                             d="M19,36l-2.1-2.2l9.9-9.9l-9.9-9.9l2.1-2.2l12,12.1L19,36z" />
-                                    </svg></a>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-categoria="Enlace-seis">Enlace-seis
+                                    <svg class="fa-angle-right" aria-hidden="true" focusable="false" version="1.1" width="24"
+                                        height="24" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;"
+                                        xml:space="preserve">
+                                        <path class="chevron-izquierda"
+                                            d="M19,36l-2.1-2.2l9.9-9.9l-9.9-9.9l2.1-2.2l12,12.1L19,36z" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-categoria="Enlace-siete">Enlace-siete
+                                    <svg class="fa-angle-right" aria-hidden="true" focusable="false" version="1.1" width="24"
+                                        height="24" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;"
+                                        xml:space="preserve">
+                                        <path class="chevron-izquierda"
+                                            d="M19,36l-2.1-2.2l9.9-9.9l-9.9-9.9l2.1-2.2l12,12.1L19,36z" />
+                                    </svg>
+                                </a>
                             </li>
                         </ul>
                     </div>
 
                     <div class="contenedor-subcategorias">
-                        <div class="subcategoria" data-categoria="tecnologia-y-computadoras">
+                        <div class="subcategoria" data-categoria="enlace-uno">
                             <div class="enlaces-subcategoria br">
                                 <button type="button" class="btn-regresar">
                                     <svg class="fa-arrow-left" aria-hidden="true" focusable="false" data-prefix="fas"
@@ -230,18 +235,18 @@
                                         </path>
                                     </svg>Regresar
                                 </button>
-                                <h3 class="subtitulo">Tecnología y Computadoras</h3>
+                                <h3 class="subtitulo">Enlace-uno</h3>
                                 <ul>
-                                    <li><a href="#">Laptops</a></li>
-                                    <li><a href="#">Tablets</a></li>
-                                    <li><a href="#">Computadoras de Escritorio</a></li>
-                                    <li><a href="#">Monitores</a></li>
-                                    <li><a href="#">Componentes</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem ipsum</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem lorem</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem describes</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem text</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem that</a></li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="subcategoria" data-categoria="libros">
+                        <div class="subcategoria" data-categoria="enlace-dos">
                             <div class="enlaces-subcategoria br">
                                 <button type="button" class="btn-regresar">
                                     <svg class="fa-arrow-left" aria-hidden="true" focusable="false" data-prefix="fas"
@@ -251,17 +256,17 @@
                                         </path>
                                     </svg>Regresar
                                 </button>
-                                <h3 class="subtitulo">Libros</h3>
+                                <h3 class="subtitulo">Enlace-dos</h3>
                                 <ul>
-                                    <li><a href="#">Top Sellers</a></li>
-                                    <li><a href="#">Ciencia Ficción</a></li>
-                                    <li><a href="#">Fantasia</a></li>
-                                    <li><a href="#">Miedo</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem lorem</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem describes</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem text</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem that</a></li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="subcategoria" data-categoria="ropa-y-accesorios">
+                        <div class="subcategoria" data-categoria="enlace-tres">
                             <div class="enlaces-subcategoria br">
                                 <button type="button" class="btn-regresar">
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left"
@@ -271,17 +276,17 @@
                                         </path>
                                     </svg>Regresar
                                 </button>
-                                <h3 class="subtitulo">Ropa y Accesorios</h3>
+                                <h3 class="subtitulo">Enlace-tres</h3>
                                 <ul>
-                                    <li><a href="#">Ropa</a></li>
-                                    <li><a href="#">Zapatos</a></li>
-                                    <li><a href="#">Accesorios</a></li>
-                                    <li><a href="#">Relojes</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem lorem</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem describes</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem text</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem that</a></li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="subcategoria" data-categoria="hogar-y-cocina">
+                        <div class="subcategoria" data-categoria="Enlace-cuatro">
                             <div class="enlaces-subcategoria br">
                                 <button type="button" class="btn-regresar">
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left"
@@ -291,21 +296,21 @@
                                         </path>
                                     </svg>Regresar
                                 </button>
-                                <h3 class="subtitulo">Hogar y Cocina</h3>
+                                <h3 class="subtitulo">Enlace-cuatro</h3>
                                 <ul>
-                                    <li><a href="#">Cocina</a></li>
-                                    <li><a href="#">Electrodomesticos</a></li>
-                                    <li><a href="#">Limpieza</a></li>
-                                    <li><a href="#">Baño</a></li>
-                                    <li><a href="#">Decoracion</a></li>
-                                    <li><a href="#">Arte</a></li>
-                                    <li><a href="#">Manualidades</a></li>
-                                    <li><a href="#">Jardin</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem ipsum</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem lorem</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem describes</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem text</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem that</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem Arte</a></li>
+                                    <li><a href="./seccion-producto.html">Some text</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem ipsum</a></li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="subcategoria" data-categoria="juegos-y-juguetes">
+                        <div class="subcategoria" data-categoria="Enlace-cinco">
                             <div class="enlaces-subcategoria br">
                                 <button type="button" class="btn-regresar">
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left"
@@ -315,17 +320,17 @@
                                         </path>
                                     </svg>Regresar
                                 </button>
-                                <h3 class="subtitulo">Juegos y Juguetes</h3>
+                                <h3 class="subtitulo">Enlace-cinco</h3>
                                 <ul>
-                                    <li><a href="#">Juguetes</a></li>
-                                    <li><a href="#">Juegos de Mesa</a></li>
-                                    <li><a href="#">Aire Libre</a></li>
-                                    <li><a href="#">Muñecas</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem lorem</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem descr</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem text</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem that</a></li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="subcategoria" data-categoria="salud-y-belleza">
+                        <div class="subcategoria" data-categoria="Enlace-seis">
                             <div class="enlaces-subcategoria br">
                                 <button type="button" class="btn-regresar">
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left"
@@ -335,17 +340,17 @@
                                         </path>
                                     </svg>Regresar
                                 </button>
-                                <h3 class="subtitulo">Salud y Belleza</h3>
+                                <h3 class="subtitulo">Enlace-seis</h3>
                                 <ul>
-                                    <li><a href="#">Cuidado de la Piel</a></li>
-                                    <li><a href="#">Maquillaje</a></li>
-                                    <li><a href="#">Lociones</a></li>
-                                    <li><a href="#">Shampoo</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem lorem em</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem describes</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem text</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem that</a></li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="subcategoria" data-categoria="alimentos-y-bebidas">
+                        <div class="subcategoria" data-categoria="Enlace-siete">
                             <div class="enlaces-subcategoria br">
                                 <button type="button" class="btn-regresar" aria-label="regresar">
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left"
@@ -355,22 +360,20 @@
                                         </path>
                                     </svg>Regresar
                                 </button>
-                                <h3 class="subtitulo">Alimentos y Bebidas</h3>
+                                <h3 class="subtitulo">Enlace-siete</h3>
                                 <ul>
-                                    <li><a href="#">Alimentos</a></li>
-                                    <li><a href="#">Bebidas</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem lorem</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem describes</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem tethat</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem that</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <!--Contenedor subcategorias-->
-                </nav>
-                <!--Contenedor Grid-->
-                <!--</nav>-->
-                <!--Contenedor contenedor grid-menu-nav-->
-            </div>
-            <!--Aquí Cerramo o DIV Menú navegación-->
-        </header>
+                </nav><!--Contenedor Grid--><!--</nav>--><!--Contenedor contenedor grid-menu-nav-->
+            </div><!--Aquí Cerramo o DIV Menú navegación-->
+        </header><!--Cerramos la cabecera del la web, donde esta el nav, logo, buscardo...-->
         <!--Cerramos la cabecera del la web, donde esta el nav, logo, buscardo...-->
 
                 <!--Contenedor migas de pan-->
@@ -906,13 +909,15 @@
         <h2 class="gt">Gatetes de colores</h2>
         <div class="contendor-lista-articulos grid-item">
             <div class="contenedor__img-color">
-                <div class="content-img">
-                    <img src="img/gatito_blanco_01.jpg" alt="gatito" width="100" height="300">
-                </div>
+                <a href="./ficha-producto.html">
+                    <div class="content-img">
+                        <img src="img/gatito_blanco_01.jpg" alt="gatito" width="100" height="300">
+                    </div>
                     <div class="titulo-subtitulo">
                         <p>Lorem ipsum dolor.</p>
                         <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
                     </div>
+                </a>
                 <ul class="producto-imagen color-option">
                     <li class="circulo-color link-color" style="background-color:rgb(7, 225, 32)"></li>
                     <li class="circulo-color link-color" style="background-color:rgb(234, 222, 4)"></li>
@@ -927,12 +932,15 @@
                     </div>
             </div>
             <div class="contenedor__img-color">
-                <div class="content-img">
-                    <img src="img/gatito_castaño_02.jpg" alt="gatito" width="100" height="300"></div>
-                <div class="titulo-subtitulo">
-                    <p>Lorem ipsum dolor.</p>
-                    <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
-                </div>
+                <a href="./ficha-producto.html">
+                    <div class="content-img">
+                        <img src="img/gatito_castaño_02.jpg" alt="gatito" width="100" height="300">
+                    </div>
+                    <div class="titulo-subtitulo">
+                        <p>Lorem ipsum dolor.</p>
+                        <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
+                    </div>
+                </a>
                 <ul class="producto-imagen color-option">
                     <li class="circulo-color link-color" style="background-color:rgb(7, 225, 32)"></li>
                     <li class="circulo-color link-color" style="background-color:rgb(234, 222, 4)"></li>
@@ -947,12 +955,15 @@
                     </div>
             </div>
             <div class="contenedor__img-color">
-                <div class="content-img">
-                    <img src="img/gatito_gris_02.jpg" alt="gatito" width="100" height="300"></div>
-                <div class="titulo-subtitulo">
-                    <p>Lorem ipsum dolor.</p>
-                    <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
-                </div>
+                <a href="./ficha-producto.html">
+                    <div class="content-img">
+                        <img src="img/gatito_gris_02.jpg" alt="gatito" width="100" height="300">
+                    </div>
+                    <div class="titulo-subtitulo">
+                        <p>Lorem ipsum dolor.</p>
+                        <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
+                    </div>
+                </a>
                 <ul class="producto-imagen color-option">
                     <li class="circulo-color link-color" style="background-color:rgb(7, 225, 32)"></li>
                     <li class="circulo-color link-color" style="background-color:rgb(234, 222, 4)"></li>
@@ -967,12 +978,15 @@
                     </div>
             </div>
             <div class="contenedor__img-color">
-                <div class="content-img">
-                    <img src="img/gatito_gris_y_blanco_04.jpg" alt="gatito" width="100" height="300"></div>
-                <div class="titulo-subtitulo">
-                    <p>Lorem ipsum dolor.</p>
-                    <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
-                </div>
+                <a href="./ficha-producto.html">
+                    <div class="content-img">
+                        <img src="img/gatito_gris_y_blanco_04.jpg" alt="gatito" width="100" height="300">
+                    </div>
+                    <div class="titulo-subtitulo">
+                        <p>Lorem ipsum dolor.</p>
+                        <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
+                    </div>
+                </a>
                 <ul class="producto-imagen color-option">
                     <li class="circulo-color link-color" style="background-color:rgb(7, 225, 32)"></li>
                     <li class="circulo-color link-color" style="background-color:rgb(234, 222, 4)"></li>
@@ -987,12 +1001,15 @@
                     </div>
             </div>
             <div class="contenedor__img-color">
-                <div class="content-img">
-                    <img src="img/gatito_negro_06.jpg" alt="gatito" width="100" height="300"></div>
-                <div class="titulo-subtitulo">
-                    <p>Lorem ipsum dolor.</p>
-                    <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
-                </div>
+                <a href="./ficha-producto.html">
+                    <div class="content-img">
+                        <img src="img/gatito_negro_06.jpg" alt="gatito" width="100" height="300">
+                    </div>
+                    <div class="titulo-subtitulo">
+                        <p>Lorem ipsum dolor.</p>
+                        <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
+                    </div>
+                </a>
                 <ul class="producto-imagen color-option">
                     <li class="circulo-color link-color" style="background-color:rgb(7, 225, 32)"></li>
                     <li class="circulo-color link-color" style="background-color:rgb(234, 222, 4)"></li>
@@ -1007,12 +1024,15 @@
                     </div>
             </div>
             <div class="contenedor__img-color">
-                <div class="content-img">
-                    <img src="img/gatito_pardo_08.jpg" alt="gatito" width="100" height="300"></div>
-                <div class="titulo-subtitulo">
-                    <p>Lorem ipsum dolor.</p>
-                    <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
-                </div>
+                <a href="./ficha-producto.html">
+                    <div class="content-img">
+                        <img src="img/gatito_pardo_08.jpg" alt="gatito" width="100" height="300">
+                    </div>
+                    <div class="titulo-subtitulo">
+                        <p>Lorem ipsum dolor.</p>
+                        <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
+                    </div>
+                </a>
                 <ul class="producto-imagen color-option">
                     <li class="circulo-color link-color" style="background-color:rgb(7, 225, 32)"></li>
                     <li class="circulo-color link-color" style="background-color:rgb(234, 222, 4)"></li>
@@ -1027,12 +1047,15 @@
                     </div>
             </div>
             <div class="contenedor__img-color">
-                <div class="content-img">
-                    <img src="img/gatito_blanco_05.jpg" alt="gatito" width="100" height="300"></div>
-                <div class="titulo-subtitulo">
-                    <p>Lorem ipsum dolor.</p>
-                    <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
-                </div>
+                <a href="./ficha-producto.html">
+                    <div class="content-img">
+                        <img src="img/gatito_blanco_05.jpg" alt="gatito" width="100" height="300">
+                    </div>
+                    <div class="titulo-subtitulo">
+                        <p>Lorem ipsum dolor.</p>
+                        <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
+                    </div>
+                </a>
                 <ul class="producto-imagen color-option">
                     <li class="circulo-color link-color" style="background-color:rgb(7, 225, 32)"></li>
                     <li class="circulo-color link-color" style="background-color:rgb(234, 222, 4)"></li>
@@ -1047,12 +1070,15 @@
                     </div>
             </div>
             <div class="contenedor__img-color">
-                <div class="content-img">
-                    <img src="img/gatito_castaño_09.jpg" alt="gatito" width="100" height="300"></div>
-                <div class="titulo-subtitulo">
-                    <p>Lorem ipsum dolor.</p>
-                    <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
-                </div>
+                <a href="./ficha-producto.html">
+                    <div class="content-img">
+                        <img src="img/gatito_castaño_09.jpg" alt="gatito" width="100" height="300">
+                    </div>
+                    <div class="titulo-subtitulo">
+                        <p>Lorem ipsum dolor.</p>
+                        <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
+                    </div>
+                </a>
                 <ul class="producto-imagen color-option">
                     <li class="circulo-color link-color" style="background-color:rgb(7, 225, 32)"></li>
                     <li class="circulo-color link-color" style="background-color:rgb(234, 222, 4)"></li>
@@ -1067,12 +1093,15 @@
                     </div>
             </div>
             <div class="contenedor__img-color">
-                <div class="content-img">
-                    <img src="img/gatito_gris_03.jpg" alt="gatito" width="100" height="300"></div>
-                <div class="titulo-subtitulo">
-                    <p>Lorem ipsum dolor.</p>
-                    <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
-                </div>
+                <a href="./ficha-producto.html">
+                    <div class="content-img">
+                        <img src="img/gatito_gris_03.jpg" alt="gatito" width="100" height="300">
+                    </div>
+                    <div class="titulo-subtitulo">
+                        <p>Lorem ipsum dolor.</p>
+                        <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
+                    </div>
+                </a>
                 <ul class="producto-imagen color-option">
                     <li class="circulo-color link-color" style="background-color:rgb(7, 225, 32)"></li>
                     <li class="circulo-color link-color" style="background-color:rgb(234, 222, 4)"></li>
@@ -1087,12 +1116,15 @@
                     </div>
             </div>
             <div class="contenedor__img-color">
-                <div class="content-img">
-                    <img src="img/gatito_gris_y_blanco_05.jpg" alt="gatito" width="100" height="300"></div>
-                <div class="titulo-subtitulo">
-                    <p>Lorem ipsum dolor.</p>
-                    <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
-                </div>
+                <a href="./ficha-producto.html">
+                    <div class="content-img">
+                        <img src="img/gatito_gris_y_blanco_05.jpg" alt="gatito" width="100" height="300">
+                    </div>
+                    <div class="titulo-subtitulo">
+                        <p>Lorem ipsum dolor.</p>
+                        <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
+                    </div>
+                </a>
                 <ul class="producto-imagen color-option">
                     <li class="circulo-color link-color" style="background-color:rgb(7, 225, 32)"></li>
                     <li class="circulo-color link-color" style="background-color:rgb(234, 222, 4)"></li>
@@ -1107,12 +1139,15 @@
                     </div>
             </div>
             <div class="contenedor__img-color">
-                <div class="content-img">
-                    <img src="img/gatito_pardo_03.jpg" alt="gatito" width="100" height="300"></div>
-                <div class="titulo-subtitulo">
-                    <p>Lorem ipsum dolor.</p>
-                    <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
-                </div>
+                <a href="./ficha-producto.html">
+                    <div class="content-img">
+                        <img src="img/gatito_pardo_03.jpg" alt="gatito" width="100" height="300">
+                    </div>
+                    <div class="titulo-subtitulo">
+                        <p>Lorem ipsum dolor.</p>
+                        <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
+                    </div>
+                </a>
                 <ul class="producto-imagen color-option">
                     <li class="circulo-color link-color" style="background-color:rgb(7, 225, 32)"></li>
                     <li class="circulo-color link-color" style="background-color:rgb(234, 222, 4)"></li>
@@ -1127,12 +1162,15 @@
                     </div>
             </div>
             <div class="contenedor__img-color">
-                <div class="content-img">
-                    <img src="img/gatito_blanco_02.jpg" alt="gatito" width="100" height="300"></div>
-                <div class="titulo-subtitulo">
-                    <p>Lorem ipsum dolor.</p>
-                    <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
-                </div>
+                <a href="./ficha-producto.html">
+                    <div class="content-img">
+                        <img src="img/gatito_blanco_02.jpg" alt="gatito" width="100" height="300">
+                    </div>
+                    <div class="titulo-subtitulo">
+                        <p>Lorem ipsum dolor.</p>
+                        <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
+                    </div>
+                </a>
                 <ul class="producto-imagen color-option">
                     <li class="circulo-color link-color" style="background-color:rgb(7, 225, 32)"></li>
                     <li class="circulo-color link-color" style="background-color:rgb(234, 222, 4)"></li>
@@ -1147,12 +1185,15 @@
                     </div>
             </div>
             <div class="contenedor__img-color">
-                <div class="content-img">
-                    <img src="img/gatito_pardo_02.jpg" alt="gatito" width="100" height="300"></div>
-                <div class="titulo-subtitulo">
-                    <p>Lorem ipsum dolor.</p>
-                    <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
-                </div>
+                <a href="./ficha-producto.html">
+                    <div class="content-img">
+                        <img src="img/gatito_pardo_02.jpg" alt="gatito" width="100" height="300">
+                    </div>
+                    <div class="titulo-subtitulo">
+                        <p>Lorem ipsum dolor.</p>
+                        <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
+                    </div>
+                </a>
                 <ul class="producto-imagen color-option">
                     <li class="circulo-color link-color" style="background-color:rgb(7, 225, 32)"></li>
                     <li class="circulo-color link-color" style="background-color:rgb(234, 222, 4)"></li>
@@ -1167,12 +1208,15 @@
                     </div>
             </div>
             <div class="contenedor__img-color">
-                <div class="content-img">
-                    <img src="img/gatito_negro_02.jpg" alt="gatito" width="100" height="300"></div>
-                <div class="titulo-subtitulo">
-                    <p>Lorem ipsum dolor.</p>
-                    <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
-                </div>
+                <a href="./ficha-producto.html">
+                    <div class="content-img">
+                        <img src="img/gatito_negro_02.jpg" alt="gatito" width="100" height="300">
+                    </div>
+                    <div class="titulo-subtitulo">
+                        <p>Lorem ipsum dolor.</p>
+                        <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
+                    </div>
+                </a>
                 <ul class="producto-imagen color-option">
                     <li class="circulo-color link-color" style="background-color:rgb(7, 225, 32)">
                     </li>
@@ -1188,12 +1232,15 @@
                     </div>
             </div>
             <div class="contenedor__img-color">
-                <div class="content-img">
-                    <img src="img/gatito_pardo_07.jpg" alt="gatito" width="100" height="300"></div>
-                <div class="titulo-subtitulo">
-                    <p>Lorem ipsum dolor.</p>
-                    <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
-                </div>
+                <a href="./ficha-producto.html">
+                    <div class="content-img">
+                        <img src="img/gatito_pardo_07.jpg" alt="gatito" width="100" height="300">
+                    </div>
+                    <div class="titulo-subtitulo">
+                        <p>Lorem ipsum dolor.</p>
+                        <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
+                    </div>
+                </a>
                 <ul class="producto-imagen color-option">
                     <li class="circulo-color link-color" style="background-color:rgb(7, 225, 32)"></li>
                     <li class="circulo-color link-color" style="background-color:rgb(234, 222, 4)"></li>
@@ -1207,7 +1254,75 @@
                         <a href="#"><span class="producto-precio-rebajado">53,45&nbsp;</span><sup>&euro;</sup></a>
                     </div>
             </div>
-
+            <div class="contenedor__img-color">
+                <a href="./ficha-producto.html">
+                    <div class="content-img">
+                        <img src="img/gatito_pardo_07.jpg" alt="gatito" width="100" height="300">
+                    </div>
+                    <div class="titulo-subtitulo">
+                        <p>Lorem ipsum dolor.</p>
+                        <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
+                    </div>
+                </a>
+                <ul class="producto-imagen color-option">
+                    <li class="circulo-color link-color" style="background-color:rgb(7, 225, 32)"></li>
+                    <li class="circulo-color link-color" style="background-color:rgb(234, 222, 4)"></li>
+                    <li class="circulo-color link-color" style="background-color:rgb(254, 158, 74)"></li>
+                    <li class="circulo-color link-color" style="background-color:rgb(153, 182, 248)"></li>
+                    <li class="circulo-color link-color" style="background-color:rgb(255, 58, 40)"></li>
+                    <li class="circulo-color link-color" style="background-color:rgb(39, 249, 203)"></li>
+                </ul>
+                <div class="precio-articulos">
+                    <a href="#"><span class="producto-precio">23,45&nbsp;</span><sup>&euro;</sup></a>
+                    <a href="#"><span class="producto-precio-rebajado">53,45&nbsp;</span><sup>&euro;</sup></a>
+                </div>
+            </div>
+            <div class="contenedor__img-color">
+                <a href="./ficha-producto.html">
+                    <div class="content-img">
+                        <img src="img/gatito_pardo_07.jpg" alt="gatito" width="100" height="300">
+                    </div>
+                    <div class="titulo-subtitulo">
+                        <p>Lorem ipsum dolor.</p>
+                        <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
+                    </div>
+                </a>
+                <ul class="producto-imagen color-option">
+                    <li class="circulo-color link-color" style="background-color:rgb(7, 225, 32)"></li>
+                    <li class="circulo-color link-color" style="background-color:rgb(234, 222, 4)"></li>
+                    <li class="circulo-color link-color" style="background-color:rgb(254, 158, 74)"></li>
+                    <li class="circulo-color link-color" style="background-color:rgb(153, 182, 248)"></li>
+                    <li class="circulo-color link-color" style="background-color:rgb(255, 58, 40)"></li>
+                    <li class="circulo-color link-color" style="background-color:rgb(39, 249, 203)"></li>
+                </ul>
+                <div class="precio-articulos">
+                    <a href="#"><span class="producto-precio">23,45&nbsp;</span><sup>&euro;</sup></a>
+                    <a href="#"><span class="producto-precio-rebajado">53,45&nbsp;</span><sup>&euro;</sup></a>
+                </div>
+            </div>
+            <div class="contenedor__img-color">
+                <a href="./ficha-producto.html">
+                    <div class="content-img">
+                        <img src="img/gatito_pardo_07.jpg" alt="gatito" width="100" height="300">
+                    </div>
+                    <div class="titulo-subtitulo">
+                        <p>Lorem ipsum dolor.</p>
+                        <p>lorem ipsum dolor sit amet consectetur adipis sit amet consectetur.</p>
+                    </div>
+                </a>
+                <ul class="producto-imagen color-option">
+                    <li class="circulo-color link-color" style="background-color:rgb(7, 225, 32)"></li>
+                    <li class="circulo-color link-color" style="background-color:rgb(234, 222, 4)"></li>
+                    <li class="circulo-color link-color" style="background-color:rgb(254, 158, 74)"></li>
+                    <li class="circulo-color link-color" style="background-color:rgb(153, 182, 248)"></li>
+                    <li class="circulo-color link-color" style="background-color:rgb(255, 58, 40)"></li>
+                    <li class="circulo-color link-color" style="background-color:rgb(39, 249, 203)"></li>
+                </ul>
+                <div class="precio-articulos">
+                    <a href="#"><span class="producto-precio">23,45&nbsp;</span><sup>&euro;</sup></a>
+                    <a href="#"><span class="producto-precio-rebajado">53,45&nbsp;</span><sup>&euro;</sup></a>
+                </div>
+            </div>
         </div>
                 <div class="paginacion grid-item">
                     <ol class="ol-paginacion">

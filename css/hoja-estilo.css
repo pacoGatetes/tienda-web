@@ -91,7 +91,7 @@ legend {
   	max-width: 100%; /*  */
   	padding: 0; /*  */
   	white-space: normal; /* determina cómo se maneja el espacio en blanco dentro de un elemento. */
-	font-weight: 350;
+	font-weight: 400;
 }
 
 a[href],/* en los enlaces, input, label, select, button, el cursor es el pointer (dedo)*/
@@ -812,7 +812,7 @@ ul.icons-header> li > a {
     margin-bottom: 0;
 }
 
-input.checkbox__selec[type="checkbox"]{
+.checkbox__selec[type="checkbox"]{
     -webkit-appearance: none;
     appearance: none;
     background-color: #fff;
@@ -827,8 +827,8 @@ input.checkbox__selec[type="checkbox"]{
     place-content: center;
 }
 
-input.checkbox__selec[type="checkbox"]::before,
-input.formulario__checkbox[type="checkbox"]::before {
+.checkbox__selec[type="checkbox"]::before,
+.formulario__checkbox[type="checkbox"]::before {
     content: " ";
     width: 0.65em;
     height: 0.65em;
@@ -937,7 +937,7 @@ input[type="checkbox"]:focus {
 	align-content: center;
 	flex-direction: row;
 	flex-wrap: wrap;
-	width: clamp(15.625rem, 80vw, 31.25rem);/* Esta función clamp e para o ancho do formulario */
+	width: clamp(15.625rem, 85vw, 31.25rem);/* Esta función clamp e para o ancho do formulario */
 	padding: clamp(0.75rem, 2vw, 1.875rem);
 	border: 1px solid var(--contorno);
 	border-radius: 0.313rem;
@@ -966,7 +966,7 @@ input[type="checkbox"]:focus {
 }
 
 .texto__inicia__registro {/* Isto e a etiqueta <p> do formulario de registro */
-	font-weight: 300;
+	font-weight: 400;
 	color: var(--color-textos);
 }
 .formulario { width: 100%;}/* Isto e para que a etiqueta form ocupe o 100% */
@@ -991,8 +991,15 @@ fieldset {
 .formulario__grupo {
 	text-align: left;
 }
+
+input:focus{background-color: #fff;}
 .formulario__grupo-input {
 	position: relative;
+}
+.formulario__input::placeholder {
+	font-weight: 350;
+	color: var(--gris-04);
+	background-color: #fff;
 }
 
 .formulario__input {
@@ -1001,17 +1008,16 @@ fieldset {
 	border: 0.125rem solid var(--contorno-input);
 	border-radius: 0.313em;
 	height: 2.75em;
-	/* line-height: 2.75em; */
 	padding: 0 0.188em 0 0.75em;
 	transition: all 0.3s ease;
 	transition: 180ms box-shadow ease-in-out;
 	color: var(--color-textos);
 }
-
 .formulario__input:focus {
-	border: 2px solid var(--azul-focus-formularios);
-	outline: none;
-	box-shadow: 3px 0px 15px rgba(163, 163, 163, 0.4);
+	border: .125em solid var(--azul-focus-formularios);
+	box-shadow: 0 0 0 0.125em rgb(0 113 133 / 50%);
+	outline: 0.188em solid transparent;
+	background-color: #fff;
 }
 
 .formulario__input-error {
@@ -1043,7 +1049,7 @@ fieldset {
 	/* padding-top: 0.5rem; */
 	font-size: clamp(0.88rem, 0vw + 0.88rem, 88rem);
 }
-input.formulario__checkbox[type="checkbox"] {
+.formulario__checkbox[type="checkbox"] {
 	margin-right: 0.313em; /*isto e o marxen que ten a exquerda o texto teminos e condicions*/
 	-webkit-appearance: none;
 	appearance: none;
@@ -1108,6 +1114,7 @@ input.formulario__checkbox[type="checkbox"] {
     }
 
 .btn-form { /* Estes son os botons do formulario */
+	color: var(--textos);
     letter-spacing: 0.1em;
     padding: 0.625rem 1.25rem;
     width: 100%;
@@ -1163,7 +1170,7 @@ input.formulario__checkbox[type="checkbox"] {
 /* --- Fin texto eres nuevo por aquí --- */
 /* Botón crear cuenta de usuario */
 
-a.a-cuenta-usario {
+.a-cuenta-usario {
 	/* esta e a etiqueta  do enlace */
 	width: 100%;
 	height: 1.875em;
@@ -1179,7 +1186,7 @@ a.a-cuenta-usario {
 	box-shadow: 0px 0px 5px rgba(163, 163, 163, 0.6);
 }
 
-a.a-cuenta-usario:focus,
+.a-cuenta-usario:focus,
 .div-btn:focus {
 	outline: 2px solid transparent;
 	border: 1px solid var(--rojo);
@@ -1225,17 +1232,18 @@ a.a-cuenta-usario:focus,
 
 .formulario__grupo-incorrecto .formulario__input {
 	border: 2px solid var(--rojo);
-
+	box-shadow: 0 0 0 0.125em rgb(229 9 20 / 50%);
 }
 
 /* ----- ----- Fin Estilos para Validacion ----- ----- */
 .texto__inicia-registro {
 	/*Enlace iniciar sesión si ya estas registrado*/
+	color: var(--azul-focus-formularios);
 	display: inline-flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	margin: 0.75rem 0;
-	font-weight: 300;
+	font-weight: 400;
 }
 
 .texto__inicia-registro a {
@@ -1482,7 +1490,7 @@ h1{margin: 0 auto 1.5em ; text-align: center;}
 .section-contendor-pricipal-index .img-index-fila-dos .container-descripcion-fila-dos .descripcion-foto-fila-dos {
 	/*padding: 0.75rem; */
 	color: var(--color-textos);
-	font-weight: 350;
+	font-weight: 400;
 }
 
 .section-contendor-pricipal-index .img-index-fila-dos .container-descripcion-fila-dos{
@@ -1634,7 +1642,12 @@ h1{margin: 0 auto 1.5em ; text-align: center;}
 .img-index-fila-cuatro{ box-shadow: var(--sombra); text-align: center;}
 .img-index-fila-cuatro h2{ margin: 0.813rem 0 0.813rem 0;}
 .img-index-fila-cuatro>a>img {width: 100%; height: auto; object-fit: cover;}
-.img-index-fila-cuatro .text-fila-cuatro{color: var(--color-textos); font-weight: 300; text-align: center; padding: 0 1rem 1.188rem 1rem;}
+.img-index-fila-cuatro .text-fila-cuatro{
+	color: var(--color-textos);
+	font-weight: 400;
+	text-align: center;
+	padding: 0 1rem 1.188rem 1rem;
+}
 
 /* ------------------------------------------------------------------------------ */
 /* ---------Fin del contenedor que tiene las cuatro fotos del index--------------*/
@@ -1787,7 +1800,7 @@ h1{margin: 0 auto 1.5em ; text-align: center;}
 .titulo-subtitulo{
 	display: flex;
 	flex: 1 1 max-content;
-	row-gap: clamp(.75em, 2vw, 1em);
+	row-gap: clamp(0.75em, 2vw, 1em);
 	flex-direction: row;
 	flex-wrap: wrap;
 	padding-top: clamp(0.313em, 2vw, 0.75em);
@@ -1795,8 +1808,14 @@ h1{margin: 0 auto 1.5em ; text-align: center;}
 	padding-right: clamp(1em, 2.5vw, 1.2em);
 }
 
-.titulo-subtitulo p { color:rgb(77, 85, 107); font-weight: 350; text-align:left;}
-.titulo-subtitulo p:nth-child(1) {font-weight: 500; color:rgb(110, 121, 148);}
+.titulo-subtitulo p {
+	color:rgba(77, 85, 107, 0.999);
+	font-weight: 400;
+	text-align:left;
+}
+.titulo-subtitulo p:nth-child(1) {
+	font-weight: 600;
+	color:rgba(110, 121, 148, 0.999);}
 
 .precio-articulos{
 	display: inline-flex;
@@ -1807,8 +1826,8 @@ h1{margin: 0 auto 1.5em ; text-align: center;}
 .precio-articulos a:nth-child(1){font-weight: 400;}
 .precio-articulos a{
 	font-size: clamp(1.2rem, .55vw + .9rem, 1.75rem);
-	font-weight: 300;
-	color:rgb(110, 121, 148);
+	font-weight: 400;
+	color:rgba(110, 121, 148, 0.999);
 	text-align: left;
 }
 .precio-articulos a sup{ font-size: 0.7em; bottom: 27%; position: relative;}
@@ -2138,6 +2157,53 @@ h1.nombre-del-producto{ margin: 0 0 1rem 0; text-align: left}
 	background: linear-gradient(#f7f7f7, #eaeaea);
 	box-shadow: 0 1px 0 rgba(255,255,255,.5) inset,0 -1px 0 rgba(255,255,255,.4) inset;
 }
+.btn-collapsible {
+	background-color: #fff;
+	color: var(--azul-focus-formularios);
+	cursor: pointer;
+	border: none;
+	text-align: left;
+	outline: none;
+	text-decoration: underline;
+	height: auto;
+}
+
+.btn-collapsible::after {
+	content: '\002335';
+	color: var(--azul-focus-formularios);
+	font-weight: 900;
+	height: 1.094em;
+	width: .813em;
+	float: right;
+	margin-left: .635em;
+	font-size: 1em;
+	transition: all ease-in-out .3s;
+}
+
+.btn-collapsible.active::after {
+	content: '\002335';
+	transform: rotateX(180deg);
+	background: #fff;
+}
+
+.cont-guia-tallas {
+	padding: 0 .875rem;
+	/* margin-top: .875rem; */
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height .5s ease-out;
+	background-color: #fff;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	color: var(--color-textos);
+	border: 1 sold var(--contorno);
+	text-align: center;
+	border-radius: 6px;
+	position: static;
+	box-shadow: 0 0 5px 0 rgba(15, 17, 17, 0.4);
+	max-width: clamp(580px, 2vw, 2600px);
+}
 
 /*--Tabla de precios---*/
 table, th, td{
@@ -2221,7 +2287,7 @@ table.tabla-tallas tr:nth-child(even) {
 .color-swatches__list {
   	display: grid;
   	grid-gap: 0.5625rem;
-  	grid-template-columns: repeat(auto-fit, 32.063rem);
+  	grid-template-columns: repeat(auto-fit, 2.063rem);
 	height: 2.813rem;
 	align-content: space-around;
 	justify-items: center;
@@ -2300,6 +2366,12 @@ table.tabla-tallas tr:nth-child(even) {
 	debería ocupar el artículo en cuestión. */
 	flex-shrink: 1; /*especifica el factor de contracción de un flex item*/
 	flex-basis: 10%; /*esta propiedad indica un punto de partida desde el cual el navegador se guiaría para calcular el tamaño del flex*/
+	}
+	.btn-cart-comprar::-moz-focus-inner,
+	.btn-fav::-moz-focus-inner {
+		padding-block: 0;
+		padding-inline: 0px;
+		border: 0;
 	}
 .btn-cart-comprar, .btn-fav{
 	background: #f3f3f3;
@@ -2863,24 +2935,14 @@ h3.descrip-tabcont{margin-bottom: 1rem; text-align: left;}
 	      	row-gap: clamp(1rem, 2vw, 2rem);
 	      }
 
-	      .formulario__input::placeholder {
-	      	font-weight: 350;
-	      	color: var(--gris-04);
-	      }
 
-	      .formulario__input:focus {
-	      	border: .125em solid var(--azul-focus-formularios);
-	      	box-shadow: 0 0 0 0.125em rgb(0 113 133 / 50%);
-	      	outline: 0.188em solid transparent;
-	      }
-
-	      .formulario__input-error {
+	      /* .formulario__input-error {
 	      	display: none;
 	      	color: var(--rojo);
 	      	padding-top: 0.375rem;
 	      	font-size: clamp(0.88rem, 0vw + 0.88rem, 88rem);
 	      	text-align: left;
-	      }
+	      } */
 
 	      .formulario__input:not(:focus):not(:placeholder-shown):invalid {
 	      	border-color: var(--rojo);
@@ -3052,6 +3114,295 @@ h3.descrip-tabcont{margin-bottom: 1rem; text-align: left;}
 /*------------------------------------*/
 /*-------Fin Fin finalizar pedido-----------*/
 /*----------------------------------*/
+.section-preguntas-frecuentes {
+	min-height: 100vh;
+
+}
+
+.section-preguntas-frecuentes .prg-frecuentes {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: grid;
+	column-gap: clamp(1rem, 2vw, 2rem);
+	row-gap: 1rem;
+	grid-template-columns: 18.75rem 1fr;
+	grid-template-rows: 1fr;
+
+}
+
+.info-aside {
+	display: flex;
+	flex-direction: column;
+	row-gap: clamp(.75rem, 2vw, 1.2rem);
+	padding: 1rem;
+	grid-row: 1 / 3;
+	padding-top: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
+	background-color: #f5f5f5;
+	border: 1px solid var(--contorno);
+	box-shadow: 0 0 9px 0 rgba(53, 53, 53, 0.2);
+}
+
+.logo-preguntas-frecuentes {
+	padding-top: 1em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo-preguntas-frecuentes img {
+	min-width: calc(2em + 8vw);
+	height: auto;
+}
+
+.info-aside .att-cliente {
+	margin-bottom: 0;
+}
+
+.sonar-wave {
+	animation: sonarWave 2s linear infinite;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-iteration-count: infinite;
+	animation-direction: normal;
+	animation-fill-mode: none;
+	animation-play-state: running;
+	animation-name: sonarWave;
+}
+
+.info-aside ul li {
+	padding: .75rem 0 .75rem 0;
+	cursor: pointer;
+}
+
+.info-aside ul li p:hover {
+	text-decoration: underline;
+	text-decoration-color: var(--rojo);
+	-webkit-text-decoration-color: var(--rojo);
+}
+
+/* P{max-width:75ch;} */
+.column-preguntas {
+	padding: 1.15rem;
+	min-height: 100vh;
+
+}
+
+/* .section-preguntas{
+
+} */
+.section-preguntas h2 {
+	padding: 1.5em 0;
+	text-align: center;
+}
+
+/*! =================================================*/
+/*! ============= Categorias ============= */
+/*! =================================================*/
+
+
+/*! =================================================*/
+/*! ============= Contenedor Preguntas ============= */
+/*! =================================================*/
+.contenedor-preguntas {
+	display: none;
+	grid-template-columns: 1fr;
+	gap: clamp(.75rem, 2vw, 1.25rem);
+	padding: 1rem;
+}
+
+.contenedor-preguntas.activo {
+	display: grid;
+}
+
+.contenedor-pregunta {
+	background: #fff;
+	padding: 1rem;
+	border: 2px solid var(--contorno);
+	border-radius: .375rem;
+	overflow: hidden;
+	transition: .3s ease all;
+	cursor: pointer;
+}
+
+.contenedor-pregunta:hover {
+	box-shadow: 0 0 9px 0 rgba(53, 53, 53, 0.2);
+}
+
+.contenedor-pregunta.activa {
+	border: 2px solid var(--rojo);
+}
+
+/*! =================================================*/
+/*! ============= Preguntas ============= */
+/*! =================================================*/
+.pregunta {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	column-gap: 1em;
+	text-align: left;
+}
+
+.pregunta img {
+	/* Este e o icon signo más */
+	width: 1.5rem;
+}
+
+.respuesta {
+	color: var(--color-textos);
+	max-height: 0;
+	opacity: 0;
+	transition: .3s ease all;
+}
+
+.contenedor-pregunta.activa .respuesta {
+	opacity: 1;
+	margin-top: 1.25rem;
+	/* margin-bottom: 25px; */
+}
+
+.contenedor-pregunta.activa img {
+	transform: rotate(45deg);
+}
+
+/*! ===============================================================*/
+/*! ============= Contenedor contacta con nosotros ============= */
+/*! ===========================================================*/
+.cont-contacta-whatsapp {
+	/* Este e o contenedor donde esta o fomulario de contacto e o whatsapp */
+	display: flex;
+	flex-direction: row;
+	margin-top: 3rem;
+	margin-bottom: 2rem;
+	padding: 0 1.25rem 0 1.25rem;
+
+}
+
+.col {
+	flex-basis: 100%;
+	flex: 1;
+}
+
+.contacta {
+	border: 1px solid rgba(110, 121, 148, 0.35);
+	padding: 1.2rem;
+	color: var(--textos);
+	border-radius: .313rem;
+	height: auto;
+	margin-right: 1rem;
+}
+
+.help-box {
+	text-align: center;
+	font-size: clamp(0.88rem, 0vw + 0.88rem, 88rem);
+	padding-bottom: 1rem;
+}
+
+.chat-soporte {
+	border: 1px solid var(--rojo);
+	padding: .65rem;
+	border-radius: .25rem;
+	text-align: left;
+
+}
+
+.chat-soporte .a-for-contacto {
+	color: var(--textos);
+	/* text-align: left; */
+}
+
+.chat-soporte span img {
+	float: left;
+}
+
+.chat-soporte p,
+.text-what {
+	display: inline;
+	font-size: clamp(0.88rem, 0vw + 0.88rem, 88rem);
+	text-align: left;
+}
+
+/*! =================================================*/
+/*! ============= Contenedor whatsapp ============= */
+/*! =================================================*/
+.col-whatsapp {
+	display: flex;
+	flex-direction: column;
+	row-gap: 0.75rem;
+	align-items: center;
+	justify-content: space-around;
+	/* padding: 10px; */
+	border: 1px solid rgba(110, 121, 148, .35);
+	padding: 1rem;
+	border-radius: 0.313rem;
+}
+
+.whatsapp {
+	z-index: 1000;
+}
+
+/* Isto e para que o icono de whatsapp veña hacia diante */
+.whatsapp img {
+	aspect-ratio: 1 / 1;
+}
+
+.pulse-button {
+	/* amimación do icono de whatsapp */
+	position: relative;
+	border: none;
+	box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.5);
+	border-radius: 50%;
+	background-color: var(--rojo);
+	cursor: pointer;
+	-webkit-animation: pulse 2.25s infinite cubic-bezier(0.66, 0, 0, 1);
+	-moz-animation: pulse 2.25s infinite cubic-bezier(0.66, 0, 0, 1);
+	-ms-animation: pulse 2.25s infinite cubic-bezier(0.66, 0, 0, 1);
+	animation: pulse 2.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+.pulse-button:hover {
+	/* Con hover quitamos a animacion o pasar o cursor */
+	-webkit-animation: none;
+	-moz-animation: none;
+	-ms-animation: none;
+	animation: none;
+}
+
+@-webkit-keyframes pulse {
+	to {
+		box-shadow: 0 0 0 20px rgba(232, 76, 61, 0);
+	}
+}
+
+@-moz-keyframes pulse {
+	to {
+		box-shadow: 0 0 0 20px rgba(232, 76, 61, 0);
+	}
+}
+
+@-ms-keyframes pulse {
+	to {
+		box-shadow: 0 0 0 20px rgba(232, 76, 61, 0);
+	}
+}
+
+@keyframes pulse {
+	to {
+		box-shadow: 0 0 0 20px rgba(232, 76, 61, 0);
+	}
+}
+
+
+/*! =================================================*/
+/*! ============= Pe de páxina ============= */
+/*! =================================================*/
+.preguntas-frecuentes {
+	height: 7.5rem;
+	bottom: 0px;
+}
 /*------------------------------------------*/
 /*-------Página gracias-----------*/
 /*----------------------------------------*/
@@ -3588,37 +3939,38 @@ h3.descrip-tabcont{margin-bottom: 1rem; text-align: left;}
 	/*-------------------------------------*/
 	/*------Fin Ficha de producto---------*/
 	/*-----------------------------------*/
+
 		/*------------------------------------------------------*/
 		/*-----------Fila cinco envio devolución entrega-------*/
 		/*---------------------------------------------------*/
-		.section-contendor-pricipal-index .fila-cinco {
-			grid-template-columns: repeat(6, minmax(10px, 1fr));
-		}
+	.section-contendor-pricipal-index .fila-cinco {
+		grid-template-columns: repeat(6, minmax(10px, 1fr));
+	}
 
-		.fila-cinco .envio {
-			grid-column: 1 / 4;
-			margin-bottom: 0.0623rem;
-		}
+	.fila-cinco .envio {
+		grid-column: 1 / 4;
+		margin-bottom: 0.0623rem;
+	}
 
-		.fila-cinco .devolucion {
-			grid-column: 4 / 7;
-			margin-bottom: 0.0623rem;
-		}
+	.fila-cinco .devolucion {
+		grid-column: 4 / 7;
+		margin-bottom: 0.0623rem;
+	}
 
-		.fila-cinco .entrega {
-			grid-row: 2 / 3;
-			grid-column: 1 / 3;
-		}
+	.fila-cinco .entrega {
+		grid-row: 2 / 3;
+		grid-column: 1 / 3;
+	}
 
-		.fila-cinco .pago-seguro {
-			grid-row: 2 / 3;
-			grid-column: 3 / 5;
-		}
+	.fila-cinco .pago-seguro {
+		grid-row: 2 / 3;
+		grid-column: 3 / 5;
+	}
 
-		.fila-cinco .formas-de-pago {
-			grid-row: 2 / 3;
-			grid-column: 5 / 7;
-		}
+	.fila-cinco .formas-de-pago {
+		grid-row: 2 / 3;
+		grid-column: 5 / 7;
+	}
 		/*------------------------------------------------------*/
 		/*-----------Fin cinco envio devolución entrega--------*/
 		/*----------------------------------------------------*/
@@ -3634,102 +3986,137 @@ h3.descrip-tabcont{margin-bottom: 1rem; text-align: left;}
 		/*------------------------------------------------------*/
 		/*-----------Fin cinco envio devolución entrega--------*/
 		/*----------------------------------------------------*/
-		           .buscador__carrito {
-		           	grid-template-columns: 3fr 4fr;
-		           }
+	.buscador__carrito {
+		grid-template-columns: 3fr 4fr;
+	}
 
-		           .logo-chekout {
-		           	grid-column: 1 / 3;
-		           }
+	.logo-chekout {
+		grid-column: 1 / 3;
+	}
 
-		           .buscador-chekout {
-		           	grid-column: 1 / span 4;
-		           	grid-row: 2 / 2;
-		           }
+	.buscador-chekout {
+		grid-column: 1 / span 4;
+		grid-row: 2 / 2;
+	}
 
-		           .cabecera-tabla {
-		           	display: none;
-		           }
+	.cabecera-tabla {
+		display: none;
+	}
 
-		           .body-tabla-chekouts {
-		           	gap: 1.5rem;
-		           	box-shadow: none;
-		           }
+	.body-tabla-chekouts {
+		gap: 1.5rem;
+		box-shadow: none;
+	}
 
-		           .columna-tabla {
-		           	flex-direction: column;
-		           	padding: 0.75rem;
-		           	border: 1px solid var(--contorno);
-		           	box-shadow: var(--sombra-formularios);
-		           	border-radius: 0.25rem;
-		           }
+	.columna-tabla {
+		flex-direction: column;
+		padding: 0.75rem;
+		border: 1px solid var(--contorno);
+		box-shadow: var(--sombra-formularios);
+		border-radius: 0.25rem;
+	}
 
-		           .cont-img-producto img {
-		           	margin-right: 0px;
-		           	margin-bottom: 0.6em;
-		           	margin: 0 auto 0.7em auto;
-		           	text-align: center;
-		           	float: none;
-		           	width: 100%;
-		           	height: auto;
-		           }
+	.cont-img-producto img {
+		margin-right: 0px;
+		margin-bottom: 0.6em;
+		margin: 0 auto 0.7em auto;
+		text-align: center;
+		float: none;
+		width: 100%;
+		height: auto;
+	}
 
-		           .cont-img-producto p {
-		           	clear: both;
-		           }
+	.cont-img-producto p {
+		clear: both;
+	}
 
-		           .grupo__input-number {
-		           	flex: 0 0 2em;
-		           	width: 50%;
-		           }
+	.grupo__input-number {
+		flex: 0 0 2em;
+		width: 50%;
+	}
 
-		           .columna-tabla .papelera {
-		           	margin-bottom: 0;
-		           	background: #eff0f3;
-		           	background: -webkit-linear-gradient(top, #f7f8fa, #e7e9ec);
-		           	background: linear-gradient(to bottom, #f7f8fa, #e7e9ec);
-		           	border-color: #adb1b8 #a2a6ac #8d9096;
-		           	border-style: solid;
-		           	border-width: 1px;
-		           	border-radius: 0.313rem;
-		           	width: 100%;
-		           }
+	.columna-tabla .papelera {
+		margin-bottom: 0;
+		background: #eff0f3;
+		background: -webkit-linear-gradient(top, #f7f8fa, #e7e9ec);
+		background: linear-gradient(to bottom, #f7f8fa, #e7e9ec);
+		border-color: #adb1b8 #a2a6ac #8d9096;
+		border-style: solid;
+		border-width: 1px;
+		border-radius: 0.313rem;
+		width: 100%;
+	}
 
-		           .columna-tabla .papelera img {
-		           	margin: 0 auto;
-		           }
+	.columna-tabla .papelera img {
+		margin: 0 auto;
+	}
 
-		           .contenedor__botones-izquierda
+	.contenedor__botones-izquierda{
+	 flex-direction: column;
+	 row-gap: 1.2rem;
+	}
 
-		           /*.contenedor__boton-derecha*/
-		           	{
-		           	flex-direction: column;
-		           	row-gap: 1.2rem;
-		           }
+	.cupon__descuento {
+		flex-direction: row;
+	}
 
-		           .cupon__descuento {
-		           	flex-direction: row;
-		           }
+	.contenedor__input-btn {
+		flex-wrap: nowrap;
+		flex-direction: column;
+		align-items: stretch;
+	}
 
-		           .contenedor__input-btn {
-		           	flex-wrap: nowrap;
-		           	flex-direction: column;
-		           	align-items: stretch;
-		           }
+	.column__derecha {
+		width: 100%;
+	}
 
-		           .column__derecha {
-		           	width: 100%;
-		           }
-
-		           .columna__totales-carrito {
-		           	width: 100%;
-		           }
+	.columna__totales-carrito {
+		width: 100%;
+	}
 		/*------------------------------------------------------*/
 		/*-----------Fin cinco envio devolución entrega--------*/
 		/*----------------------------------------------------*/
 		/*--botones favoritos---*/
-		.btn-favoritos {margin-bottom: 2.5em;}
-		/*--fin botones favoritos--*/
+	.btn-favoritos {margin-bottom: 2.5em;}
+	/*--fin botones favoritos--*/
+	/*--- preguntas frecuentes ---*/
+	.info-aside {
+		grid-row: 1 / 2;
+		grid-column: 1 / 3;
+		margin: 0 1rem 0 1rem;
+	}
+
+	.column-preguntas {
+		grid-row: 2 / 3;
+		grid-column: 1 / 3;
+		padding: 0;
+	}
+
+	.section-preguntas-frecuentes .prg-frecuentes {
+		padding: 1rem 0 0 0;
+	}
+
+	.logo-preguntas-frecuentes img {
+		min-width: calc(8em + 10vw);
+		height: auto;
+	}
+
+	/*----------------------------------------*/
+	/*-----Fin Logo preguntas frecuentes-----*/
+	/*--------------------------------------*/
+	.info-aside ul li {
+		padding: 0.5rem 0 0.5rem 0;
+	}
+
+	.cont-contacta-whatsapp {
+		flex-direction: column;
+		row-gap: 1rem;
+	}
+
+	.contacta {
+		margin-right: 0;
+	}
+		/*---- Fin preguntas frecuentes -------*/
 }
 
 	/*---------------------------------------------------------*/
@@ -3757,11 +4144,6 @@ h3.descrip-tabcont{margin-bottom: 1rem; text-align: left;}
 	/*---------------------------------*/
 	/*---Contendor-lista-articulos----*/
 	/*-------------------------------*/
-
-	/*.section-contendor-pricipal-index .contendor-lista-articulos {
-		/*grid-template-columns: repeat(auto-fill, minmax(min(8rem, 100%), 1fr)); antes habia 11rem coambie a 8 *
-	}*/
-
 	.section-contendor-pricipal-index .contendor-lista-articulos .lista-articulos .descripcion-articulo{
 		row-gap: 0.5rem;
 		padding: 0.5rem;
@@ -3778,9 +4160,6 @@ h3.descrip-tabcont{margin-bottom: 1rem; text-align: left;}
 	/*---------------------------------------*/
 	/*---Carroousel de imgenes da galeria----*/
 	/*--------------------------------------*/
-	/* .contenedor__galeria {
-		grid-template-rows: 29rem;
-	} */
 
 	.contenedor__imagen-producto {
 		display: none;
@@ -3803,14 +4182,14 @@ h3.descrip-tabcont{margin-bottom: 1rem; text-align: left;}
 		display: inline-block;
 	}
 
-				/* Estes son os circulos rojos */
+	/* Estes son os circulos rojos */
 	/*--------------------------------------------*/
 	/*---Fin Carroousel de imgenes da galeria----*/
 	/*------------------------------------------*/
 	/*-------------------------------------*/
 	/*---------Preguntas frecuentes-------*/
 	/*-----------------------------------*/
-	.contenedor-preguntas {padding: 0;}
+	/* .contenedor-preguntas {padding: 0;} */
 	.section-preguntas h2 {
 		padding: 0.75em 0;
 
@@ -3820,7 +4199,7 @@ h3.descrip-tabcont{margin-bottom: 1rem; text-align: left;}
 	/*------Fin Preguntas frecuentes------*/
 	/*----------------------------------*/
 
-	}
+}
 /*-------------------------------------------------*/
 /*---------Cerramos Mediaqueies de 600px----------*/
 /*-----------------------------------------------*/
@@ -3829,7 +4208,7 @@ h3.descrip-tabcont{margin-bottom: 1rem; text-align: left;}
 /*----------------------------------*/
 @media only screen and (min-width: 600px) {
   	.migas-pan .home-label {
-    		display: none;
+    	display: none;
   	}
 
   span.psw {/*esto es para dispositivos moviles*/
@@ -3849,12 +4228,11 @@ h3.descrip-tabcont{margin-bottom: 1rem; text-align: left;}
 @media screen and (max-width: 480px) {
 	.contenedor-logo-buscador-enlaces {grid-template-columns: 1fr 3fr 4fr;}
 	.grid-menu-nav .btn-menu-cerrar { /* Esta e a X de cerrar o menu de navegación */
-			left: calc(100% - 32%);
+		left: calc(100% - 32%);
 	}
 	.contenedor__galeria {
-			grid-template-rows: 1fr;
-
-		}
+		grid-template-rows: 1fr;
+	}
 	/*------------------------------------------------------*/
 	/*-----------Fila cinco envio devolución entrega-------*/
 	/*---------------------------------------------------*/
@@ -3863,27 +4241,27 @@ h3.descrip-tabcont{margin-bottom: 1rem; text-align: left;}
 		row-gap: 0.75rem;
 	}
 	.fila-cinco .envio {
-			grid-column: 1 / 7;
+		grid-column: 1 / 7;
 	}
 
 	.fila-cinco .devolucion {
-			grid-row: 2 / 3;
-			grid-column: 1 / 7;
+		grid-row: 2 / 3;
+		grid-column: 1 / 7;
 	}
 
 	.fila-cinco .entrega {
-			grid-row: 3 / 4;
-			grid-column: 1 / 7;
+		grid-row: 3 / 4;
+		grid-column: 1 / 7;
 	}
 
 	.fila-cinco .pago-seguro {
-			grid-row: 4 / 5;
-			grid-column: 1/ 7;
+		grid-row: 4 / 5;
+		grid-column: 1/ 7;
 	}
 
 	.fila-cinco .formas-de-pago {
-			grid-row: 5 / 6;
-			grid-column: 1 / 7;
+		grid-row: 5 / 6;
+		grid-column: 1 / 7;
 	}
 		/*------------------------------------------------------*/
 		/*-----------Fin cinco envio devolución entrega--------*/
@@ -3891,50 +4269,57 @@ h3.descrip-tabcont{margin-bottom: 1rem; text-align: left;}
 
 		/* ----------- Pestañas de información do porducto --------*/
 
-		.tab-pestanas .tablink:hover {border-bottom: 1px solid var(--contorno);}
-		.tab-pestanas .tablink:focus {
-			border-bottom: 1px solid var(--contorno);
-		}
-		.tab-pestanas .tablink.active {
-			background-color: var(--rojo);
-			color: #fff;
-			border-bottom: none;
-		}
-		.tab-pestanas  {
-			width: 100%;
-			overflow-x: auto;
-			scroll-snap-type: x mandatory;
-			overscroll-behavior-x: contain; /* Establece el comportamiento del navegador cuando se alcanza el limite horizonta */
-			-webkit-overflow-scrolling: touch; /* Isto e importate para IOS */
-			white-space: nowrap; /* Isto e para que os textos non fagan salto de linea */
-			box-shadow: 0 6px 6px 0 rgba(52, 52, 52, 0.2);
-			scrollbar-width: none; /* Ocultamos a barra de desplazamiento */
-			-ms-overflow-style: none; /* Ocultamos a barra de desplazamiento */
-			padding-bottom: 0.438rem;
-			column-gap: 1.2rem;
-		}
-		.tab-pestanas::-webkit-scrollbar {display: none;} /*Oocultamos a barra de desplazamineto */
-		.tab-pestanas button.tablink {
-			scroll-snap-align: start;
-			scroll-snap-stop: always;
-			width: 100%;
-			border: 0.063rem solid var(--contorno);
-			border-radius: 1.5rem;
-			padding: 0.5rem 1.2rem 0.5rem 1.2rem;
-		}
-		.tabcontent {
-			height: 21.875rem;
-			overflow-y: auto;
-		}
+	.tab-pestanas .tablink:hover {border-bottom: 1px solid var(--contorno);}
+	.tab-pestanas .tablink:focus {
+		border-bottom: 1px solid var(--contorno);
+	}
+	.tab-pestanas .tablink.active {
+		background-color: var(--rojo);
+		color: #fff;
+		border-bottom: none;
+	}
+	.tab-pestanas  {
+		width: 100%;
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		overscroll-behavior-x: contain; /* Establece el comportamiento del navegador cuando se alcanza el limite horizonta */
+		-webkit-overflow-scrolling: touch; /* Isto e importate para IOS */
+		white-space: nowrap; /* Isto e para que os textos non fagan salto de linea */
+		box-shadow: 0 6px 6px 0 rgba(52, 52, 52, 0.2);
+		scrollbar-width: none; /* Ocultamos a barra de desplazamiento */
+		-ms-overflow-style: none; /* Ocultamos a barra de desplazamiento */
+		padding-bottom: 0.438rem;
+		column-gap: 1.2rem;
+	}
+	.tab-pestanas::-webkit-scrollbar {display: none;} /*Oocultamos a barra de desplazamineto */
+	.tab-pestanas button.tablink {
+		scroll-snap-align: start;
+		scroll-snap-stop: always;
+		width: 100%;
+		border: 0.063rem solid var(--contorno);
+		border-radius: 1.5rem;
+		padding: 0.5rem 1.2rem 0.5rem 1.2rem;
+	}
+	.tabcontent {
+		height: 21.875rem;
+		overflow-y: auto;
+	}
+	.section-preguntas h2 {
+		padding: 0.375em 0;
+		text-align: center;
+	}
 		/* ------ Pe do formulario -----------*/
-		.contenedor-privacidad-form .condiciones-form{
-			flex-direction: column;
-			row-gap: 0.75rem;
-		}
-		.favicon-footer {
-			padding: 0 0.75rem 0 0.75rem;
-			padding-bottom: 0.25rem;
-		}
+	.contenedor-privacidad-form .condiciones-form{
+		flex-direction: column;
+		row-gap: 0.75rem;
+	}
+	.favicon-footer {
+		padding: 0 0.75rem 0 0.75rem;
+		padding-bottom: 0.25rem;
+	}
+	.section-contendor-pricipal-index .contendor-lista-articulos {
+		grid-template-columns: repeat(auto-fill, minmax(min(8rem, 100%), 1fr));
+	}
 }
 	/*--------------------------------------------------------*/
 	/*---------Abrimos Mediaqueies de 280px a 360px----------*/
@@ -3956,17 +4341,16 @@ h3.descrip-tabcont{margin-bottom: 1rem; text-align: left;}
 	/* fin contenedor menu navegacion */
 	/* contenedor logo-buscador-enlaces cabecera */
 	.contenedor-logo-buscador-enlaces{ grid-template-columns: 1fr 1fr 3fr;}
-	/* .contenedor-logo-buscador-enlaces .logo{ width: 40px;} */
 	img.logo-peque {
 		/* min-width: calc(1.5em + 4vw); */
 		min-width: auto;
 		max-width: 35px;
 	}
-		.container-btn-compra-btn-fav {
-			flex-direction: column;
-			align-items: stretch;
-			row-gap: 1em;
-		}
+	.container-btn-compra-btn-fav {
+		flex-direction: column;
+		align-items: stretch;
+		row-gap: 1em;
+	}
 	/* fin contenedor logo-buscador-enlaces cabecera */
 
 	.contenedor-talla {

@@ -3,18 +3,13 @@ const inputs = document.querySelectorAll('#formulario input');
 
 const expresiones = {
     usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, números, guión y guión_bajo
-    //nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
     password: /^.{4,12}$/, //4 a 12 digitos.
-    //correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-    //telefono: /^\d{7,14}$/ // 7 a 14 números.
+
 };
 
 const campos = {
     usuario: false,
-    //nombre: false,
     password: false,
-    //correo: false,
-    //telefono: false
     terminos: false
 };
 
@@ -25,6 +20,7 @@ const validarFormulario = (e) => {
             break;
         case "password":
             validarCampo(expresiones.password, e.target, 'password');
+            break;
     }
 };
 // Validar Usuario, Nombre, correo electonico, teléfono
@@ -49,21 +45,21 @@ const validarCampo = (expresion, input, campo) => {
 //validar contraseñas
 const validarPassword2 = () => {
     const inputPassword1 = document.getElementById('password');
-  
+
 
     if (inputPassword1.value) {
-        document.getElementById(`grupo__password2`).classList.add('formulario__grupo-incorrecto');
-        document.getElementById(`grupo__password2`).classList.remove('formulario__grupo-correcto');
-        document.querySelector(`#grupo__password2 svg`).classList.add('fa-xmark');
-        document.querySelector(`#grupo__password2 svg`).classList.remove('fa-check');
-        document.querySelector(`#grupo__password2 .formulario__input-error`).classList.add('formulario__input-error-activo');
+        document.getElementById(`grupo__password`).classList.add('formulario__grupo-incorrecto');
+        document.getElementById(`grupo__password`).classList.remove('formulario__grupo-correcto');
+        document.querySelector(`#grupo__password svg`).classList.add('fa-xmark');
+        document.querySelector(`#grupo__password svg`).classList.remove('fa-check');
+        document.querySelector(`#grupo__password .formulario__input-error`).classList.add('formulario__input-error-activo');
         campos['password'] = false;
     } else {
-        document.getElementById(`grupo__password2`).classList.remove('formulario__grupo-incorrecto');
-        document.getElementById(`grupo__password2`).classList.add('formulario__grupo-correcto');
-        document.querySelector(`#grupo__password2 svg`).classList.remove('fa-xmark');
-        document.querySelector(`#grupo__password2 svg`).classList.add('fa-check');
-        document.querySelector(`#grupo__password2 .formulario__input-error`).classList.remove('formulario__input-error-activo');
+        document.getElementById(`grupo__password`).classList.remove('formulario__grupo-incorrecto');
+        document.getElementById(`grupo__password`).classList.add('formulario__grupo-correcto');
+        document.querySelector(`#grupo__password svg`).classList.remove('fa-xmark');
+        document.querySelector(`#grupo__password svg`).classList.add('fa-check');
+        document.querySelector(`#grupo__password .formulario__input-error`).classList.remove('formulario__input-error-activo');
         campos['password'] = true;
     }
 };
@@ -76,7 +72,7 @@ inputs.forEach((input) => {
 formulario.addEventListener('submit', (e) => {
     e.preventDefault();
     const terminos = document.getElementById('terminos');
-    if (campos.usuario  && campos.password) {
+    if (campos.usuario && campos.password) {
         formulario.reset();
 
         document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {

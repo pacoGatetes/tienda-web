@@ -18,7 +18,7 @@
     <!--<link rel="icon" href="icons/favicon.ico" sizes="16x16" type="image/vnd.microsoft.icon">-->
     <link rel="apple-touch-icon" sizes="57x57" href="icons/touch-icon-iphone.png"><!--favicon para telf Apple-->
     <link rel="apple-touch-icon" sizes="114x114" href="icons/touch-icon-ipad.png"><!--favicon Apple para Ipad-->
-    <script rel="preload" src="js/main.js" defer></script>
+    <!-- <script rel="preload" src="js/main.js" defer></script> -->
 </head>
 <body>
     <main class="row-fila contenedor__formulario-pago">
@@ -48,7 +48,7 @@
                         <div class="formulario__grupo-label nombre">
                             <label for="nombre" class="formulario__label">Nombre</label>
                             <div class="formulario__grupo-input">
-                                <input type="text" class="formulario__input" id="nombre" name="nombre" placeholder="Nombre " maxlength="50"
+                                <input type="text" class="formulario__input" id="nombre" name="nombre" placeholder="Nombre" maxlength="50"
                                     pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" required>
                                 <p class="formulario__input-error" role="alert">Por favor, introduzca un nombre válido</p>
                             </div>
@@ -105,7 +105,7 @@
                                         </span>
                                     </div>
                                 </div>
-                                <input type="tel" class="formulario__input" id="telefono" name="telefono" placeholder=" " maxlength="15"
+                                <input type="tel" class="formulario__input" id="telefono" name="telefono" placeholder=" " maxlength="9"
                                     pattern="^[9|8|7|6]\d{8}$" required>
                                 <p class="formulario__input-error" role="alert">Por favor, introduzca un número de teléfono valido</p>
                             </div>
@@ -113,8 +113,8 @@
                         <!-- Grupo mensaje -->
                         <div class="formulario__grupo mensaje" id="">
                             <label for="mensaje" class="formulario__label">Observaciones</label>
-                                <textarea class="mensaje__formulario-contacto" id="mensaje" rows="5" cols="50" name="mensaje" minlength="20"
-                            spellcheck="true" placeholder="Escriba su mensaje..."></textarea>
+                                <textarea class="mensaje__formulario-contacto" id="mensaje" name="mensaje" rows="5" cols="50"  minlength="20" spellcheck="true" placeholder="Escriba su mensaje...">
+                                </textarea>
                         </div>
                             <!--Fin Grupo mensaje -->
 
@@ -169,13 +169,13 @@
                 <li><a href="#">Política de privacidad</a></li>
                 <li><a href="#">Política de Cookies</a></li>
             </ul>
-                <ul class="favicon-footer">
-                    <li class="">
-                        <img src="./icons/favicon.svg" width="20" height="20" alt="">
-                        <p>&copy;&nbsp;2020-2022 gatetes tiene todos los derechos reservados. Si no cumples la ley, te arañamos
-                        </p>
-                    </li>
-                </ul>
+            <ul class="favicon-footer">
+                <li class="">
+                    <img src="./icons/favicon.svg" width="20" height="20" alt="">
+                    <p>&copy;&nbsp;2020-2022 gatetes tiene todos los derechos reservados. Si no cumples la ley, te arañamos
+                    </p>
+                </li>
+            </ul>
         </div>
     </footer>
 </body>

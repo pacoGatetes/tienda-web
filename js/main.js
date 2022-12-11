@@ -79,10 +79,91 @@ btnCerrarMenu?.addEventListener('click', (e)=> {
 });
 
 
-//////////////////////////////////////////////////////////////
-//////////////FILTROS SELECT/////////////////////////////
-////////////////////////////////////////////////////////////
-////abrimos los deplegables donde estan los checkbox///////////
+
+	//////////////////////////////////////////////////////////////
+	//////////////CAROUSEL DEL INDEX/////////////////////////////
+	////////////////////////////////////////////////////////////
+	const fila = document.querySelector('.contenedor-carousel');
+	const articulorecomendadoindex = document.querySelectorAll('.articulo-recomendado-index');
+	const flechaIzquierda = document.getElementById('flecha-izquierda');
+	const flechaDerecha = document.getElementById('flecha-derecha');
+
+	// ? ----- ----- Event Listener para la flecha derecha. ----- -----
+if (flechaDerecha) {
+	flechaDerecha.addEventListener('click', () => {
+		fila.scrollLeft += fila.offsetWidth;
+
+		const indicadorActivo = document.querySelector('.indicadores .activo');
+		if (indicadorActivo.nextSibling) {
+			indicadorActivo.nextSibling.classList.add('activo');
+			indicadorActivo.classList.remove('activo');
+		}
+	});
+	flechaDerecha?.addEventListener('click', () => {
+
+	});
+}
+	// ? ----- ----- Event Listener para la flecha izquierda. ----- -----
+if (flechaIzquierda) {
+	flechaIzquierda.addEventListener('click', () => {
+		fila.scrollLeft -= fila.offsetWidth;
+
+		const indicadorActivo = document.querySelector('.indicadores .activo');
+		if (indicadorActivo.previousSibling) {
+			indicadorActivo.previousSibling.classList.add('activo');
+			indicadorActivo.classList.remove('activo');
+		}
+	});
+	flechaIzquierda?.addEventListener('click', () => {
+	});
+}
+	// ? ----- ----- Paginación ----- -----
+	const numeroPaginas = Math.ceil(articulorecomendadoindex.length / 8);
+		for (let i = 0; i < numeroPaginas; i++) {
+	const indicador = document.createElement('button');
+	if (i === 0) {
+		indicador.classList.add('activo');
+	}
+
+	document.querySelector('.indicadores').appendChild(indicador);
+	indicador.addEventListener('click', (e) => {
+		fila.scrollLeft = i * fila.offsetWidth;
+
+		document.querySelector('.indicadores .activo').classList.remove('activo');
+		e.target.classList.add('activo');
+	});
+}
+	//////////////////////////////////////////////////////////////////////
+	////////////////FIN CAROUSEL DEL INDEX///////////////////////////////
+	////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////
+	////////////////MIGAS DE PAN//////////////////////////////////////
+	/////////////////////////////////////////////////////////////////
+	const crumbs = document.querySelectorAll('migas-pan select');
+	const allowedKeys = new Set(['Tab', 'Enter', ' ']);
+	const preventedKeys = new Set(['ArrowUp', 'ArrowDown']);
+
+	crumbs.forEach(nav => {
+		let ignoreChange = false;
+
+		nav.addEventListener('change', e => {
+			if (ignoreChange) return;
+		});
+
+		nav.addEventListener('keydown', ({ key }) => {
+			if (preventedKeys.has(key))
+				ignoreChange = true;
+			else if (allowedKeys.has(key))
+				ignoreChange = false;
+		});
+	});
+	///////////////////////////////////////////////////////////////////
+	////////////////FIN MIGAS DE PAN//////////////////////////////////
+	/////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////
+	//////////////FILTROS SELECT/////////////////////////////
+	////////////////////////////////////////////////////////////
+	////abrimos los deplegables donde estan los checkbox///////////
 
 // Obtener todo el menú desplegable del documento
 document.querySelectorAll('.boton__desplegable').forEach(dropDownFunc);//este e o div class= "boton__desplegable" que hace que el checkobx sea desplegable.
@@ -180,108 +261,10 @@ document.addEventListener("keyup", e => {
 //////////////////////////////////////////////////////////////
 //////////////FIN FILTROS SELECT/////////////////////////////
 ////////////////////////////////////////////////////////////
-	//////////////////////////////////////////////////////////////
-	//////////////CAROUSEL DEL INDEX/////////////////////////////
-	////////////////////////////////////////////////////////////
-	const fila = document.querySelector('.contenedor-carousel');
-	const articulorecomendadoindex = document.querySelectorAll('.articulo-recomendado-index');
-	const flechaIzquierda = document.getElementById('flecha-izquierda');
-	const flechaDerecha = document.getElementById('flecha-derecha');
 
-	// ? ----- ----- Event Listener para la flecha derecha. ----- -----
-if (flechaDerecha) {
-	flechaDerecha.addEventListener('click', () => {
-		fila.scrollLeft += fila.offsetWidth;
-
-		const indicadorActivo = document.querySelector('.indicadores .activo');
-		if (indicadorActivo.nextSibling) {
-			indicadorActivo.nextSibling.classList.add('activo');
-			indicadorActivo.classList.remove('activo');
-		}
-	});
-	flechaDerecha?.addEventListener('click', () => {
-
-	});
-}
-	// ? ----- ----- Event Listener para la flecha izquierda. ----- -----
-if (flechaIzquierda) {
-	flechaIzquierda.addEventListener('click', () => {
-		fila.scrollLeft -= fila.offsetWidth;
-
-		const indicadorActivo = document.querySelector('.indicadores .activo');
-		if (indicadorActivo.previousSibling) {
-			indicadorActivo.previousSibling.classList.add('activo');
-			indicadorActivo.classList.remove('activo');
-		}
-	});
-	flechaIzquierda?.addEventListener('click', () => {
-	});
-}
-	// ? ----- ----- Paginación ----- -----
-	const numeroPaginas = Math.ceil(articulorecomendadoindex.length / 8);
-		for (let i = 0; i < numeroPaginas; i++) {
-	const indicador = document.createElement('button');
-	if (i === 0) {
-		indicador.classList.add('activo');
-	}
-
-	document.querySelector('.indicadores').appendChild(indicador);
-	indicador.addEventListener('click', (e) => {
-		fila.scrollLeft = i * fila.offsetWidth;
-
-		document.querySelector('.indicadores .activo').classList.remove('activo');
-		e.target.classList.add('activo');
-	});
-}
-	//////////////////////////////////////////////////////////////////////
-	////////////////FIN CAROUSEL DEL INDEX///////////////////////////////
-	////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////
-	////////////////MIGAS DE PAN//////////////////////////////////////
-	/////////////////////////////////////////////////////////////////
-	const crumbs = document.querySelectorAll('migas-pan select');
-	const allowedKeys = new Set(['Tab', 'Enter', ' ']);
-	const preventedKeys = new Set(['ArrowUp', 'ArrowDown']);
-
-	crumbs.forEach(nav => {
-		let ignoreChange = false;
-
-		nav.addEventListener('change', e => {
-			if (ignoreChange) return;
-		});
-
-		nav.addEventListener('keydown', ({ key }) => {
-			if (preventedKeys.has(key))
-				ignoreChange = true;
-			else if (allowedKeys.has(key))
-				ignoreChange = false;
-		});
-	});
-	///////////////////////////////////////////////////////////////////
-	////////////////FIN MIGAS DE PAN//////////////////////////////////
-	/////////////////////////////////////////////////////////////////
-	//////////////////////////////////////////////////////////////
-	/////////////DESPLEGABLE TABLA DE TALLAS/////////////////////
-	////////////////////////////////////////////////////////////
-
-
-
-	//////////////////////////////////////////////////////////////////
-	///////////////FIN DESPLEGLE TABLA DE TALLAS/////////////////////
-	////////////////////////////////////////////////////////////////
-
-	/////////////////////////////////////////////////////////////////
-	/////////////////IMAGENES FICHA PRODUCTO////////////////////////
-	///////////////////////////////////////////////////////////////
-
-
-
-	/////////////////////////////////////////////////////////////////
-	/////////////////IMAGENES FICHA PRODUCTO////////////////////////
-	///////////////////////////////////////////////////////////////
-	//////////////////////////////////////////////////////////////
-	/////////////////FILTROS DE COLOR//////////////////////
-	////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+/////////////////FILTROS DE COLOR////////////////////////////
+////////////////////////////////////////////////////////////
 (function () {
 	var ColorSwatches = function (element) {
 		this.element = element;
@@ -415,12 +398,70 @@ if (flechaIzquierda) {
 	}
 }());
 
-	//////////////////////////////////////////////////////////////
-	/////////////////FIN FILTROS DE COLOR//////////////////
-	////////////////////////////////////////////////////////////
-	//////////////////////////////////////////////////////////////
-	/////////////////PREGUNTAS FRECUENTES//////////////////
-	////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+///////////////////FIN FILTROS DE COLOR//////////////////////
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+///////////// SELECT OPTION TALLA//////////////////////////
+//////////////////////////////////////////////////////////
+const selectElement = document.querySelector('.select-talla');
+selectElement?.addEventListener('change', (event) => {
+	const result = document.querySelector('.result');
+	result.textContent = `${event.target.value}`;
+});
+////////////////////////////////////////////////////////////
+///////////// CERRAMOS OPTION SELECT TALLA ////////////////
+//////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////
+/////////////DESPLEGABLE TABLA DE TALLAS/////////////////////
+////////////////////////////////////////////////////////////
+
+var coll = document.getElementsByClassName("btn-collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+	coll[i].addEventListener("click", function () {
+		this.classList.toggle("active");
+		var content = this.nextElementSibling;
+		if (content.style.maxHeight) {
+			content.style.maxHeight = null;
+		} else {
+			content.style.maxHeight = content.scrollHeight + "px";
+		}
+	});
+}
+
+//////////////////////////////////////////////////////////////////
+///////////////FIN DESPLEGLE TABLA DE TALLAS/////////////////////
+////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////
+/////////PESTAÑAS INFO CARATERISTICAS ENVIO GARANTIA///////
+//////////////////////////////////////////////////////////
+
+function openPage(evt, pageName) {
+	var i, tabcontent, tablinks;
+	tabcontent = document.getElementsByClassName("tabcontent");
+	for (i = 0; i < tabcontent.length; i++) {
+		tabcontent[i].style.display = "none";
+	}
+	tablinks = document.getElementsByClassName("tablink");
+	for (i = 0; i < tablinks.length; i++) {
+		tablinks[i].className = tablinks[i].className.replace(" active", "");
+	}
+	document.getElementById(pageName).style.display = "block";
+	evt.currentTarget.className += " active";
+}
+//Obtenga el elemento con id = "defaultOpen" y haga clic en él
+document?.getElementById("defaultopen")?.click();
+/////////////////////////////////////////////////////////////////////////////////////////
+//////////// CERRAMOS PESTAÑAS INFO CARATERISTICAS ENVIO GARANTIA //////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////
+///////////////////////PREGUNTAS FRECUENTES//////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
 const preguntas = document.querySelectorAll('.section-preguntas .contenedor-pregunta');
 preguntas.forEach((pregunta) => {
 	pregunta.addEventListener('click', (e) => {

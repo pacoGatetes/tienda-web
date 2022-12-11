@@ -89,7 +89,7 @@
                     </div>
                         <!--<div class="contenedor__boton-derecha">-->
                      <div class="col-3 div-btn">
-                        <a class="btn-form btn__seguir-comprando" oncharge="history.go(-1)">Seguir comprado</a>
+                        <a class="btn-form btn__seguir-comprando" onClick="history.go(-1)">Seguir comprado</a>
                     </div>
                         <!--</div>-->
                 </div>
@@ -113,45 +113,6 @@
             </ul>
         </div>
     </footer>
-
-    <script>
-        var input = document.querySelector('#qty');
-        var btnminus = document.querySelector('.qtyminus');
-        var btnplus = document.querySelector('.qtyplus');
-
-        if (input !== undefined && btnminus !== undefined && btnplus !== undefined && input !== null && btnminus !== null && btnplus !== null) {
-            var min = Number(input.getAttribute('min'));
-            var max = Number(input.getAttribute('max'));
-            var step = Number(input.getAttribute('step'));
-
-            function qtyminus(e){
-                var current = Number(input.value);
-                var newval = (current - step);
-                if(newval < min) {
-                    newval = min;
-                }else if(newval > max) {
-                    newval = max;
-                }
-                input.value = Number(newval);
-                e.preventDefault();
-            }
-
-            function qtyplus(e) {
-                var current = Number(input.value);
-                var newval = (current + step);
-                if(newval > max) newval = max;
-                input.value = Number(newval);
-                e.preventDefault();
-            }
-
-            btnminus.addEventListener('click',qtyminus);
-            btnplus.addEventListener('click',qtyplus);
-        }
-        //Isto e apara que o input type non se poida introducir texto en firefox
-    document.querySelector('input').addEventListener('keydown', function (evt) {
-        !/(^\d*\.?\d*$)|(Backspace|Control|Meta|a)/.test(evt.key) && evt.preventDefault()
-    });
-    </script>
 
 </body>
 </html>

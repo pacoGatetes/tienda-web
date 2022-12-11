@@ -1,63 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-<style>
-    .btn-collapsible {
-        background-color: #fff;
-        color: var(--azul-focus-formularios);
-        cursor: pointer;
-        /* padding: 0 0 0 1rem ; */
-        /* width: 100%; */
-        border: none;
-        text-align: left;
-        outline: none;
-        text-decoration: underline;
-        height: auto;
-    }
-
-    .btn-collapsible::after {
-        content: '\002335';
-        /*transform: rotateZ(0deg);*/
-        color: var(--azul-focus-formularios);
-        font-weight: 900;
-        height: 1.094em;
-        width: .813em;
-        float: right;
-        margin-left: .635em;
-        font-size: 1em;
-        transition: all ease-in-out .3s;
-    }
-
-    .btn-collapsible.active::after {
-        content: '\002335';
-        transform: rotateX(180deg);
-        background: #fff;
-    }
-
-    .cont-guia-tallas {
-        padding: 0 .875rem;
-        /* margin-top: .875rem; */
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height .5s ease-out;
-        background-color: #fff;
-        display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	color: var(--color-textos);
-	border: 1 sold var(--contorno);
-	text-align: center;
-	border-radius: 6px;
-	position: static;
-	box-shadow: 0 0 5px 0 rgba(15, 17, 17, 0.4);
-    max-width: clamp(580px, 2vw, 2600px);
-}
-
-</style>
-
-
-<!DOCTYPE html>
-<html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <title>Una monada de gatitos</title>
@@ -80,7 +22,6 @@
     <link rel="apple-touch-icon" sizes="114x114" href="icons/touch-icon-ipad.png">
     <!--favicon Apple para Ipad-->
     <script rel="preload" src="js/main.js" defer></script>
-
 </head>
 
 <body>
@@ -90,23 +31,19 @@
         <header class="header">
             <div class="menu-nav contenedor-cabezera row" id="menu-nav">
                 <div class="contenedor-logo-buscador-enlaces grid-item">
-
                     <div class="contenedor-botones-menu">
                         <button type="buttom" id="btn-menu-barras" class="btn-menu-barras" title="menu"
-                            aria-controls="grid-menu-nav" aria-labelledby="grid-menu-nav" aria-expanded="false">
-                            <!--Esta son as barras de menú móvil-->
-                            <svg class="menu-fa-bars" aria-hidden="true" focusable="false" data-prefix="fas"
-                                data-icon="bars" role="img" xml:space="preserve" width="24" height="24"
-                                viewBox="0 0 448 512">
+                            aria-controls="grid-menu-nav" aria-labelledby="grid-menu-nav"
+                            aria-expanded="false"><!--Esta son as barras de menú móvil-->
+                            <svg class="menu-fa-bars" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars"
+                                role="img" xml:space="preserve" width="24" height="24" viewBox="0 0 448 512">
                                 <path fill="currentColor"
                                     d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
                                 </path>
                             </svg>
                         </button>
 
-
-                    </div>
-                    <!--Cerramo contenedor contenedor-botones-menú-->
+                    </div><!--Cerramo contenedor contenedor-botones-menú-->
 
                     <div class="contenedor-enlaces-nav">
                         <div class="btn-departamentos" id="btn-departamentos">
@@ -122,57 +59,56 @@
 
                     <!--este div es que contiene el logo-->
                     <div class="cont__logo-index">
-                        <a class="logo" href="index.html">
+                        <a class="logo" href="./index.html">
                             <picture>
                                 <!--<source media="(min-width: 650px)" srcset="icons/gatetes.svg">-->
                                 <source media="(min-width: 361px)" srcset="icons/gatetes.svg" width="200" height="50"
                                     type="image/svg+xml">
-                                <img class="logo-peque" src="icons/favicon.svg" width="24" height="24" alt="Logo"
-                                    title="Logo">
+                                <img class="logo-peque" src="icons/favicon.svg" width="24" height="24" alt="Logo" title="Logo">
                             </picture>
                         </a>
                     </div>
                     <div class="buscador">
                         <form class="contenedor-buscador" role="search" action="">
-                            <input class="bsc" type="search" placeholder="Busqueda" name="buscador"
+                            <input class="bsc" id="search" type="search" placeholder="Busqueda" name="buscador"
                                 aria-label="Search through site content">
+                            <!-- <span class="clear" onclick="document.getElementById('search').value = ''"></span> -->
+
                             <button class="container-icon-lupa" type="submit" aria-label="search">
                                 <img class="icon-lupa" src="icons/search.svg" alt="icon-lupa" width="24" height="24"
                                     aria-hidden="true">
                             </button>
                         </form>
-                    </div>
-                    <!--cerramos el div donde esta el buscador-->
+                    </div><!--cerramos el div donde esta el buscador-->
                     <div class="icons-header-info-sesion-fav-cart cont-icon">
                         <ul class="icons-header">
                             <li>
-                                <a href="#">
+                                <a href="./preguntas-fecuentes.html">
                                     <svg version="1.1" x="0px" y="0px" width="24" height="24" viewBox="0 0 28.4 28.3"
                                         style="enable-background:new 0 0 28.4 28.3;" xml:space="preserve" role="img">
                                         <title>Atención al cliente</title>
-                                        <ellipse class="atencion__cliente-ellipse" cx="14.2" cy="14.2" rx="12.1"
-                                            ry="12.1" />
+                                        <ellipse class="atencion__cliente-ellipse" cx="14.2" cy="14.2" rx="12.1" ry="12.1" />
                                         <path class="atencion__cliente-path"
-                                            d="M10.7,10.8c-0.1-4.1,7.2-4.6,7.1,0.2c-0.3,3.5-3.8,3.2-3.9,7.1"/>
-                                        <circle class="atencion__cliente-circle st12" cx="13.9" cy="21.5" r="1"/>
+                                            d="M10.7,10.8c-0.1-4.1,7.2-4.6,7.1,0.2c-0.3,3.5-3.8,3.2-3.9,7.1" />
+                                        <circle class="atencion__cliente-circle st12" cx="13.9" cy="21.5" r="1" />
                                     </svg>
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#">
+                                <a href="./inicia-sesion.html">
                                     <svg version="1.1" x="0px" y="0px" width="24" height="24" viewBox="0 0 19.8 22.2"
                                         style="enable-background:new 0 0 19.8 22.2;" xml:space="preserve">
                                         <title>Iniciar sesión</title>
-                                        <ellipse class="iniciar__sesion-ellipse" cx="9.9" cy="6.7" rx="4.5" ry="4.4"/>
+                                        <ellipse class="iniciar__sesion-ellipse" cx="9.9" cy="6.7" rx="4.5" ry="4.4" />
                                         <path class="iniciar__sesion-path"
-                                            d="M14.4,12.9h0.4c1.4,0,2.5,1,2.7,2.3l0.4,2.8c0.1,1-0.6,1.9-1.6,1.9c0,0,0,0,0,0H3.9c-1,0-1.8-0.9-1.8-1.9 c0,0,0-0.1,0-0.1l0.4-2.8c0.2-1.3,1.3-2.3,2.7-2.3h0.3"/>
+                                            d="M14.4,12.9h0.4c1.4,0,2.5,1,2.7,2.3l0.4,2.8c0.1,1-0.6,1.9-1.6,1.9c0,0,0,0,0,0H3.9c-1,0-1.8-0.9-1.8-1.9 c0,0,0-0.1,0-0.1l0.4-2.8c0.2-1.3,1.3-2.3,2.7-2.3h0.3" />
                                     </svg>
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#">
+                                <a href="./favoritos.html">
                                     <span class="insignia-fav">8</span>
                                     <svg version="1.1" x="0px" y="0px" width="24" height="24" viewBox="0 0 23.8 23.5"
                                         style="enable-background:new 0 0 23.8 23.5;" xml:space="preserve">
@@ -189,24 +125,22 @@
                                     <svg version="1.1" x="0px" y="0px" width="24" height="24" viewBox="0 0 19.5 17.8"
                                         style="enable-background:new 0 0 19.5 17.8;" xml:space="preserve">
                                         <title>Carrito de la compra</title>
-                                        <circle class="carrito__compra-circle st0" cx="6.5" cy="16.3" r="1.3" />
-                                        <circle class="carrito__compra-circle st0" cx="15.5" cy="16.4" r="1.3" />
+                                        <circle class="carrito__compra-circle st0" cx="6.5" cy="16.3" r="1.3"/>
+                                        <circle class="carrito__compra-circle st0" cx="15.5" cy="16.4" r="1.3"/>
                                         <polyline class="carrito__compra-polyline st1"
-                                            points="17.9,13.2 4.8,13.1 6.9,9.4 3.6,2.4 6.9,9.4 15.1,9.4 19,2.5 3.6,2.5 2.7,0.5 0,0.5" />
+                                            points="17.9,13.2 4.8,13.1 6.9,9.4 3.6,2.4 6.9,9.4 15.1,9.4 19,2.5 3.6,2.5 2.7,0.5 0,0.5"/>
                                     </svg>
                                 </a>
                             </li>
                         </ul>
                     </div>
-                </div>
-                <!--Cerramos el contenedor logo, buscador, enlaces izquierda-->
+                </div><!--Cerramos el contenedor logo, buscador, enlaces izquierda-->
 
                 <!--<nav class="contenedor contenedor-grid-nav">-->
                 <nav class="grid-menu-nav" id="grid-menu-nav">
-                    <button type="button" id="btn-menu-cerrar" class="btn-menu-cerrar" title="Cerrar"
-                        aria-label="close">
-                        <svg class="x-cerrar" aria-hidden="true" focusable="false" role="img" version="1.1" x="0px"
-                            y="0px" width="24" height="24" viewBox="0 0 24 24" xml:space="preserve">
+                    <button type="button" id="btn-menu-cerrar" class="btn-menu-cerrar" title="Cerrar" aria-label="close">
+                        <svg class="x-cerrar" aria-hidden="true" focusable="false" role="img" version="1.1" x="0px" y="0px"
+                            width="24" height="24" viewBox="0 0 24 24" xml:space="preserve">
                             <path class="x-cerrar"
                                 d="M3.9,20.1c-0.6-0.6-0.6-1.5,0-2L10,12L3.9,5.9c-0.6-0.6-0.6-1.5,0-2s1.5-0.6,2,0L12,10l6.1-6.1 c0.6-0.6,1.5-0.6,2,0c0.6,0.6,0.6,1.5,0,2L14,12l6.1,6.1c0.6,0.6,0.6,1.5,0,2c-0.6,0.6-1.5,0.6-2,0L12,14l-6.1,6.1C5.4,20.6,4.5,20.6,3.9,20.1z" />
                         </svg><!-- Este e o botón de cerrar -->
@@ -215,67 +149,80 @@
                         <h3 class="subtitulo">Categorias</h3>
                         <ul>
                             <li>
-                                <a href="#" data-categoria="tecnologia-y-computadoras">Tecnología y Computadoras<svg
-                                        class="fa-angle-right" aria-hidden="true" focusable="false" version="1.1"
-                                        width="24" height="24" x="0px" y="0px" viewBox="0 0 48 48"
-                                        style="enable-background:new 0 0 48 48;" xml:space="preserve">
+                                <a href="#" data-categoria="enlace-uno">Enlace-uno
+                                    <svg class="fa-angle-right" aria-hidden="true" focusable="false" version="1.1" width="24"
+                                        height="24" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;"
+                                        xml:space="preserve">
+                                        <path class="chevron-izquierda"
+                                            d="M19,36l-2.1-2.2l9.9-9.9l-9.9-9.9l2.1-2.2l12,12.1L19,36z"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-categoria="enlace-dos">Enlace-dos
+                                    <svg class="fa-angle-right" aria-hidden="true" focusable="false" version="1.1" width="24"
+                                        height="24" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;"
+                                        xml:space="preserve">
+                                        <path class="chevron-izquierda"
+                                            d="M19,36l-2.1-2.2l9.9-9.9l-9.9-9.9l2.1-2.2l12,12.1L19,36z"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-categoria="enlace-tres">Enlace-tres
+                                    <svg class="fa-angle-right" aria-hidden="true" focusable="false" version="1.1" width="24"
+                                        height="24" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;"
+                                        xml:space="preserve">
+                                        <path class="chevron-izquierda"
+                                            d="M19,36l-2.1-2.2l9.9-9.9l-9.9-9.9l2.1-2.2l12,12.1L19,36z"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-categoria="Enlace-cuatro">Enlace-cuatro
+                                    <svg class="fa-angle-right" aria-hidden="true" focusable="false" version="1.1" width="24"
+                                        height="24" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;"
+                                        xml:space="preserve">
                                         <path class="chevron-izquierda"
                                             d="M19,36l-2.1-2.2l9.9-9.9l-9.9-9.9l2.1-2.2l12,12.1L19,36z" />
                                     </svg>
                                 </a>
                             </li>
-                            <li><a href="#" data-categoria="libros">Libros<svg class="fa-angle-right" aria-hidden="true"
-                                        focusable="false" version="1.1" width="24" height="24" x="0px" y="0px"
-                                        viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;"
+                            <li>
+                                <a href="#" data-categoria="Enlace-cinco">Enlace-cinco
+                                    <svg class="fa-angle-right" aria-hidden="true" focusable="false" version="1.1" width="24"
+                                        height="24" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;"
                                         xml:space="preserve">
                                         <path class="chevron-izquierda"
                                             d="M19,36l-2.1-2.2l9.9-9.9l-9.9-9.9l2.1-2.2l12,12.1L19,36z" />
-                                    </svg></a>
+                                    </svg>
+                                </a>
                             </li>
-                            <li><a href="#" data-categoria="ropa-y-accesorios">Ropa y Accesorios<svg
-                                        class="fa-angle-right" aria-hidden="true" focusable="false" version="1.1"
-                                        width="24" height="24" x="0px" y="0px" viewBox="0 0 48 48"
-                                        style="enable-background:new 0 0 48 48;" xml:space="preserve">
+                            <li>
+                                <a href="#" data-categoria="Enlace-seis">Enlace-seis
+                                    <svg class="fa-angle-right" aria-hidden="true" focusable="false" version="1.1" width="24"
+                                        height="24" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;"
+                                        xml:space="preserve">
                                         <path class="chevron-izquierda"
                                             d="M19,36l-2.1-2.2l9.9-9.9l-9.9-9.9l2.1-2.2l12,12.1L19,36z" />
-                                    </svg></a>
+                                    </svg>
+                                </a>
                             </li>
-                            <li><a href="#" data-categoria="hogar-y-cocina">Hogar y Cocina<svg class="fa-angle-right"
-                                        aria-hidden="true" focusable="false" version="1.1" width="24" height="24"
-                                        x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;"
+                            <li>
+                                <a href="#" data-categoria="Enlace-siete">Enlace-siete
+                                    <svg class="fa-angle-right" aria-hidden="true" focusable="false" version="1.1" width="24"
+                                        height="24" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;"
                                         xml:space="preserve">
                                         <path class="chevron-izquierda"
-                                            d="M19,36l-2.1-2.2l9.9-9.9l-9.9-9.9l2.1-2.2l12,12.1L19,36z"/>
-                                    </svg></a></li>
-                            <li><a href="#" data-categoria="juegos-y-juguetes">Juegos y Juguetes<svg
-                                        class="fa-angle-right" aria-hidden="true" focusable="false" version="1.1"
-                                        width="24" height="24" x="0px" y="0px" viewBox="0 0 48 48"
-                                        style="enable-background:new 0 0 48 48;" xml:space="preserve">
-                                        <path class="chevron-izquierda"
-                                            d="M19,36l-2.1-2.2l9.9-9.9l-9.9-9.9l2.1-2.2l12,12.1L19,36z"/>
-                                    </svg></a>
-                            </li>
-                            <li><a href="#" data-categoria="salud-y-belleza">Salud y Belleza<svg class="fa-angle-right"
-                                        aria-hidden="true" focusable="false" version="1.1" width="24" height="24"
-                                        x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;"
-                                        xml:space="preserve">
-                                        <path class="chevron-izquierda"
-                                            d="M19,36l-2.1-2.2l9.9-9.9l-9.9-9.9l2.1-2.2l12,12.1L19,36z"/>
-                                    </svg></a>
-                            </li>
-                            <li><a href="#" data-categoria="alimentos-y-bebidas">Alimentos y Bebidas<svg
-                                        class="fa-angle-right" aria-hidden="true" focusable="false" version="1.1"
-                                        width="24" height="24" x="0px" y="0px" viewBox="0 0 48 48"
-                                        style="enable-background:new 0 0 48 48;" xml:space="preserve">
-                                        <path class="chevron-izquierda"
-                                            d="M19,36l-2.1-2.2l9.9-9.9l-9.9-9.9l2.1-2.2l12,12.1L19,36z"/>
-                                    </svg></a>
+                                            d="M19,36l-2.1-2.2l9.9-9.9l-9.9-9.9l2.1-2.2l12,12.1L19,36z" />
+                                    </svg>
+                                </a>
                             </li>
                         </ul>
                     </div>
 
                     <div class="contenedor-subcategorias">
-                        <div class="subcategoria" data-categoria="tecnologia-y-computadoras">
+                        <div class="subcategoria" data-categoria="enlace-uno">
                             <div class="enlaces-subcategoria br">
                                 <button type="button" class="btn-regresar">
                                     <svg class="fa-arrow-left" aria-hidden="true" focusable="false" data-prefix="fas"
@@ -285,18 +232,18 @@
                                         </path>
                                     </svg>Regresar
                                 </button>
-                                <h3 class="subtitulo">Tecnología y Computadoras</h3>
+                                <h3 class="subtitulo">Enlace-uno</h3>
                                 <ul>
-                                    <li><a href="#">Laptops</a></li>
-                                    <li><a href="#">Tablets</a></li>
-                                    <li><a href="#">Computadoras de Escritorio</a></li>
-                                    <li><a href="#">Monitores</a></li>
-                                    <li><a href="#">Componentes</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem ipsum</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem lorem</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem describes</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem text</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem that</a></li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="subcategoria" data-categoria="libros">
+                        <div class="subcategoria" data-categoria="enlace-dos">
                             <div class="enlaces-subcategoria br">
                                 <button type="button" class="btn-regresar">
                                     <svg class="fa-arrow-left" aria-hidden="true" focusable="false" data-prefix="fas"
@@ -306,17 +253,17 @@
                                         </path>
                                     </svg>Regresar
                                 </button>
-                                <h3 class="subtitulo">Libros</h3>
+                                <h3 class="subtitulo">Enlace-dos</h3>
                                 <ul>
-                                    <li><a href="#">Top Sellers</a></li>
-                                    <li><a href="#">Ciencia Ficción</a></li>
-                                    <li><a href="#">Fantasia</a></li>
-                                    <li><a href="#">Miedo</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem lorem</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem describes</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem text</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem that</a></li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="subcategoria" data-categoria="ropa-y-accesorios">
+                        <div class="subcategoria" data-categoria="enlace-tres">
                             <div class="enlaces-subcategoria br">
                                 <button type="button" class="btn-regresar">
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left"
@@ -326,17 +273,17 @@
                                         </path>
                                     </svg>Regresar
                                 </button>
-                                <h3 class="subtitulo">Ropa y Accesorios</h3>
+                                <h3 class="subtitulo">Enlace-tres</h3>
                                 <ul>
-                                    <li><a href="#">Ropa</a></li>
-                                    <li><a href="#">Zapatos</a></li>
-                                    <li><a href="#">Accesorios</a></li>
-                                    <li><a href="#">Relojes</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem lorem</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem describes</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem text</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem that</a></li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="subcategoria" data-categoria="hogar-y-cocina">
+                        <div class="subcategoria" data-categoria="Enlace-cuatro">
                             <div class="enlaces-subcategoria br">
                                 <button type="button" class="btn-regresar">
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left"
@@ -346,21 +293,21 @@
                                         </path>
                                     </svg>Regresar
                                 </button>
-                                <h3 class="subtitulo">Hogar y Cocina</h3>
+                                <h3 class="subtitulo">Enlace-cuatro</h3>
                                 <ul>
-                                    <li><a href="#">Cocina</a></li>
-                                    <li><a href="#">Electrodomesticos</a></li>
-                                    <li><a href="#">Limpieza</a></li>
-                                    <li><a href="#">Baño</a></li>
-                                    <li><a href="#">Decoracion</a></li>
-                                    <li><a href="#">Arte</a></li>
-                                    <li><a href="#">Manualidades</a></li>
-                                    <li><a href="#">Jardin</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem ipsum</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem lorem</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem describes</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem text</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem that</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem Arte</a></li>
+                                    <li><a href="./seccion-producto.html">Some text</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem ipsum</a></li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="subcategoria" data-categoria="juegos-y-juguetes">
+                        <div class="subcategoria" data-categoria="Enlace-cinco">
                             <div class="enlaces-subcategoria br">
                                 <button type="button" class="btn-regresar">
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left"
@@ -370,17 +317,17 @@
                                         </path>
                                     </svg>Regresar
                                 </button>
-                                <h3 class="subtitulo">Juegos y Juguetes</h3>
+                                <h3 class="subtitulo">Enlace-cinco</h3>
                                 <ul>
-                                    <li><a href="#">Juguetes</a></li>
-                                    <li><a href="#">Juegos de Mesa</a></li>
-                                    <li><a href="#">Aire Libre</a></li>
-                                    <li><a href="#">Muñecas</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem lorem</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem descr</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem text</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem that</a></li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="subcategoria" data-categoria="salud-y-belleza">
+                        <div class="subcategoria" data-categoria="Enlace-seis">
                             <div class="enlaces-subcategoria br">
                                 <button type="button" class="btn-regresar">
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left"
@@ -390,17 +337,17 @@
                                         </path>
                                     </svg>Regresar
                                 </button>
-                                <h3 class="subtitulo">Salud y Belleza</h3>
+                                <h3 class="subtitulo">Enlace-seis</h3>
                                 <ul>
-                                    <li><a href="#">Cuidado de la Piel</a></li>
-                                    <li><a href="#">Maquillaje</a></li>
-                                    <li><a href="#">Lociones</a></li>
-                                    <li><a href="#">Shampoo</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem lorem em</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem describes</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem text</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem that</a></li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="subcategoria" data-categoria="alimentos-y-bebidas">
+                        <div class="subcategoria" data-categoria="Enlace-siete">
                             <div class="enlaces-subcategoria br">
                                 <button type="button" class="btn-regresar" aria-label="regresar">
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left"
@@ -410,77 +357,74 @@
                                         </path>
                                     </svg>Regresar
                                 </button>
-                                <h3 class="subtitulo">Alimentos y Bebidas</h3>
+                                <h3 class="subtitulo">Enlace-siete</h3>
                                 <ul>
-                                    <li><a href="#">Alimentos</a></li>
-                                    <li><a href="#">Bebidas</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem lorem</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem describes</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem tethat</a></li>
+                                    <li><a href="./seccion-producto.html">Lorem that</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <!--Contenedor subcategorias-->
-                </nav>
-                <!--Contenedor Grid-->
-                <!--</nav>-->
-                <!--Contenedor contenedor grid-menu-nav-->
-            </div>
-            <!--Aquí Cerramo o DIV Menú navegación-->
-        </header>
+                </nav><!--Contenedor Grid--><!--</nav>--><!--Contenedor contenedor grid-menu-nav-->
+            </div><!--Aquí Cerramo o DIV Menú navegación-->
+        </header><!--Cerramos la cabecera del la web, donde esta el nav, logo, buscardo...-->
         <!--Cerramos la cabecera del la web, donde esta el nav, logo, buscardo...-->
                         <!--Contenedor migas de pan-->
-                        <div class="cont-migas-pan">
-                            <svg style="display: none;">
-                                <symbol id="icon-home">
-                                    <title>A home icon</title>
-                                    <path
-                                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
-                                    </path>
-                                </symbol>
-                                <symbol id="icon-dropdown-arrow">
-                                    <title>A down arrow</title>
-                                    <path d="M12 20l 7-7-7-7"></path>
-                                </symbol>
+        <div class="cont-migas-pan">
+            <svg style="display: none;">
+                <symbol id="icon-home">
+                    <title>A home icon</title>
+                        <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                        </path>
+                </symbol>
+                <symbol id="icon-dropdown-arrow">
+                    <title>A down arrow</title>
+                        <path d="M12 20l 7-7-7-7"></path>
+                </symbol>
+            </svg>
+                <nav class="migas-pan" aria-label="migas-pan" tabindex="0">
+                    <a href="index.html">
+                        <span class="crumbicon">
+                            <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                                <use href="#icon-home"></use>
                             </svg>
-                            <nav class="migas-pan" aria-label="migas-pan" tabindex="0">
-                                <a href="index.html">
-                                    <span class="crumbicon">
-                                        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
-                                            <use href="#icon-home"></use>
-                                        </svg>
-                                    </span>
+                        </span>
                                     <!--<span class="home-label">Casa</span>-->
-                                </a>
-                                <span class="crumbicon" aria-hidden="true">
-                                    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-                                        <use href="#icon-dropdown-arrow"></use>
-                                    </svg>
-                                </span>
-                                <span class="crumb">
-                                    <a href="./home/rpg/">Lorem ipsum</a>
-                                    <span class="crumbicon">
-                                        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-                                            <use href="#icon-dropdown-arrow"></use>
-                                        </svg>
-                                    </span>
-                                </span>
-                                <span class="crumb">
-                                    <a href="./home/rpg/indie/">Lorem ipsum</a>
-                                    <span class="crumbicon">
-                                        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-                                            <use href="#icon-dropdown-arrow"></use>
-                                        </svg>
-                                    </span>
-                                </span>
-                                <span class="crumb">
-                                    <a aria-current="page">Lorem ipsum</a>
-                                    <span class="crumbicon">
-                                        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                    </a>
+                    <span class="crumbicon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                            <use href="#icon-dropdown-arrow"></use>
+                        </svg>
+                    </span>
+                    <span class="crumb">
+                        <a href="./home/rpg/">Lorem ipsum</a>
+                        <span class="crumbicon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                                <use href="#icon-dropdown-arrow"></use>
+                            </svg>
+                        </span>
+                    </span>
+                    <span class="crumb">
+                        <a href="./home/rpg/indie/">Lorem ipsum</a>
+                        <span class="crumbicon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                                <use href="#icon-dropdown-arrow"></use>
+                            </svg>
+                        </span>
+                    </span>
+                    <span class="crumb">
+                        <a aria-current="page">Lorem ipsum</a>
+                        <span class="crumbicon">
+                            <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
                                             <!--<use href="#icon-dropdown-arrow"></use>-->
-                                        </svg>
-                                    </span>
-                                </span>
-                            </nav>
-                        </div>
+                            </svg>
+                        </span>
+                    </span>
+                </nav>
+        </div>
                         <!--Cerramos contenedor migas de pan-->
                         <!--//////////////////contenedor select//////////////////-->
         <main>
@@ -639,7 +583,9 @@
 							<button class="btn-cart-comprar" value="Submit" title="Añadir al carrito">Añadir a la cesta
                             </button>
 
-            				<button class="btn-fav" value="Submit"><img src="icons/favoritos.svg" width="24" height="24" alt="favoritos" title="Añadir a favoritos"><span class="span-fav">Añadir a favoritos</span>
+            				<button class="btn-fav" value="Submit">
+                                <img src="icons/favoritos.svg" width="24" height="24" alt="favoritos" title="Añadir a favoritos">
+                                <span class="span-fav">Añadir a favoritos</span>
                             </button>
 						</div><!--container-btn-compra-btn-fav row-->
 
@@ -654,24 +600,28 @@
 						    <button type="button" class="tablink tab-4" role="tab" aria-selected="false" aria-controls="tab-4" id="tab-4" tabindex="0" onClick="openPage(event, 'Garantia')">Garantia</button>
 					    </div>
 
-					    <div id="Descripcion" class="tabcontent" role="tabpanel" tabindex="0"        aria-labelledby="Descripcion">
+					    <div id="Descripcion" class="tabcontent" role="tabpanel" tabindex="0" aria-labelledby="Descripcion">
 						    <h3 class="descrip-tabcont">Pellentesque habitant morbi tristique senectus et netus et malesuada.</h3>
-							<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+							<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+                            </p>
 					    </div>
 
 					    <div id="Carateristicas" class="tabcontent" role="tabpanel" tabindex="0" aria-labelledby="Carateristicas" hidden>
 						    <h3 class="descrip-tabcont">Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper.</h3>
-							<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est</p>
+							<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est
+                            </p>
             		    </div>
 
 					    <div id="Envio" class="tabcontent" role="tabpanel" tabindex="0" aria-labelledby="Envio" hidden>
 						    <h3 class="descrip-tabcont">Vestibulum erat wisi, condimentum sed, commodo vitae.</h3>
-							<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis</p>
+							<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis
+                            </p>
 					    </div>
 
 					    <div id="Garantia" class="tabcontent" role="tabpanel" tabindex="0" aria-labelledby="Garantia" hidden>
 						    <h3 class="descrip-tabcont">Nam dui mi, tincidunt quis, accumsan porttitor, facilisis.</h3>
-							<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metusDescipción de los articulos que estamos vendiendoet netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet,</p>
+							<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metusDescipción de los articulos que estamos vendiendoet netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet,
+                            </p>
 					    </div>
 				    </div>
 			    </div><!--Cerramos el contendor que tiene el contenido imagen talla y color-->
@@ -781,199 +731,20 @@
                         <li><a href="#">Entidad</a></li>
                     </ul>
                 </div>
-        
+
             </div>
             <!--Aquí cerramos el contenedor redes Sociales, Compra online y Formas de Pago-->
-        
+
             <div class="contenedor-privacidad">
                 <div class="condiciones favicon-footer">
                     <img src="./icons/favicon.svg" width="20" height="20" alt="">
                     <p>&copy;&nbsp;2020-2022 gatetes tiene todos los derechos reservados. Si no cumples la ley, te arañamos
                     </p>
                 </div>
-        
+
             </div><!--Cerramos el Contenedo de plitica de Privacidad-->
         </footer>
 	</div>
-    <script>
-//////////// LUPA /////////////////////////////
-	const imgContElm = document.querySelector('.contenedor__imagen-producto');
-	const imgElm = document.querySelector('.contenedor__imagen-producto img');
-	const listProductsElm = document.querySelector('.lista__imagenes-producto');
-
-	// Precentage Of The Zoom:
-	const ZOOM = 300;
-
-	// Event Mouse Enter:
-	imgContElm.addEventListener('mouseenter', function () {
-
-		imgElm.style.width = ZOOM + '%';
-
-	});
-
-	// Event Mouse Leave:
-	imgContElm.addEventListener('mouseleave', function () {
-
-		imgElm.style.width = '100%';
-		imgElm.style.top = '0';
-		imgElm.style.left = '0';
-
-	});
-
-	// Event Mouse Move:
-	// Change position of the big image, depends on the position of the cursor in the Container Of image.
-	imgContElm.addEventListener('mousemove', function (mouseEvent) {
-
-		let obj = imgContElm;
-		let obj_left = 0;
-		let obj_top = 0;
-		let xpos;
-		let ypos;
-
-		while (obj.offsetParent) {
-			obj_left += obj.offsetLeft;
-			obj_top += obj.offsetTop;
-			obj = obj.offsetParent;
-		}
-
-		if (mouseEvent) {
-			//FireFox
-			xpos = mouseEvent.pageX;
-			ypos = mouseEvent.pageY;
-		} else {
-			//IE
-			xpos = window.event.x + document.body.scrollLeft - 2;
-			ypos = window.event.y + document.body.scrollTop - 2;
-		}
-
-		xpos -= obj_left;
-		ypos -= obj_top;
-
-		const imgWidth = imgElm.clientWidth;
-		const imgHeight = imgElm.clientHeight;
-
-		imgElm.style.top = -(((imgHeight - this.clientHeight) * ypos) / this.clientHeight) + 'px';
-		imgElm.style.left = -(((imgWidth - this.clientWidth) * xpos) / this.clientWidth) + 'px';
-
-	});
-
-	// Change The Current Image:
-	Array.from(listProductsElm.children).forEach((productElm, i, list) => {
-
-		productElm.addEventListener('click', function () {
-			const newSrc = productElm.querySelector('img').src;
-			imgElm.src = newSrc;
-
-			list.forEach(prod => prod.classList.remove('active'));
-			productElm.classList.add('active');
-		});
-
-	});
-
-	// Change Height Of The Image Container:
-	function changeHeight() {
-
-		imgContElm.style.height = imgContElm.clientWidth + 'px';
-
-	}
-	changeHeight();
-
-	// Change Height:
-	window.addEventListener('resize', changeHeight);
-    //////////// CERRAMOS LUPA /////////////////////////////
-
-    /////////CERRAMOS GALERIA DE IMAGENES PRODUCTO/////////
-        var ioBuilder = function (carousel) {
-            return new IntersectionObserver(function (entries) {
-                var statusDot = carousel.parentNode.querySelectorAll('.position .dot');
-                entries.forEach(function (item) {
-                    if (item.isIntersecting && item.intersectionRatio == 1.0) {
-                        statusDot.forEach(function (item) {
-                            item.classList.remove('active');
-                        });
-
-                        var position = imagePosition(item.target.parentElement);
-                        statusDot[position].classList.add('active');
-                    }
-                });
-            },
-                {
-                    root: carousel,
-                    threshold: 1
-                }
-            );
-        };
-
-        var imagePosition = function (image) {
-            return Array.prototype.indexOf.call(image.parentNode.children, image);
-        }
-
-        var setup = function (carousel) {
-            var images = carousel.querySelectorAll('.image img');
-            images.forEach(function () {
-                var pos = carousel.parentNode.querySelector('.position');
-                var dot = document.createElement('div');
-                dot.classList.add('dot');
-                pos.appendChild(dot);
-            });
-
-            var io = ioBuilder(carousel);
-
-            images.forEach(function (item) {
-                io.observe(item);
-            });
-        };
-
-
-        setup(document.querySelector('.carousel.x.mandatory'));
-    /////////CERRAMOS GALERIA DE IMAGENES PRODUCTO/////////////////////////////
-
-    /////////PESTAÑAS INFO CARATERISTICAS ENVIO GARANTIA//////////////////////
-
-    function openPage(evt, pageName){
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display="none";
-        }
-        tablinks = document.getElementsByClassName("tablink");
-        for(i = 0; i< tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(pageName).style.display = "block";
-		evt.currentTarget.className += " active";
-    }
-    //Obtenga el elemento con id = "defaultOpen" y haga clic en él
-    document.getElementById("defaultopen").click();
-//////////// CERRAMOS PESTAÑAS INFO CARATERISTICAS ENVIO GARANTIA//////////////////////
-
-
-///////////// SELECT OPTION TALLA //////////////////////////////////////
-                    const selectElement = document.querySelector('.select-talla');
-                    selectElement.addEventListener('change', (event) => {
-                        const result = document.querySelector('.result');
-                        result.textContent = `${event.target.value}`;
-                    });
-////////////// CERRAMOS OPTION SELECT TALLA ////////////////////////
-
-    ////////// TABLA DE TALLAS //////////////////////////////////
-    var coll = document.getElementsByClassName("btn-collapsible");
-    var i;
-
-    for (i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", function () {
-            this.classList.toggle("active");
-            var content = this.nextElementSibling;
-            if (content.style.maxHeight) {
-                content.style.maxHeight = null;
-            } else {
-                content.style.maxHeight = content.scrollHeight + "px";
-            }
-        });
-    }
- ////////// CERRAMOS TABLA DE TALLAS //////////////////////////////////
-	</script>
+    <script src="js/lupa-galley-img.js"></script>
 </body>
-
-
 </html>

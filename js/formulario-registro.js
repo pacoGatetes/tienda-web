@@ -4,11 +4,11 @@ const inputs = document.querySelectorAll('#formulario input');
 const expresiones = {
     usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, números, guión y guión_bajo
     password: /^.{4,12}$/, //4 a 12 digitos.
+
 };
 
 const campos = {
     usuario: false,
-    nombre: false,
     password: false,
     terminos: false
 };
@@ -20,7 +20,6 @@ const validarFormulario = (e) => {
             break;
         case "password":
             validarCampo(expresiones.password, e.target, 'password');
-            validarPassword();
             break;
     }
 };
@@ -44,10 +43,11 @@ const validarCampo = (expresion, input, campo) => {
 };
 
 //validar contraseñas
-const validarPassword = () => {
-    const inputPassword = document.getElementById('password');
+const validarPassword2 = () => {
+    const inputPassword1 = document.getElementById('password');
 
-    if (inputPassword.value) {
+
+    if (inputPassword1.value) {
         document.getElementById(`grupo__password`).classList.add('formulario__grupo-incorrecto');
         document.getElementById(`grupo__password`).classList.remove('formulario__grupo-correcto');
         document.querySelector(`#grupo__password svg`).classList.add('fa-xmark');
@@ -74,11 +74,6 @@ formulario.addEventListener('submit', (e) => {
     const terminos = document.getElementById('terminos');
     if (campos.usuario && campos.password && terminos.checked) {
         formulario.reset();
-
-        document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
-        setTimeout(() => {
-            document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
-        }, 4000);
 
         document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
             icono.classList.remove('formulario__grupo-correcto');

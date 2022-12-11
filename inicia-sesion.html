@@ -18,7 +18,7 @@
     <!--<link rel="icon" href="icons/favicon.ico" sizes="16x16" type="image/vnd.microsoft.icon">-->
     <link rel="apple-touch-icon" sizes="57x57" href="icons/touch-icon-iphone.png"><!--favicon para telf Apple-->
     <link rel="apple-touch-icon" sizes="114x114" href="icons/touch-icon-ipad.png"><!--favicon Apple para Ipad-->
-    <script rel="preload" src="js/main.js" defer></script>
+    <!-- <script rel="preload" src="js/main.js" defer></script> -->
     <script src="js/formulario-inicia-sesion.js" defer></script>
 </head>
 <body>
@@ -27,10 +27,12 @@
         <section class="contenedor__formulario">
             <header>
             <h2>Mi cuenta</h2>
-                <img class="logo logo__formularios" src="icons/gatetes.svg" alt="logo" title="logo">
+                <a href="./index.html">
+                    <img class="logo logo__formularios" src="icons/gatetes.svg" alt="logo" title="logo">
+                </a>
                     <p class="texto__inicia__registro">Inicia sesión para acceder a todos nuestros servicios</p>
                     <div class="linea"></div>
-                </header>
+            </header>
             <form action="" class="formulario" id="formulario">
             <fieldset>
                 <legend>Datos de acceso</legend>
@@ -57,7 +59,7 @@
                     <div class="formulario__grupo-input">
                         <input type="password" class="formulario__input" name="password" id="password" autocomplete="current-password" aria-describedby="contraseñaNovalida" aria-invalid="true">
                             <svg class="input__icon formulario__validacion-estado-verde fa-xmark" version="1.1" x="0px" y="0px" viewBox="0 0 320 512" xml:space="preserve">
-                                <path d="M310.6,361.4c12.5,12.5,12.5,32.8,0,45.2c-6.2,6.2-14.4,9.4-22.6,9.4s-16.4-3.1-22.6-9.4L160,301.3L54.6,406.6 c-6.2,6.3-14.4,9.4-22.6,9.4s-16.4-3.1-22.6-9.4c-12.5-12.5-12.5-32.8,0-45.2L114.8,256L9.4,150.6c-12.5-12.5-12.5-32.8,0-45.2 s32.8-12.5,45.2,0L160,210.8l105.4-105.4c12.5-12.5,32.8-12.5,45.2,0s12.5,32.7,0,45.2L205.2,256L310.6,361.4z" />
+                                <path d="M310.6,361.4c12.5,12.5,12.5,32.8,0,45.2c-6.2,6.2-14.4,9.4-22.6,9.4s-16.4-3.1-22.6-9.4L160,301.3L54.6,406.6 c-6.2,6.3-14.4,9.4-22.6,9.4s-16.4-3.1-22.6-9.4c-12.5-12.5-12.5-32.8,0-45.2L114.8,256L9.4,150.6c-12.5-12.5-12.5-32.8,0-45.2 s32.8-12.5,45.2,0L160,210.8l105.4-105.4c12.5-12.5,32.8-12.5,45.2,0s12.5,32.7,0,45.2L205.2,256L310.6,361.4z"/>
                             </svg>
 
                             <svg class="input__icon formulario__validacion-estado-rojo fa-check" version="1.1" x="0px" y="0px" viewBox="0 0 448 512" xml:space="preserve">
@@ -88,9 +90,7 @@
 
                 <!-- Botón cancelar -->
                 <div class="formulario__grupo">
-                    <p class="texto__inicia-registro">
-                        <a href="iniciar_sesion.html">¿Se te olvidó tu contraseña?</a>
-                    </p>
+                        <a href="./recuperar-contraseña.html" class="texto__inicia-registro">¿Se te olvidó tu contraseña?</a>
                 </div>
                 <!-- Fin Botón cancelar -->
 

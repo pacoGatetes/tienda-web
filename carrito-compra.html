@@ -38,7 +38,7 @@
                     <!--Cerramo contenedor contenedor-botones-menú-->
                     <!--este div es que contiene el logo-->
                     <div class="cont__logo-index logo-chekout">
-                        <a class="logo" href="index.html">
+                        <a class="logo" href="./index.html">
                             <picture>
                                 <!--<source media="(min-width: 650px)" srcset="icons/gatetes.svg">-->
                                 <source media="(min-width: 361px)" srcset="icons/gatetes.svg" width="200" height="50"
@@ -66,10 +66,10 @@
                                     <svg version="1.1" x="0px" y="0px" width="24" height="24" viewBox="0 0 28.4 28.3"
                                         style="enable-background:new 0 0 28.4 28.3;" xml:space="preserve" role="img">
                                         <title>Atención al cliente</title>
-                                        <ellipse class="atencion__cliente-ellipse" cx="14.2" cy="14.2" rx="12.1" ry="12.1" />
+                                        <ellipse class="atencion__cliente-ellipse" cx="14.2" cy="14.2" rx="12.1" ry="12.1"/>
                                         <path class="atencion__cliente-path"
-                                            d="M10.7,10.8c-0.1-4.1,7.2-4.6,7.1,0.2c-0.3,3.5-3.8,3.2-3.9,7.1" />
-                                        <circle class="atencion__cliente-circle st12" cx="13.9" cy="21.5" r="1" />
+                                            d="M10.7,10.8c-0.1-4.1,7.2-4.6,7.1,0.2c-0.3,3.5-3.8,3.2-3.9,7.1"/>
+                                        <circle class="atencion__cliente-circle st12" cx="13.9" cy="21.5" r="1"/>
                                     </svg>
                                 </a>
                             </li>
@@ -93,7 +93,7 @@
                                         style="enable-background:new 0 0 23.8 23.5;" xml:space="preserve">
                                         <title>Favoritos</title>
                                         <path class="favoritos-path"
-                                            d="M19.5,5.1c-1.6-1.8-4.2-1.8-5.9,0L11.9,7l-1.8-1.9c-1.6-1.8-4.2-1.8-5.9,0c-0.8,0.9-1.2,2-1.2,3.2 c0,1.1,0.4,2.3,1.2,3.2l1.8,2l5.8,6.4l5.8-6.4l1.8-2c0.8-0.9,1.2-2,1.2-3.2C20.7,7.1,20.3,5.9,19.5,5.1z" />
+                                            d="M19.5,5.1c-1.6-1.8-4.2-1.8-5.9,0L11.9,7l-1.8-1.9c-1.6-1.8-4.2-1.8-5.9,0c-0.8,0.9-1.2,2-1.2,3.2 c0,1.1,0.4,2.3,1.2,3.2l1.8,2l5.8,6.4l5.8-6.4l1.8-2c0.8-0.9,1.2-2,1.2-3.2C20.7,7.1,20.3,5.9,19.5,5.1z"/>
                                     </svg>
                                 </a>
                             </li>
@@ -111,7 +111,7 @@
             </div>
             <!--Aquí Cerramo o DIV Menú navegación-->
         </header>
-        <!--Cerramos la cabecera del la web, donde esta el nav, logo, buscardo...-->
+        <!--Cerramos la cabecera del la web, donde esta el nav, logo, buscardor...-->
                             <!--Cerramos la cabecera del la web, donde esta el nav, logo, buscardo...-->
                 <!--Contenedor migas de pan-->
                 <div class="cont-migas-pan migas__carro">
@@ -128,7 +128,7 @@
                         </symbol>
                     </svg>
                     <nav class="migas-pan" aria-label="migas-pan" tabindex="0">
-                        <a href="index.html">
+                        <a href="./index.html">
                             <span class="crumbicon">
                                 <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
                                     <use href="#icon-home"></use>
@@ -290,7 +290,7 @@
                                 </div>
                             </div>
                             <div class="div-btn contenedor__Finalizar pedido">
-                                <button type="button" class="btn-form">Finalizar pedido</button>
+                                <a href="./finalizar-pedido.html" class="btn-form">Finalizar pedido</a>
                             </div>
                         </div>
 
@@ -302,87 +302,22 @@
         </main>
 
     </div>
-            <footer class="pie__formulario">
-                <div class="contenedor-privacidad-form">
-                    <ul class="condiciones-form">
-                        <li><a href="#">Condiciones de uso</a></li>
-                        <li><a href="#">Política de privacidad</a></li>
-                        <li><a href="#">Política de Cookies</a></li>
-                    </ul>
-                    <ul class="favicon-footer">
-                        <li class="">
-                            <img src="./icons/favicon.svg" width="20" height="20" alt="">
+        <footer class="pie__formulario">
+            <div class="contenedor-privacidad-form">
+                <ul class="condiciones-form">
+                    <li><a href="#">Condiciones de uso</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Política de Cookies</a></li>
+                </ul>
+                <ul class="favicon-footer">
+                    <li class="">
+                        <img src="./icons/favicon.svg" width="20" height="20" alt="">
                             <p>&copy;&nbsp;2020-2022 gatetes tiene todos los derechos reservados. Si no cumples la ley, te arañamos
                             </p>
-                        </li>
-                    </ul>
-                </div>
-            </footer>
-
-    <script>
-        var input = document.querySelector('#qty');
-        var btnminus = document.querySelector('.qtyminus');
-        var btnplus = document.querySelector('.qtyplus');
-
-        if (input !== undefined && btnminus !== undefined && btnplus !== undefined && input !== null && btnminus !== null && btnplus !== null) {
-            var min = Number(input.getAttribute('min'));
-            var max = Number(input.getAttribute('max'));
-            var step = Number(input.getAttribute('step'));
-
-            function qtyminus(e){
-                var current = Number(input.value);
-                var newval = (current - step);
-                if(newval < min) {
-                    newval = min;
-                }else if(newval > max) {
-                    newval = max;
-                }
-                input.value = Number(newval);
-                e.preventDefault();
-            }
-
-            function qtyplus(e) {
-                var current = Number(input.value);
-                var newval = (current + step);
-                if(newval > max) newval = max;
-                input.value = Number(newval);
-                e.preventDefault();
-            }
-
-            btnminus.addEventListener('click',qtyminus);
-            btnplus.addEventListener('click',qtyplus);
-        }
-        //Isto e apara que o input type non se poida introducir texto en firefox
-    document.querySelector('input').addEventListener('keydown', function (evt) {
-        !/(^\d*\.?\d*$)|(Backspace|Control|Meta|a)/.test(evt.key) && evt.preventDefault()
-    });
-    ////FIN Isto e apara que o input type non se poida introducir texto en firefox
-   /* let counter = 0;
-    function increment() {
-        counter++;
-    }
-    function decrement() {
-        counter--;
-    }
-    function get(){
-        return counter;
-    }
-    const inc = document.getElementById("increment");
-    const input = document.getElementById("input");
-    const dec = document.getElementById("decrement");
-
-    inc.addEventListener("click", () => {
-        increment();
-        input.value = get();
-    });
-
-    dec.addEventListener("click", () => {
-        if (input.value > 0){
-            decrement();
-        }
-        input.value = get();
-    });*/
-    </script>
+                    </li>
+                </ul>
+            </div>
+        </footer>
 
 </body>
 </html>
