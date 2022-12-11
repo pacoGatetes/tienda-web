@@ -535,7 +535,7 @@ form>.container-icon-lupa {
 	justify-content: space-evenly;
 	column-gap: clamp(0.125em, 1.5vw, 2.5em);
 	width: 100%;
-	height: 150%;
+	height: 165%;
 	padding: 0.1rem;
 	position: relative;
 	z-index: 3000;
@@ -4276,6 +4276,7 @@ h3.descrip-tabcont{margin-bottom: 1rem; text-align: left;}
 	.tab-pestanas .tablink.active {
 		background-color: var(--rojo);
 		color: #fff;
+		font-weight: 500;
 		border-bottom: none;
 	}
 	.tab-pestanas  {
@@ -4335,7 +4336,7 @@ h3.descrip-tabcont{margin-bottom: 1rem; text-align: left;}
 		z-index: 3000;
 	}
 	.grid-menu-nav .btn-menu-cerrar { /* Esta e a X de cerrar o menu de navegación */
-		left: calc(100% - 15rem);
+		left: calc(100% - 14rem);
 	}
 
 	/* fin contenedor menu navegacion */
