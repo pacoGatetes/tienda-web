@@ -85,6 +85,25 @@
                                 <p class="formulario__input-error" role="alert">Por favor, introduzca un código postal válido</p>
                             </div>
                         </div>
+                        <div class="formulario__grupo-label provincia">
+                            <label for="provincia" class="formulario__label">Provincia</label>
+                            <div class="formulario__grupo-input">
+                                <input type="text" class="formulario__input" id="provincia" name="provincia" maxlength="50"
+                                    placeholder="Provincia."
+                                    pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð,.'-]{2,64}"
+                                    required>
+                                <p class="formulario__input-error" role="alert">Por favor, introduzca una provincia válida</p>
+                            </div>
+                        </div>
+                        <div class="formulario__grupo-label ciudad">
+                            <label for="ciudad" class="formulario__label">Ciudad</label>
+                            <div class="formulario__grupo-input">
+                                <input type="text" class="formulario__input" id="ciudad" name="provincia" maxlength="50" placeholder="ciudad."
+                                    pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð,.'-]{2,64}"
+                                    required>
+                                <p class="formulario__input-error" role="alert">Por favor, introduzca una ciudad válida</p>
+                            </div>
+                        </div>
                         <div class="formulario__grupo-label email">
                             <label for="email" class="formulario__label">Email</label>
                             <div class="formulario__grupo-input">
@@ -172,7 +191,7 @@
             <ul class="favicon-footer">
                 <li class="">
                     <img src="./icons/favicon.svg" width="20" height="20" alt="">
-                    <p>&copy;&nbsp;2020-2022 gatetes tiene todos los derechos reservados. Si no cumples la ley, te arañamos
+                    <p>&copy;&nbsp;2020-2022 Gatetes tiene todos los derechos reservados. Si no cumples la ley, te arañamos
                     </p>
                 </li>
             </ul>
