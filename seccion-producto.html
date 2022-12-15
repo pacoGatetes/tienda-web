@@ -26,7 +26,7 @@
 
 </head>
 
-<body class="block" aria-haspopup="dialog">
+<body aria-haspopup="dialog">
     <div class="flex__grid grid-container">
         <!--Este es el contenedor de la web, es un container css-grid-->
 
@@ -433,12 +433,12 @@
                 <!--Cerramos contenedor migas de pan-->
                 <!--//////////////////contenedor select//////////////////-->
 
-<div aria-haspopup="dialog" class="contenedor-selec-checkbox row">
+<div class="contenedor-selec-checkbox row">
     <!--Este e o contenedor que ten todo-los checkbox-->
 
     <div class="abrir-modal">
         <!--Este div conten cada un dos desplegables checkebox -->
-        <div id="modal1" role="dialog" class="checkbox__contenedor modal modal-dialog">
+        <div id="modal1" role="dialog" modal-mode="checkbox" class="checkbox__contenedor modal modal-dialog">
 
             <h4 class="boton__desplegable click-desplebable">
                 Desplegable-1
@@ -554,7 +554,9 @@
         <!--Cerramos checkbox-contenedor-->
     </div>
     <!--Cerramos div que contiene cada uno de los desplegables-->
-    <button type="button" class="btn-abrir-modal" data-open="modal1"><span class="btn-dsp">Desplegable-1</span></button>
+    <button type="button" class="btn-abrir-modal" data-open="modal1">
+        <span class="btn-dsp">Desplegable-1</span>
+    </button>
 
 
     <div class="abrir-modal">
@@ -673,7 +675,9 @@
         <!--Cerramos checkbox-contenedor-->
     </div>
     <!--Cerramos div que contiene cada uno de los desplegables-->
-    <button type="button" class="btn-abrir-modal" data-open="modal2"><span class="btn-dsp">Desplegable-2</span></button>
+    <button type="button" class="btn-abrir-modal" data-open="modal2">
+        <span class="btn-dsp">Desplegable-2</span>
+    </button>
     <!-- <button type="button" class="openbtn btn-abrir-modal" onclick="openNav()">Desplegable-2</button> -->
     <!--Cerramos div que contiene cada uno de los desplegables-->
     <div class="abrir-modal">
@@ -896,7 +900,9 @@
         <!--Cerramos checkbox-contenedor-->
     </div>
     <!--Cerramos div que contiene cada uno de los desplegables-->
-    <button type="button" class="btn-abrir-modal" data-open="modal4"><span class="btn-dsp">Desplegable-4</span></button>
+    <button type="button" class="btn-abrir-modal" data-open="modal4">
+        <span class="btn-dsp">Desplegable-4</span>
+    </button>
     <!--Cerramos div que contiene cada uno de los desplegables -->
 
 </div>
