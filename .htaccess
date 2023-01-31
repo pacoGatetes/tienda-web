@@ -1,0 +1,7 @@
+Options All -Indexs
+ErrorDocument 404 /TIENDA/404.html
+ErrorDocument 403 /TIENDA/403.html
+AuthName "Autorizacion requerida"
+AuthUserFile
+RewriteEngine On
+RewriteRule ^([a-zA-Z0-9/]+)$ index.php?view=$1
