@@ -3,27 +3,36 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Una monada de gatitos</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <!-- Informamos al navegador para que precarge las fuentes de Google-->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap" rel="preconnect"
+    <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap"
         as="font"><!-- API Google roboto flex fonts-->
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="theme-color" content="#E50914">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#E50914">
-    <!--Esta etiqueta puede establecer si la página admite la función de zoom de la pantalla táctil -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet preload" href="css/hoja-estilo.css" as="style">
-    <link rel="icon" href="icons/favicon.svg" type="image/svg+xml" sizes="any">
-    <!--Favicon-->
-    <!--<link rel="icon" href="icons/favicon.ico" sizes="16x16" type="image/vnd.microsoft.icon">-->
-    <link rel="apple-touch-icon" sizes="57x57" href="icons/touch-icon-iphone.png">
-    <!--favicon para telf Apple-->
-    <link rel="apple-touch-icon" sizes="114x114" href="icons/touch-icon-ipad.png">
-    <!--favicon Apple para Ipad-->
     <script rel="preload" src="js/main.js" defer></script>
-
+    <link rel="icon" href="icons/favicon.svg" type="image/svg+xml" sizes="any"><!--Favicon-->
+    <!--<link rel="icon" href="icons/favicon.ico" sizes="16x16" type="image/vnd.microsoft.icon">-->
+    <link rel="apple-touch-icon" sizes="57x57" href="icons/touch-icon-iphone.png"><!--favicon para telf Apple-->
+    <link rel="apple-touch-icon" sizes="114x114" href="icons/touch-icon-ipad.png"><!--favicon Apple para Ipad-->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icons/touch-icon-">
+    <link rel="apple-touch-startup-image" href="icons/touch-icon-ipad.png">
+    <!--Si alguien marca el sitio como favorito-->
+    <link rel="apple-touch-startup-image" href="icons/touch-icon-">
+    <link rel="mask-icon" href="/icons/favicon.svg" color="#E50914">
+    <link rel="canonical" href=""> <!--Ayuda a prevenir contenido duplicado-->
+    <meta name="apple-mobile-web-app-title" content="App Title">
+    <meta name="rating" content="adult">
+    <!--Presuntamente este meta le dice a los navegadores que esto es contendido para adultos-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#E50914">
+    <meta name="description" content=".....">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <!--Google Android-->
+    <meta name="theme-color" content="#E50914">
+    <meta name="mobile-web-app-capable" content="yes">
 </head>
 
 <body aria-haspopup="dialog">
@@ -436,9 +445,6 @@
 <div class="contenedor-selec-checkbox row">
     <!--Este e o contenedor que ten todo-los checkbox-->
 
-    <div class="abrir-modal">
-        <!--Este div conten cada un dos desplegables checkebox -->
-        <div id="modal1" role="dialog" modal-mode="checkbox" class="checkbox__contenedor modal modal-dialog">
 
 
 
@@ -446,9 +452,6 @@
 
         <div id="modal1" role="dialog" aria-modal="true" modal-mode="checkbox" class="checkbox__contenedor modal modal-dialog">
 
-            <div class="print-values">
-                <p id="valueList">sds</p>
-            </div>
             <h4 class="boton__desplegable"><!--Este e o botón desplegable-->
                 Desplegable-1
             </h4>
@@ -566,25 +569,7 @@
     <button type="button" class="btn-abrir-modal" data-open="modal1">
         <span class="btn-dsp">Desplegable-1</span>
     </button>
-    <script>
-        var valueList = document.getElementById("valueList");
-        var text = ' ';
-        var listArray = [];
-        var checkboxes = document.querySelectorAll(".checkbox__selec");
 
-        for (var checkbox of checkboxes) {
-            checkbox.addEventListener('click', function () {
-                if (this.checked == true) {
-                    listArray.push(this.value);
-                    valueList.innerHTML = text + listArray.join(' ');
-                } else {
-                    // REMOVER LOS VALORES
-                    listArray = listArray.filter(e => e !== this.value);
-                    valueList.innerHTML = text + listArray.join(' ');
-                }
-            })
-        }
-    </script>
 
     <div class="abrir-modal">
         <!--Este div conten cada un dos desplegables checkebox -->
