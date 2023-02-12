@@ -157,6 +157,7 @@ h1, h2, h3, h4, h5, h6{
 	--contorno-input: #c5c5c5;
 	--icons: #595959;
 	--sombra: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	--sombra-buscador-movil: 0 1px 4px 0 rgba(32, 33, 36, 0.158);
 	--sombra-buscador: 0 1px 4px 0 rgba(32, 33, 36, 0.28);
 	--sombra-formularios: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
 	--azul-focus-formularios: #007185;
@@ -4200,7 +4201,7 @@ textarea:focus {
 	}
 	.contenedor-buscador {
 		/*esto es el efecto hover de la caja donde esta el buscador*/
-		box-shadow: var(--sombra-buscador);
+		box-shadow: var(--sombra-buscador-movil);
 	}
 	.contenedor__galeria {
 		grid-template-rows: 1fr;
